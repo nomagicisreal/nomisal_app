@@ -1,0 +1,14 @@
+name: nomisal_app
+description: An application for nomisal to integrate dart entities/models.
+version: 0.0.4
+repository: https://github.com/nomagicisreal/nomisal_app
+
+environment:
+  sdk: ^3.1.4
+
+dependencies:
+  freezed: ^2.4.5
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.21.0

@@ -1,0 +1,1 @@
+An application for nomisal to integrate dart entities/models.
