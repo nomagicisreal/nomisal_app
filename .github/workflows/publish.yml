@@ -11,11 +11,6 @@ jobs:
       id-token: write # Required for authentication using OIDC
     runs-on: ubuntu-latest
     steps:
-      # Checkout repository
-      - uses: actions/checkout@v4
-      # Setup Dart SDK with JWT token
-      - uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
-      # Minimal package setup and dry run checks.
       - name: Install dependencies
         run: dart pub get
       - name: Publish - dry run
