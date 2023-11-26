@@ -19,7 +19,9 @@ include: package:lints/recommended.yaml
 #   rules:
 #     - camel_case_types
 
-# analyzer:
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
 #   exclude:
 #     - path/to/excluded/files/**
 
