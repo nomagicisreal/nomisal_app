@@ -146,7 +146,7 @@ class _$UserImpl implements _User {
   }
 }
 
-abstract class _User implements User {
+abstract class _User implements User, Identity {
   const factory _User({required final String id, required final String name}) =
       _$UserImpl;
 
@@ -162,42 +162,41 @@ abstract class _User implements User {
       throw _privateConstructorUsedError;
 }
 
-Student<G> _$StudentFromJson<G extends SchoolGrade>(Map<String, dynamic> json) {
-  return _Student<G>.fromJson(json);
+Student _$StudentFromJson(Map<String, dynamic> json) {
+  return _Student.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Student<G extends SchoolGrade> {
+mixin _$Student {
   String get id => throw _privateConstructorUsedError;
   String get idOfSchool => throw _privateConstructorUsedError;
   String get idOfClass => throw _privateConstructorUsedError;
-  School<G> get school => throw _privateConstructorUsedError;
+  School get school => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $StudentCopyWith<G, Student<G>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StudentCopyWith<Student> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StudentCopyWith<G extends SchoolGrade, $Res> {
-  factory $StudentCopyWith(Student<G> value, $Res Function(Student<G>) then) =
-      _$StudentCopyWithImpl<G, $Res, Student<G>>;
+abstract class $StudentCopyWith<$Res> {
+  factory $StudentCopyWith(Student value, $Res Function(Student) then) =
+      _$StudentCopyWithImpl<$Res, Student>;
   @useResult
   $Res call(
       {String id,
       String idOfSchool,
       String idOfClass,
-      School<G> school,
+      School school,
       String name});
 
-  $SchoolCopyWith<G, $Res> get school;
+  $SchoolCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class _$StudentCopyWithImpl<G extends SchoolGrade, $Res,
-    $Val extends Student<G>> implements $StudentCopyWith<G, $Res> {
+class _$StudentCopyWithImpl<$Res, $Val extends Student>
+    implements $StudentCopyWith<$Res> {
   _$StudentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -230,7 +229,7 @@ class _$StudentCopyWithImpl<G extends SchoolGrade, $Res,
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School<G>,
+              as School,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -240,38 +239,37 @@ class _$StudentCopyWithImpl<G extends SchoolGrade, $Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $SchoolCopyWith<G, $Res> get school {
-    return $SchoolCopyWith<G, $Res>(_value.school, (value) {
+  $SchoolCopyWith<$Res> get school {
+    return $SchoolCopyWith<$Res>(_value.school, (value) {
       return _then(_value.copyWith(school: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$StudentImplCopyWith<G extends SchoolGrade, $Res>
-    implements $StudentCopyWith<G, $Res> {
+abstract class _$$StudentImplCopyWith<$Res> implements $StudentCopyWith<$Res> {
   factory _$$StudentImplCopyWith(
-          _$StudentImpl<G> value, $Res Function(_$StudentImpl<G>) then) =
-      __$$StudentImplCopyWithImpl<G, $Res>;
+          _$StudentImpl value, $Res Function(_$StudentImpl) then) =
+      __$$StudentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
       String idOfSchool,
       String idOfClass,
-      School<G> school,
+      School school,
       String name});
 
   @override
-  $SchoolCopyWith<G, $Res> get school;
+  $SchoolCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class __$$StudentImplCopyWithImpl<G extends SchoolGrade, $Res>
-    extends _$StudentCopyWithImpl<G, $Res, _$StudentImpl<G>>
-    implements _$$StudentImplCopyWith<G, $Res> {
+class __$$StudentImplCopyWithImpl<$Res>
+    extends _$StudentCopyWithImpl<$Res, _$StudentImpl>
+    implements _$$StudentImplCopyWith<$Res> {
   __$$StudentImplCopyWithImpl(
-      _$StudentImpl<G> _value, $Res Function(_$StudentImpl<G>) _then)
+      _$StudentImpl _value, $Res Function(_$StudentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -283,7 +281,7 @@ class __$$StudentImplCopyWithImpl<G extends SchoolGrade, $Res>
     Object? school = null,
     Object? name = null,
   }) {
-    return _then(_$StudentImpl<G>(
+    return _then(_$StudentImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -299,7 +297,7 @@ class __$$StudentImplCopyWithImpl<G extends SchoolGrade, $Res>
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School<G>,
+              as School,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -310,7 +308,7 @@ class __$$StudentImplCopyWithImpl<G extends SchoolGrade, $Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StudentImpl<G extends SchoolGrade> implements _Student<G> {
+class _$StudentImpl implements _Student {
   const _$StudentImpl(
       {required this.id,
       required this.idOfSchool,
@@ -328,20 +326,20 @@ class _$StudentImpl<G extends SchoolGrade> implements _Student<G> {
   @override
   final String idOfClass;
   @override
-  final School<G> school;
+  final School school;
   @override
   final String name;
 
   @override
   String toString() {
-    return 'Student<$G>(id: $id, idOfSchool: $idOfSchool, idOfClass: $idOfClass, school: $school, name: $name)';
+    return 'Student(id: $id, idOfSchool: $idOfSchool, idOfClass: $idOfClass, school: $school, name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StudentImpl<G> &&
+            other is _$StudentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.idOfSchool, idOfSchool) ||
                 other.idOfSchool == idOfSchool) &&
@@ -359,27 +357,26 @@ class _$StudentImpl<G extends SchoolGrade> implements _Student<G> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$StudentImplCopyWith<G, _$StudentImpl<G>> get copyWith =>
-      __$$StudentImplCopyWithImpl<G, _$StudentImpl<G>>(this, _$identity);
+  _$$StudentImplCopyWith<_$StudentImpl> get copyWith =>
+      __$$StudentImplCopyWithImpl<_$StudentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$StudentImplToJson<G>(
+    return _$$StudentImplToJson(
       this,
     );
   }
 }
 
-abstract class _Student<G extends SchoolGrade> implements Student<G> {
+abstract class _Student implements Student, Identity {
   const factory _Student(
       {required final String id,
       required final String idOfSchool,
       required final String idOfClass,
-      required final School<G> school,
-      required final String name}) = _$StudentImpl<G>;
+      required final School school,
+      required final String name}) = _$StudentImpl;
 
-  factory _Student.fromJson(Map<String, dynamic> json) =
-      _$StudentImpl<G>.fromJson;
+  factory _Student.fromJson(Map<String, dynamic> json) = _$StudentImpl.fromJson;
 
   @override
   String get id;
@@ -388,12 +385,12 @@ abstract class _Student<G extends SchoolGrade> implements Student<G> {
   @override
   String get idOfClass;
   @override
-  School<G> get school;
+  School get school;
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$StudentImplCopyWith<G, _$StudentImpl<G>> get copyWith =>
+  _$$StudentImplCopyWith<_$StudentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -405,7 +402,7 @@ StudentCompanion _$StudentCompanionFromJson(Map<String, dynamic> json) {
 mixin _$StudentCompanion {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  Student<SchoolGrade> get relation => throw _privateConstructorUsedError;
+  Student get relation => throw _privateConstructorUsedError;
   StudentCompanionType get relationship => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -423,10 +420,10 @@ abstract class $StudentCompanionCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      Student<SchoolGrade> relation,
+      Student relation,
       StudentCompanionType relationship});
 
-  $StudentCopyWith<SchoolGrade, $Res> get relation;
+  $StudentCopyWith<$Res> get relation;
 }
 
 /// @nodoc
@@ -459,7 +456,7 @@ class _$StudentCompanionCopyWithImpl<$Res, $Val extends StudentCompanion>
       relation: null == relation
           ? _value.relation
           : relation // ignore: cast_nullable_to_non_nullable
-              as Student<SchoolGrade>,
+              as Student,
       relationship: null == relationship
           ? _value.relationship
           : relationship // ignore: cast_nullable_to_non_nullable
@@ -469,8 +466,8 @@ class _$StudentCompanionCopyWithImpl<$Res, $Val extends StudentCompanion>
 
   @override
   @pragma('vm:prefer-inline')
-  $StudentCopyWith<SchoolGrade, $Res> get relation {
-    return $StudentCopyWith<SchoolGrade, $Res>(_value.relation, (value) {
+  $StudentCopyWith<$Res> get relation {
+    return $StudentCopyWith<$Res>(_value.relation, (value) {
       return _then(_value.copyWith(relation: value) as $Val);
     });
   }
@@ -487,11 +484,11 @@ abstract class _$$StudentCompanionImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      Student<SchoolGrade> relation,
+      Student relation,
       StudentCompanionType relationship});
 
   @override
-  $StudentCopyWith<SchoolGrade, $Res> get relation;
+  $StudentCopyWith<$Res> get relation;
 }
 
 /// @nodoc
@@ -522,7 +519,7 @@ class __$$StudentCompanionImplCopyWithImpl<$Res>
       relation: null == relation
           ? _value.relation
           : relation // ignore: cast_nullable_to_non_nullable
-              as Student<SchoolGrade>,
+              as Student,
       relationship: null == relationship
           ? _value.relationship
           : relationship // ignore: cast_nullable_to_non_nullable
@@ -548,7 +545,7 @@ class _$StudentCompanionImpl implements _StudentCompanion {
   @override
   final String name;
   @override
-  final Student<SchoolGrade> relation;
+  final Student relation;
   @override
   final StudentCompanionType relationship;
 
@@ -590,11 +587,11 @@ class _$StudentCompanionImpl implements _StudentCompanion {
   }
 }
 
-abstract class _StudentCompanion implements StudentCompanion {
+abstract class _StudentCompanion implements StudentCompanion, Identity {
   const factory _StudentCompanion(
           {required final String id,
           required final String name,
-          required final Student<SchoolGrade> relation,
+          required final Student relation,
           required final StudentCompanionType relationship}) =
       _$StudentCompanionImpl;
 
@@ -606,7 +603,7 @@ abstract class _StudentCompanion implements StudentCompanion {
   @override
   String get name;
   @override
-  Student<SchoolGrade> get relation;
+  Student get relation;
   @override
   StudentCompanionType get relationship;
   @override
@@ -615,15 +612,16 @@ abstract class _StudentCompanion implements StudentCompanion {
       throw _privateConstructorUsedError;
 }
 
-Parent<G> _$ParentFromJson<G extends SchoolGrade>(Map<String, dynamic> json) {
+Parent<G> _$ParentFromJson<G extends SchoolQualification>(
+    Map<String, dynamic> json) {
   return _Parent<G>.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Parent<G extends SchoolGrade> {
+mixin _$Parent<G extends SchoolQualification> {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  Student<G> get children => throw _privateConstructorUsedError;
+  Student get children => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -632,18 +630,18 @@ mixin _$Parent<G extends SchoolGrade> {
 }
 
 /// @nodoc
-abstract class $ParentCopyWith<G extends SchoolGrade, $Res> {
+abstract class $ParentCopyWith<G extends SchoolQualification, $Res> {
   factory $ParentCopyWith(Parent<G> value, $Res Function(Parent<G>) then) =
       _$ParentCopyWithImpl<G, $Res, Parent<G>>;
   @useResult
-  $Res call({String id, String name, Student<G> children});
+  $Res call({String id, String name, Student children});
 
-  $StudentCopyWith<G, $Res> get children;
+  $StudentCopyWith<$Res> get children;
 }
 
 /// @nodoc
-class _$ParentCopyWithImpl<G extends SchoolGrade, $Res, $Val extends Parent<G>>
-    implements $ParentCopyWith<G, $Res> {
+class _$ParentCopyWithImpl<G extends SchoolQualification, $Res,
+    $Val extends Parent<G>> implements $ParentCopyWith<G, $Res> {
   _$ParentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -670,35 +668,35 @@ class _$ParentCopyWithImpl<G extends SchoolGrade, $Res, $Val extends Parent<G>>
       children: null == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as Student<G>,
+              as Student,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $StudentCopyWith<G, $Res> get children {
-    return $StudentCopyWith<G, $Res>(_value.children, (value) {
+  $StudentCopyWith<$Res> get children {
+    return $StudentCopyWith<$Res>(_value.children, (value) {
       return _then(_value.copyWith(children: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ParentImplCopyWith<G extends SchoolGrade, $Res>
+abstract class _$$ParentImplCopyWith<G extends SchoolQualification, $Res>
     implements $ParentCopyWith<G, $Res> {
   factory _$$ParentImplCopyWith(
           _$ParentImpl<G> value, $Res Function(_$ParentImpl<G>) then) =
       __$$ParentImplCopyWithImpl<G, $Res>;
   @override
   @useResult
-  $Res call({String id, String name, Student<G> children});
+  $Res call({String id, String name, Student children});
 
   @override
-  $StudentCopyWith<G, $Res> get children;
+  $StudentCopyWith<$Res> get children;
 }
 
 /// @nodoc
-class __$$ParentImplCopyWithImpl<G extends SchoolGrade, $Res>
+class __$$ParentImplCopyWithImpl<G extends SchoolQualification, $Res>
     extends _$ParentCopyWithImpl<G, $Res, _$ParentImpl<G>>
     implements _$$ParentImplCopyWith<G, $Res> {
   __$$ParentImplCopyWithImpl(
@@ -724,14 +722,14 @@ class __$$ParentImplCopyWithImpl<G extends SchoolGrade, $Res>
       children: null == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
-              as Student<G>,
+              as Student,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ParentImpl<G extends SchoolGrade> implements _Parent<G> {
+class _$ParentImpl<G extends SchoolQualification> implements _Parent<G> {
   const _$ParentImpl(
       {required this.id, required this.name, required this.children});
 
@@ -743,7 +741,7 @@ class _$ParentImpl<G extends SchoolGrade> implements _Parent<G> {
   @override
   final String name;
   @override
-  final Student<G> children;
+  final Student children;
 
   @override
   String toString() {
@@ -779,11 +777,12 @@ class _$ParentImpl<G extends SchoolGrade> implements _Parent<G> {
   }
 }
 
-abstract class _Parent<G extends SchoolGrade> implements Parent<G> {
+abstract class _Parent<G extends SchoolQualification>
+    implements Parent<G>, Identity {
   const factory _Parent(
       {required final String id,
       required final String name,
-      required final Student<G> children}) = _$ParentImpl<G>;
+      required final Student children}) = _$ParentImpl<G>;
 
   factory _Parent.fromJson(Map<String, dynamic> json) =
       _$ParentImpl<G>.fromJson;
@@ -793,23 +792,24 @@ abstract class _Parent<G extends SchoolGrade> implements Parent<G> {
   @override
   String get name;
   @override
-  Student<G> get children;
+  Student get children;
   @override
   @JsonKey(ignore: true)
   _$$ParentImplCopyWith<G, _$ParentImpl<G>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Teacher<G> _$TeacherFromJson<G extends SchoolGrade>(Map<String, dynamic> json) {
+Teacher<G> _$TeacherFromJson<G extends SchoolQualification>(
+    Map<String, dynamic> json) {
   return _Teacher<G>.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Teacher<G extends SchoolGrade> {
+mixin _$Teacher<G extends SchoolQualification> {
   String get id => throw _privateConstructorUsedError;
   String get idOfSchool => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  School<G> get school => throw _privateConstructorUsedError;
+  School get school => throw _privateConstructorUsedError;
   List<Group> get students => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -819,7 +819,7 @@ mixin _$Teacher<G extends SchoolGrade> {
 }
 
 /// @nodoc
-abstract class $TeacherCopyWith<G extends SchoolGrade, $Res> {
+abstract class $TeacherCopyWith<G extends SchoolQualification, $Res> {
   factory $TeacherCopyWith(Teacher<G> value, $Res Function(Teacher<G>) then) =
       _$TeacherCopyWithImpl<G, $Res, Teacher<G>>;
   @useResult
@@ -827,14 +827,14 @@ abstract class $TeacherCopyWith<G extends SchoolGrade, $Res> {
       {String id,
       String idOfSchool,
       String name,
-      School<G> school,
+      School school,
       List<Group> students});
 
-  $SchoolCopyWith<G, $Res> get school;
+  $SchoolCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class _$TeacherCopyWithImpl<G extends SchoolGrade, $Res,
+class _$TeacherCopyWithImpl<G extends SchoolQualification, $Res,
     $Val extends Teacher<G>> implements $TeacherCopyWith<G, $Res> {
   _$TeacherCopyWithImpl(this._value, this._then);
 
@@ -868,7 +868,7 @@ class _$TeacherCopyWithImpl<G extends SchoolGrade, $Res,
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School<G>,
+              as School,
       students: null == students
           ? _value.students
           : students // ignore: cast_nullable_to_non_nullable
@@ -878,15 +878,15 @@ class _$TeacherCopyWithImpl<G extends SchoolGrade, $Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $SchoolCopyWith<G, $Res> get school {
-    return $SchoolCopyWith<G, $Res>(_value.school, (value) {
+  $SchoolCopyWith<$Res> get school {
+    return $SchoolCopyWith<$Res>(_value.school, (value) {
       return _then(_value.copyWith(school: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$TeacherImplCopyWith<G extends SchoolGrade, $Res>
+abstract class _$$TeacherImplCopyWith<G extends SchoolQualification, $Res>
     implements $TeacherCopyWith<G, $Res> {
   factory _$$TeacherImplCopyWith(
           _$TeacherImpl<G> value, $Res Function(_$TeacherImpl<G>) then) =
@@ -897,15 +897,15 @@ abstract class _$$TeacherImplCopyWith<G extends SchoolGrade, $Res>
       {String id,
       String idOfSchool,
       String name,
-      School<G> school,
+      School school,
       List<Group> students});
 
   @override
-  $SchoolCopyWith<G, $Res> get school;
+  $SchoolCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class __$$TeacherImplCopyWithImpl<G extends SchoolGrade, $Res>
+class __$$TeacherImplCopyWithImpl<G extends SchoolQualification, $Res>
     extends _$TeacherCopyWithImpl<G, $Res, _$TeacherImpl<G>>
     implements _$$TeacherImplCopyWith<G, $Res> {
   __$$TeacherImplCopyWithImpl(
@@ -937,7 +937,7 @@ class __$$TeacherImplCopyWithImpl<G extends SchoolGrade, $Res>
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School<G>,
+              as School,
       students: null == students
           ? _value._students
           : students // ignore: cast_nullable_to_non_nullable
@@ -948,7 +948,7 @@ class __$$TeacherImplCopyWithImpl<G extends SchoolGrade, $Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TeacherImpl<G extends SchoolGrade> implements _Teacher<G> {
+class _$TeacherImpl<G extends SchoolQualification> implements _Teacher<G> {
   const _$TeacherImpl(
       {required this.id,
       required this.idOfSchool,
@@ -967,7 +967,7 @@ class _$TeacherImpl<G extends SchoolGrade> implements _Teacher<G> {
   @override
   final String name;
   @override
-  final School<G> school;
+  final School school;
   final List<Group> _students;
   @override
   List<Group> get students {
@@ -1013,12 +1013,13 @@ class _$TeacherImpl<G extends SchoolGrade> implements _Teacher<G> {
   }
 }
 
-abstract class _Teacher<G extends SchoolGrade> implements Teacher<G> {
+abstract class _Teacher<G extends SchoolQualification>
+    implements Teacher<G>, Identity {
   const factory _Teacher(
       {required final String id,
       required final String idOfSchool,
       required final String name,
-      required final School<G> school,
+      required final School school,
       required final List<Group> students}) = _$TeacherImpl<G>;
 
   factory _Teacher.fromJson(Map<String, dynamic> json) =
@@ -1031,7 +1032,7 @@ abstract class _Teacher<G extends SchoolGrade> implements Teacher<G> {
   @override
   String get name;
   @override
-  School<G> get school;
+  School get school;
   @override
   List<Group> get students;
   @override
@@ -1040,16 +1041,16 @@ abstract class _Teacher<G extends SchoolGrade> implements Teacher<G> {
       throw _privateConstructorUsedError;
 }
 
-SchoolManager<G> _$SchoolManagerFromJson<G extends SchoolGrade>(
+SchoolManager<G> _$SchoolManagerFromJson<G extends SchoolQualification>(
     Map<String, dynamic> json) {
   return _SchoolManager<G>.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SchoolManager<G extends SchoolGrade> {
+mixin _$SchoolManager<G extends SchoolQualification> {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  School<G> get school => throw _privateConstructorUsedError;
+  School get school => throw _privateConstructorUsedError;
   List<Group> get students => throw _privateConstructorUsedError;
   List<Group> get teachers => throw _privateConstructorUsedError;
 
@@ -1060,7 +1061,7 @@ mixin _$SchoolManager<G extends SchoolGrade> {
 }
 
 /// @nodoc
-abstract class $SchoolManagerCopyWith<G extends SchoolGrade, $Res> {
+abstract class $SchoolManagerCopyWith<G extends SchoolQualification, $Res> {
   factory $SchoolManagerCopyWith(
           SchoolManager<G> value, $Res Function(SchoolManager<G>) then) =
       _$SchoolManagerCopyWithImpl<G, $Res, SchoolManager<G>>;
@@ -1068,15 +1069,15 @@ abstract class $SchoolManagerCopyWith<G extends SchoolGrade, $Res> {
   $Res call(
       {String id,
       String name,
-      School<G> school,
+      School school,
       List<Group> students,
       List<Group> teachers});
 
-  $SchoolCopyWith<G, $Res> get school;
+  $SchoolCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class _$SchoolManagerCopyWithImpl<G extends SchoolGrade, $Res,
+class _$SchoolManagerCopyWithImpl<G extends SchoolQualification, $Res,
     $Val extends SchoolManager<G>> implements $SchoolManagerCopyWith<G, $Res> {
   _$SchoolManagerCopyWithImpl(this._value, this._then);
 
@@ -1106,7 +1107,7 @@ class _$SchoolManagerCopyWithImpl<G extends SchoolGrade, $Res,
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School<G>,
+              as School,
       students: null == students
           ? _value.students
           : students // ignore: cast_nullable_to_non_nullable
@@ -1120,15 +1121,15 @@ class _$SchoolManagerCopyWithImpl<G extends SchoolGrade, $Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $SchoolCopyWith<G, $Res> get school {
-    return $SchoolCopyWith<G, $Res>(_value.school, (value) {
+  $SchoolCopyWith<$Res> get school {
+    return $SchoolCopyWith<$Res>(_value.school, (value) {
       return _then(_value.copyWith(school: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SchoolManagerImplCopyWith<G extends SchoolGrade, $Res>
+abstract class _$$SchoolManagerImplCopyWith<G extends SchoolQualification, $Res>
     implements $SchoolManagerCopyWith<G, $Res> {
   factory _$$SchoolManagerImplCopyWith(_$SchoolManagerImpl<G> value,
           $Res Function(_$SchoolManagerImpl<G>) then) =
@@ -1138,16 +1139,16 @@ abstract class _$$SchoolManagerImplCopyWith<G extends SchoolGrade, $Res>
   $Res call(
       {String id,
       String name,
-      School<G> school,
+      School school,
       List<Group> students,
       List<Group> teachers});
 
   @override
-  $SchoolCopyWith<G, $Res> get school;
+  $SchoolCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class __$$SchoolManagerImplCopyWithImpl<G extends SchoolGrade, $Res>
+class __$$SchoolManagerImplCopyWithImpl<G extends SchoolQualification, $Res>
     extends _$SchoolManagerCopyWithImpl<G, $Res, _$SchoolManagerImpl<G>>
     implements _$$SchoolManagerImplCopyWith<G, $Res> {
   __$$SchoolManagerImplCopyWithImpl(_$SchoolManagerImpl<G> _value,
@@ -1175,7 +1176,7 @@ class __$$SchoolManagerImplCopyWithImpl<G extends SchoolGrade, $Res>
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School<G>,
+              as School,
       students: null == students
           ? _value._students
           : students // ignore: cast_nullable_to_non_nullable
@@ -1190,7 +1191,8 @@ class __$$SchoolManagerImplCopyWithImpl<G extends SchoolGrade, $Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SchoolManagerImpl<G extends SchoolGrade> implements _SchoolManager<G> {
+class _$SchoolManagerImpl<G extends SchoolQualification>
+    implements _SchoolManager<G> {
   const _$SchoolManagerImpl(
       {required this.id,
       required this.name,
@@ -1208,7 +1210,7 @@ class _$SchoolManagerImpl<G extends SchoolGrade> implements _SchoolManager<G> {
   @override
   final String name;
   @override
-  final School<G> school;
+  final School school;
   final List<Group> _students;
   @override
   List<Group> get students {
@@ -1267,12 +1269,12 @@ class _$SchoolManagerImpl<G extends SchoolGrade> implements _SchoolManager<G> {
   }
 }
 
-abstract class _SchoolManager<G extends SchoolGrade>
-    implements SchoolManager<G> {
+abstract class _SchoolManager<G extends SchoolQualification>
+    implements SchoolManager<G>, Identity {
   const factory _SchoolManager(
       {required final String id,
       required final String name,
-      required final School<G> school,
+      required final School school,
       required final List<Group> students,
       required final List<Group> teachers}) = _$SchoolManagerImpl<G>;
 
@@ -1284,7 +1286,7 @@ abstract class _SchoolManager<G extends SchoolGrade>
   @override
   String get name;
   @override
-  School<G> get school;
+  School get school;
   @override
   List<Group> get students;
   @override
@@ -1292,5 +1294,189 @@ abstract class _SchoolManager<G extends SchoolGrade>
   @override
   @JsonKey(ignore: true)
   _$$SchoolManagerImplCopyWith<G, _$SchoolManagerImpl<G>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PublicationProvider _$PublicationProviderFromJson(Map<String, dynamic> json) {
+  return _PublicationProvider.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PublicationProvider {
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<Publication> get publications => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PublicationProviderCopyWith<PublicationProvider> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PublicationProviderCopyWith<$Res> {
+  factory $PublicationProviderCopyWith(
+          PublicationProvider value, $Res Function(PublicationProvider) then) =
+      _$PublicationProviderCopyWithImpl<$Res, PublicationProvider>;
+  @useResult
+  $Res call({String id, String name, List<Publication> publications});
+}
+
+/// @nodoc
+class _$PublicationProviderCopyWithImpl<$Res, $Val extends PublicationProvider>
+    implements $PublicationProviderCopyWith<$Res> {
+  _$PublicationProviderCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? publications = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      publications: null == publications
+          ? _value.publications
+          : publications // ignore: cast_nullable_to_non_nullable
+              as List<Publication>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PublicationProviderImplCopyWith<$Res>
+    implements $PublicationProviderCopyWith<$Res> {
+  factory _$$PublicationProviderImplCopyWith(_$PublicationProviderImpl value,
+          $Res Function(_$PublicationProviderImpl) then) =
+      __$$PublicationProviderImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String name, List<Publication> publications});
+}
+
+/// @nodoc
+class __$$PublicationProviderImplCopyWithImpl<$Res>
+    extends _$PublicationProviderCopyWithImpl<$Res, _$PublicationProviderImpl>
+    implements _$$PublicationProviderImplCopyWith<$Res> {
+  __$$PublicationProviderImplCopyWithImpl(_$PublicationProviderImpl _value,
+      $Res Function(_$PublicationProviderImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? publications = null,
+  }) {
+    return _then(_$PublicationProviderImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      publications: null == publications
+          ? _value._publications
+          : publications // ignore: cast_nullable_to_non_nullable
+              as List<Publication>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PublicationProviderImpl implements _PublicationProvider {
+  const _$PublicationProviderImpl(
+      {required this.id,
+      required this.name,
+      required final List<Publication> publications})
+      : _publications = publications;
+
+  factory _$PublicationProviderImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PublicationProviderImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String name;
+  final List<Publication> _publications;
+  @override
+  List<Publication> get publications {
+    if (_publications is EqualUnmodifiableListView) return _publications;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_publications);
+  }
+
+  @override
+  String toString() {
+    return 'PublicationProvider(id: $id, name: $name, publications: $publications)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PublicationProviderImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other._publications, _publications));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name,
+      const DeepCollectionEquality().hash(_publications));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PublicationProviderImplCopyWith<_$PublicationProviderImpl> get copyWith =>
+      __$$PublicationProviderImplCopyWithImpl<_$PublicationProviderImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PublicationProviderImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PublicationProvider implements PublicationProvider, Identity {
+  const factory _PublicationProvider(
+          {required final String id,
+          required final String name,
+          required final List<Publication> publications}) =
+      _$PublicationProviderImpl;
+
+  factory _PublicationProvider.fromJson(Map<String, dynamic> json) =
+      _$PublicationProviderImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  List<Publication> get publications;
+  @override
+  @JsonKey(ignore: true)
+  _$$PublicationProviderImplCopyWith<_$PublicationProviderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

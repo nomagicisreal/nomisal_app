@@ -20,3 +20,4 @@ part 'entity/entity.dart';
 
 typedef Json = Map<String, dynamic>;
 
+

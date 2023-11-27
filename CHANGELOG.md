@@ -5,13 +5,16 @@
 - Update README.md.
 
 ## 0.0.4
-- Provide an entities and expect to be used normally after `pub add` and `pub get`.
+- Provide an entity expected to use normally after `pub add` and `pub get`.
 - Try To automate publishing with Github Actions.
 
 ## 0.0.5
 - context
   - Try to integrate my 'EDM concept' (`Entity`, `Data`, `Model`) in file structure
   - Prepare for the project on the end of 2023/2024 semester, building a learning platform.
-- what i do
   - Instead of 'EDM concept', Use `identity`, `identity-not` as basic classification for entities.
-  - Implement basic usage of 'freezed annotation' (generate code). 
+- goals
+  - Create basic properties of some entities, which be expected to use in ui of my 'learning platform' project. 
+  - Implement `toJson` and `fromJson` in 'freezed' for entities, which be expected to use in my 'learning platform' project
+    - read data in flutter assets.
+    - read/write data in cloud store

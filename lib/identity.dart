@@ -13,9 +13,17 @@ part 'identity.g.dart';
 ///   - [Parent]
 ///   - [Teacher]
 ///   - [SchoolManager]
+///   - []
 ///
+
+abstract interface class Identity {
+  String get id;
+  String get name;
+}
+
 @freezed
 class User with _$User {
+  @Implements<Identity>()
   const factory User({
     required String id,
     required String name,
@@ -25,14 +33,15 @@ class User with _$User {
 }
 
 @freezed
-class Student<G extends SchoolGrade> with _$Student<G> {
+class Student with _$Student {
+  @Implements<Identity>()
   const factory Student({
     required String id,
     required String idOfSchool,
     required String idOfClass,
-    required School<G> school,
+    required School school,
     required String name,
-  }) = _Student<G>;
+  }) = _Student;
 
   factory Student.fromJson(Map<String, dynamic> json) =>
       _$StudentFromJson(json);
@@ -40,6 +49,7 @@ class Student<G extends SchoolGrade> with _$Student<G> {
 
 @freezed
 class StudentCompanion with _$StudentCompanion {
+  @Implements<Identity>()
   const factory StudentCompanion({
     required String id,
     required String name,
@@ -47,47 +57,63 @@ class StudentCompanion with _$StudentCompanion {
     required StudentCompanionType relationship,
   }) = _StudentCompanion;
 
-factory StudentCompanion.fromJson(Map<String, dynamic> json) =>
-    _$StudentCompanionFromJson(json);
+  factory StudentCompanion.fromJson(Map<String, dynamic> json) =>
+      _$StudentCompanionFromJson(json);
 }
 
 @freezed
-class Parent<G extends SchoolGrade> with _$Parent<G> {
+class Parent<G extends SchoolQualification> with _$Parent {
+  @Implements<Identity>()
   const factory Parent({
     required String id,
     required String name,
-    required Student<G> children,
-  }) = _Parent<G>;
+    required Student children,
+  }) = _Parent;
 
-factory Parent.fromJson(Map<String, dynamic> json) => _$ParentFromJson(json);
+  factory Parent.fromJson(Map<String, dynamic> json) => _$ParentFromJson(json);
 }
 
 @freezed
-class Teacher<G extends SchoolGrade> with _$Teacher<G> {
+class Teacher<G extends SchoolQualification> with _$Teacher {
+  @Implements<Identity>()
   const factory Teacher({
     required String id,
     required String idOfSchool,
     required String name,
-    required School<G> school,
+    required School school,
     required List<Group> students,
-  }) = _Teacher<G>;
+  }) = _Teacher;
 
-factory Teacher.fromJson(Map<String, dynamic> json) =>
-    _$TeacherFromJson(json);
+  factory Teacher.fromJson(Map<String, dynamic> json) =>
+      _$TeacherFromJson(json);
 }
 
 @freezed
-class SchoolManager<G extends SchoolGrade> with _$SchoolManager<G> {
+class SchoolManager<G extends SchoolQualification> with _$SchoolManager {
+  @Implements<Identity>()
   const factory SchoolManager({
     required String id,
     required String name,
-    required School<G> school,
+    required School school,
     required List<Group> students,
     required List<Group> teachers,
-  }) = _SchoolManager<G>;
+  }) = _SchoolManager;
 
-factory SchoolManager.fromJson(Map<String, dynamic> json) =>
-    _$SchoolManagerFromJson(json);
+  factory SchoolManager.fromJson(Map<String, dynamic> json) =>
+      _$SchoolManagerFromJson(json);
+}
+
+@freezed
+class PublicationProvider with _$PublicationProvider {
+  @Implements<Identity>()
+  const factory PublicationProvider({
+    required String id,
+    required String name,
+    required List<Publication> publications,
+  }) = _PublicationProvider;
+
+  factory PublicationProvider.fromJson(Map<String, dynamic> json) =>
+      _$PublicationProviderFromJson(json);
 }
 
 enum StudentCompanionType { partner, senior, mentor }

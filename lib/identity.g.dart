@@ -17,18 +17,16 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'name': instance.name,
     };
 
-_$StudentImpl<G> _$$StudentImplFromJson<G extends SchoolGrade>(
-        Map<String, dynamic> json) =>
-    _$StudentImpl<G>(
+_$StudentImpl _$$StudentImplFromJson(Map<String, dynamic> json) =>
+    _$StudentImpl(
       id: json['id'] as String,
       idOfSchool: json['idOfSchool'] as String,
       idOfClass: json['idOfClass'] as String,
-      school: School<G>.fromJson(json['school'] as Map<String, dynamic>),
+      school: School.fromJson(json['school'] as Map<String, dynamic>),
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$StudentImplToJson<G extends SchoolGrade>(
-        _$StudentImpl<G> instance) =>
+Map<String, dynamic> _$$StudentImplToJson(_$StudentImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'idOfSchool': instance.idOfSchool,
@@ -42,8 +40,7 @@ _$StudentCompanionImpl _$$StudentCompanionImplFromJson(
     _$StudentCompanionImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      relation: Student<SchoolGrade>.fromJson(
-          json['relation'] as Map<String, dynamic>),
+      relation: Student.fromJson(json['relation'] as Map<String, dynamic>),
       relationship:
           $enumDecode(_$StudentCompanionTypeEnumMap, json['relationship']),
     );
@@ -63,15 +60,15 @@ const _$StudentCompanionTypeEnumMap = {
   StudentCompanionType.mentor: 'mentor',
 };
 
-_$ParentImpl<G> _$$ParentImplFromJson<G extends SchoolGrade>(
+_$ParentImpl<G> _$$ParentImplFromJson<G extends SchoolQualification>(
         Map<String, dynamic> json) =>
     _$ParentImpl<G>(
       id: json['id'] as String,
       name: json['name'] as String,
-      children: Student<G>.fromJson(json['children'] as Map<String, dynamic>),
+      children: Student.fromJson(json['children'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ParentImplToJson<G extends SchoolGrade>(
+Map<String, dynamic> _$$ParentImplToJson<G extends SchoolQualification>(
         _$ParentImpl<G> instance) =>
     <String, dynamic>{
       'id': instance.id,
@@ -79,19 +76,19 @@ Map<String, dynamic> _$$ParentImplToJson<G extends SchoolGrade>(
       'children': instance.children,
     };
 
-_$TeacherImpl<G> _$$TeacherImplFromJson<G extends SchoolGrade>(
+_$TeacherImpl<G> _$$TeacherImplFromJson<G extends SchoolQualification>(
         Map<String, dynamic> json) =>
     _$TeacherImpl<G>(
       id: json['id'] as String,
       idOfSchool: json['idOfSchool'] as String,
       name: json['name'] as String,
-      school: School<G>.fromJson(json['school'] as Map<String, dynamic>),
+      school: School.fromJson(json['school'] as Map<String, dynamic>),
       students: (json['students'] as List<dynamic>)
           .map((e) => Group.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$TeacherImplToJson<G extends SchoolGrade>(
+Map<String, dynamic> _$$TeacherImplToJson<G extends SchoolQualification>(
         _$TeacherImpl<G> instance) =>
     <String, dynamic>{
       'id': instance.id,
@@ -101,21 +98,22 @@ Map<String, dynamic> _$$TeacherImplToJson<G extends SchoolGrade>(
       'students': instance.students,
     };
 
-_$SchoolManagerImpl<G> _$$SchoolManagerImplFromJson<G extends SchoolGrade>(
-        Map<String, dynamic> json) =>
-    _$SchoolManagerImpl<G>(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      school: School<G>.fromJson(json['school'] as Map<String, dynamic>),
-      students: (json['students'] as List<dynamic>)
-          .map((e) => Group.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      teachers: (json['teachers'] as List<dynamic>)
-          .map((e) => Group.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
+_$SchoolManagerImpl<G>
+    _$$SchoolManagerImplFromJson<G extends SchoolQualification>(
+            Map<String, dynamic> json) =>
+        _$SchoolManagerImpl<G>(
+          id: json['id'] as String,
+          name: json['name'] as String,
+          school: School.fromJson(json['school'] as Map<String, dynamic>),
+          students: (json['students'] as List<dynamic>)
+              .map((e) => Group.fromJson(e as Map<String, dynamic>))
+              .toList(),
+          teachers: (json['teachers'] as List<dynamic>)
+              .map((e) => Group.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        );
 
-Map<String, dynamic> _$$SchoolManagerImplToJson<G extends SchoolGrade>(
+Map<String, dynamic> _$$SchoolManagerImplToJson<G extends SchoolQualification>(
         _$SchoolManagerImpl<G> instance) =>
     <String, dynamic>{
       'id': instance.id,
@@ -123,4 +121,22 @@ Map<String, dynamic> _$$SchoolManagerImplToJson<G extends SchoolGrade>(
       'school': instance.school,
       'students': instance.students,
       'teachers': instance.teachers,
+    };
+
+_$PublicationProviderImpl _$$PublicationProviderImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PublicationProviderImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      publications: (json['publications'] as List<dynamic>)
+          .map((e) => Publication.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$PublicationProviderImplToJson(
+        _$PublicationProviderImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'publications': instance.publications,
     };
