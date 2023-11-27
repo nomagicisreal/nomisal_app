@@ -1,7 +1,9 @@
 library app;
 
 part 'data/data.dart';
+
 part 'model/model.dart';
+
 part 'entity/entity.dart';
 
 ///
@@ -20,4 +22,5 @@ part 'entity/entity.dart';
 
 typedef Json = Map<String, dynamic>;
 
-
+// void main(List<String> arguments) {
+// }

@@ -6,32 +6,6 @@ part of 'identity_not.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
-      id: json['id'] as String,
-      v: json['v'] as String,
-      title: json['title'] as String,
-      content: json['content'] as String,
-      status: $enumDecode(_$NoteStatusEnumMap, json['status']),
-      additionalContent: json['additionalContent'] as Object,
-    );
-
-Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'v': instance.v,
-      'title': instance.title,
-      'content': instance.content,
-      'status': _$NoteStatusEnumMap[instance.status]!,
-      'additionalContent': instance.additionalContent,
-    };
-
-const _$NoteStatusEnumMap = {
-  NoteStatus.editing: 'editing',
-  NoteStatus.recorded: 'recorded',
-  NoteStatus.categorized: 'categorized',
-  NoteStatus.highlighted: 'highlighted',
-};
-
 _$MessageImpl _$$MessageImplFromJson(Map<String, dynamic> json) =>
     _$MessageImpl(
       id: json['id'] as String,
@@ -57,15 +31,444 @@ Map<String, dynamic> _$$MessageImplToJson(_$MessageImpl instance) =>
 const _$MessageStatusEnumMap = {
   MessageStatus.sending: 'sending',
   MessageStatus.received: 'received',
+  MessageStatus.highlighted: 'highlighted',
+};
+
+_$SubmissionImpl _$$SubmissionImplFromJson(Map<String, dynamic> json) =>
+    _$SubmissionImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      answer: json['answer'] as Object,
+    );
+
+Map<String, dynamic> _$$SubmissionImplToJson(_$SubmissionImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'description': instance.description,
+      'answer': instance.answer,
+    };
+
+_$QuestionnaireImpl _$$QuestionnaireImplFromJson(Map<String, dynamic> json) =>
+    _$QuestionnaireImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      questions:
+          (json['questions'] as List<dynamic>).map((e) => e as Object).toList(),
+      answers:
+          (json['answers'] as List<dynamic>).map((e) => e as Object).toList(),
+    );
+
+Map<String, dynamic> _$$QuestionnaireImplToJson(_$QuestionnaireImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'description': instance.description,
+      'questions': instance.questions,
+      'answers': instance.answers,
+    };
+
+_$SurveyChoosingImpl _$$SurveyChoosingImplFromJson(Map<String, dynamic> json) =>
+    _$SurveyChoosingImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      questions:
+          (json['questions'] as List<dynamic>).map((e) => e as Object).toList(),
+      options: (json['options'] as List<dynamic>)
+          .map((e) => (e as List<dynamic>).map((e) => e as Object).toList())
+          .toList(),
+      answers: (json['answers'] as List<dynamic>).map((e) => e as int).toList(),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$SurveyChoosingImplToJson(
+        _$SurveyChoosingImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'description': instance.description,
+      'questions': instance.questions,
+      'options': instance.options,
+      'answers': instance.answers,
+      'runtimeType': instance.$type,
+    };
+
+_$SurveyMatchingImpl _$$SurveyMatchingImplFromJson(Map<String, dynamic> json) =>
+    _$SurveyMatchingImpl(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      sideA: (json['sideA'] as List<dynamic>)
+          .map((e) => (e as List<dynamic>).map((e) => e as Object).toList())
+          .toList(),
+      sideB: (json['sideB'] as List<dynamic>)
+          .map((e) => (e as List<dynamic>).map((e) => e as Object).toList())
+          .toList(),
+      answers: (json['answers'] as List<dynamic>)
+          .map((e) => (e as Map<String, dynamic>).map(
+                (k, e) => MapEntry(int.parse(k), e as int),
+              ))
+          .toList(),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$SurveyMatchingImplToJson(
+        _$SurveyMatchingImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'description': instance.description,
+      'sideA': instance.sideA,
+      'sideB': instance.sideB,
+      'answers': instance.answers
+          .map((e) => e.map((k, e) => MapEntry(k.toString(), e)))
+          .toList(),
+      'runtimeType': instance.$type,
+    };
+
+_$QuizImpl _$$QuizImplFromJson(Map<String, dynamic> json) => _$QuizImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$QuizStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      content: json['content'] as Object,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$QuizImplToJson(_$QuizImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$QuizStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+const _$QuizStatusEnumMap = {
+  QuizStatus.unfinished: 'unfinished',
+  QuizStatus.failed: 'failed',
+  QuizStatus.pass: 'pass',
+};
+
+_$QuizSubmissionImpl _$$QuizSubmissionImplFromJson(Map<String, dynamic> json) =>
+    _$QuizSubmissionImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$QuizStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      content: Submission.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$QuizSubmissionImplToJson(
+        _$QuizSubmissionImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$QuizStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$QuizQuestionnaireImpl _$$QuizQuestionnaireImplFromJson(
+        Map<String, dynamic> json) =>
+    _$QuizQuestionnaireImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$QuizStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      content: Questionnaire.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$QuizQuestionnaireImplToJson(
+        _$QuizQuestionnaireImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$QuizStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$QuizSurveyImpl _$$QuizSurveyImplFromJson(Map<String, dynamic> json) =>
+    _$QuizSurveyImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$QuizStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      content: Survey.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$QuizSurveyImplToJson(_$QuizSurveyImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$QuizStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$QuizVideoCheckpointImpl _$$QuizVideoCheckpointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$QuizVideoCheckpointImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$QuizStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      content: json['content'] as Object,
+      checkpoints: (json['checkpoints'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(int.parse(k), e as Object),
+      ),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$QuizVideoCheckpointImplToJson(
+        _$QuizVideoCheckpointImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$QuizStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'content': instance.content,
+      'checkpoints':
+          instance.checkpoints.map((k, e) => MapEntry(k.toString(), e)),
+      'runtimeType': instance.$type,
+    };
+
+_$TestImpl _$$TestImplFromJson(Map<String, dynamic> json) => _$TestImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$TestStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      start: DateTime.parse(json['start'] as String),
+      end: DateTime.parse(json['end'] as String),
+      content: json['content'] as Object,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$TestImplToJson(_$TestImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$TestStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'start': instance.start.toIso8601String(),
+      'end': instance.end.toIso8601String(),
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+const _$TestStatusEnumMap = {
+  TestStatus.preparing: 'preparing',
+  TestStatus.secreted: 'secreted',
+  TestStatus.testing: 'testing',
+  TestStatus.failed: 'failed',
+  TestStatus.pass: 'pass',
+};
+
+_$TestSubmissionImpl _$$TestSubmissionImplFromJson(Map<String, dynamic> json) =>
+    _$TestSubmissionImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$TestStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      content: Submission.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$TestSubmissionImplToJson(
+        _$TestSubmissionImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$TestStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$TestQuestionnaireImpl _$$TestQuestionnaireImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TestQuestionnaireImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$TestStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      start: DateTime.parse(json['start'] as String),
+      end: DateTime.parse(json['end'] as String),
+      content: Questionnaire.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$TestQuestionnaireImplToJson(
+        _$TestQuestionnaireImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$TestStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'start': instance.start.toIso8601String(),
+      'end': instance.end.toIso8601String(),
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$TestSurveyImpl _$$TestSurveyImplFromJson(Map<String, dynamic> json) =>
+    _$TestSurveyImpl(
+      id: json['id'] as String,
+      ability: Ability.fromJson(json['ability'] as Map<String, dynamic>),
+      status: $enumDecode(_$TestStatusEnumMap, json['status']),
+      title: json['title'] as String,
+      description: json['description'] as String,
+      start: DateTime.parse(json['start'] as String),
+      end: DateTime.parse(json['end'] as String),
+      content: Survey.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$TestSurveyImplToJson(_$TestSurveyImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'ability': instance.ability,
+      'status': _$TestStatusEnumMap[instance.status]!,
+      'title': instance.title,
+      'description': instance.description,
+      'start': instance.start.toIso8601String(),
+      'end': instance.end.toIso8601String(),
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$ExamQuizImpl _$$ExamQuizImplFromJson(Map<String, dynamic> json) =>
+    _$ExamQuizImpl(
+      id: json['id'] as String,
+      certificate:
+          Certificate.fromJson(json['certificate'] as Map<String, dynamic>),
+      content: Quiz.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$ExamQuizImplToJson(_$ExamQuizImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'certificate': instance.certificate,
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$ExamTestImpl _$$ExamTestImplFromJson(Map<String, dynamic> json) =>
+    _$ExamTestImpl(
+      id: json['id'] as String,
+      certificate:
+          Certificate.fromJson(json['certificate'] as Map<String, dynamic>),
+      content: Test.fromJson(json['content'] as Map<String, dynamic>),
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$ExamTestImplToJson(_$ExamTestImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'certificate': instance.certificate,
+      'content': instance.content,
+      'runtimeType': instance.$type,
+    };
+
+_$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
+      id: json['id'] as String,
+      v: json['v'] as String?,
+      title: json['title'] as String,
+      content: json['content'] as String,
+      attachment: json['attachment'] as Object,
+      status: $enumDecode(_$NoteStatusEnumMap, json['status']),
+    );
+
+Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'v': instance.v,
+      'title': instance.title,
+      'content': instance.content,
+      'attachment': instance.attachment,
+      'status': _$NoteStatusEnumMap[instance.status]!,
+    };
+
+const _$NoteStatusEnumMap = {
+  NoteStatus.editing: 'editing',
+  NoteStatus.recorded: 'recorded',
+  NoteStatus.categorized: 'categorized',
+  NoteStatus.pinned: 'pinned',
+};
+
+_$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
+      id: json['id'] as String,
+      v: json['v'] as String?,
+      title: json['title'] as String,
+      content: json['content'] as String,
+      attachment: json['attachment'] as Object,
+      timestamp: DateTime.parse(json['timestamp'] as String),
+      threads: (json['threads'] as Map<String, dynamic>).map(
+        (k, e) => MapEntry(
+            k,
+            (e as List<dynamic>)
+                .map((e) => Message.fromJson(e as Map<String, dynamic>))
+                .toList()),
+      ),
+      status: $enumDecode(_$PostStatusEnumMap, json['status']),
+    );
+
+Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'v': instance.v,
+      'title': instance.title,
+      'content': instance.content,
+      'attachment': instance.attachment,
+      'timestamp': instance.timestamp.toIso8601String(),
+      'threads': instance.threads,
+      'status': _$PostStatusEnumMap[instance.status]!,
+    };
+
+const _$PostStatusEnumMap = {
+  PostStatus.editing: 'editing',
+  PostStatus.posted: 'posted',
+  PostStatus.archived: 'archived',
+  PostStatus.idle: 'idle',
+  PostStatus.popular: 'popular',
+  PostStatus.closed: 'closed',
 };
 
 _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
       id: json['id'] as String,
-      v: json['v'] as String,
+      v: json['v'] as String?,
       title: json['title'] as String,
       content: json['content'] as String,
-      status: $enumDecode(_$TaskSimpleStatusEnumMap, json['status']),
-      additionalContent: json['additionalContent'] as Object,
+      status: $enumDecode(_$TaskStatusEnumMap, json['status']),
+      attachment: json['attachment'] as Object,
     );
 
 Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
@@ -74,26 +477,102 @@ Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
       'v': instance.v,
       'title': instance.title,
       'content': instance.content,
-      'status': _$TaskSimpleStatusEnumMap[instance.status]!,
-      'additionalContent': instance.additionalContent,
+      'status': _$TaskStatusEnumMap[instance.status]!,
+      'attachment': instance.attachment,
     };
 
-const _$TaskSimpleStatusEnumMap = {
-  TaskSimpleStatus.pending: 'pending',
-  TaskSimpleStatus.progressing: 'progressing',
-  TaskSimpleStatus.completed: 'completed',
+const _$TaskStatusEnumMap = {
+  TaskStatus.pending: 'pending',
+  TaskStatus.progressing: 'progressing',
+  TaskStatus.completed: 'completed',
+};
+
+_$AssignmentImpl _$$AssignmentImplFromJson(Map<String, dynamic> json) =>
+    _$AssignmentImpl(
+      id: json['id'] as String,
+      v: json['v'] as String?,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      start: DateTime.parse(json['start'] as String),
+      end: DateTime.parse(json['end'] as String),
+      isIncludeStartTime: json['isIncludeStartTime'] as bool,
+      isIncludeEndTime: json['isIncludeEndTime'] as bool,
+      requirements: (json['requirements'] as List<dynamic>)
+          .map((e) => e as Object)
+          .toList(),
+      requireStepByStep: json['requireStepByStep'] as bool,
+      statusManager:
+          $enumDecode(_$AssignmentStatusEnumMap, json['statusManager']),
+      statusAudience: $enumDecode(_$TaskStatusEnumMap, json['statusAudience']),
+      statusChanges: (json['statusChanges'] as List<dynamic>)
+          .map((e) => DateTime.parse(e as String))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$AssignmentImplToJson(_$AssignmentImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'v': instance.v,
+      'title': instance.title,
+      'description': instance.description,
+      'start': instance.start.toIso8601String(),
+      'end': instance.end.toIso8601String(),
+      'isIncludeStartTime': instance.isIncludeStartTime,
+      'isIncludeEndTime': instance.isIncludeEndTime,
+      'requirements': instance.requirements,
+      'requireStepByStep': instance.requireStepByStep,
+      'statusManager': _$AssignmentStatusEnumMap[instance.statusManager]!,
+      'statusAudience': _$TaskStatusEnumMap[instance.statusAudience]!,
+      'statusChanges':
+          instance.statusChanges.map((e) => e.toIso8601String()).toList(),
+    };
+
+const _$AssignmentStatusEnumMap = {
+  AssignmentStatus.preparing: 'preparing',
+  AssignmentStatus.stored: 'stored',
+  AssignmentStatus.categorized: 'categorized',
+  AssignmentStatus.attached: 'attached',
+  AssignmentStatus.published: 'published',
+  AssignmentStatus.progressing: 'progressing',
+  AssignmentStatus.marked: 'marked',
+  AssignmentStatus.amending: 'amending',
+  AssignmentStatus.completed: 'completed',
+  AssignmentStatus.closed: 'closed',
+  AssignmentStatus.validated: 'validated',
+};
+
+_$NoticeImpl _$$NoticeImplFromJson(Map<String, dynamic> json) => _$NoticeImpl(
+      id: json['id'] as String,
+      v: json['v'] as String?,
+      title: json['title'] as String,
+      content: json['content'] as String,
+      status: $enumDecode(_$NoticeStatusEnumMap, json['status']),
+    );
+
+Map<String, dynamic> _$$NoticeImplToJson(_$NoticeImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'v': instance.v,
+      'title': instance.title,
+      'content': instance.content,
+      'status': _$NoticeStatusEnumMap[instance.status]!,
+    };
+
+const _$NoticeStatusEnumMap = {
+  NoticeStatus.created: 'created',
+  NoticeStatus.noticed: 'noticed',
+  NoticeStatus.removed: 'removed',
 };
 
 _$AnnouncementImpl _$$AnnouncementImplFromJson(Map<String, dynamic> json) =>
     _$AnnouncementImpl(
       id: json['id'] as String,
-      v: json['v'] as String,
+      v: json['v'] as String?,
       title: json['title'] as String,
       content: json['content'] as String,
       start: DateTime.parse(json['start'] as String),
       end: DateTime.parse(json['end'] as String),
       status: $enumDecode(_$AnnouncementStatusEnumMap, json['status']),
-      additionalContent: json['additionalContent'] as Object,
     );
 
 Map<String, dynamic> _$$AnnouncementImplToJson(_$AnnouncementImpl instance) =>
@@ -105,24 +584,24 @@ Map<String, dynamic> _$$AnnouncementImplToJson(_$AnnouncementImpl instance) =>
       'start': instance.start.toIso8601String(),
       'end': instance.end.toIso8601String(),
       'status': _$AnnouncementStatusEnumMap[instance.status]!,
-      'additionalContent': instance.additionalContent,
     };
 
 const _$AnnouncementStatusEnumMap = {
+  AnnouncementStatus.happened: 'happened',
   AnnouncementStatus.designed: 'designed',
-  AnnouncementStatus.posted: 'posted',
-  AnnouncementStatus.removed: 'removed',
+  AnnouncementStatus.announced: 'announced',
+  AnnouncementStatus.known: 'known',
+  AnnouncementStatus.discarded: 'discarded',
 };
 
 _$EventImpl _$$EventImplFromJson(Map<String, dynamic> json) => _$EventImpl(
       id: json['id'] as String,
-      v: json['v'] as String,
+      v: json['v'] as String?,
       name: json['name'] as String,
-      content: json['content'] as String,
+      description: json['description'] as String,
       start: DateTime.parse(json['start'] as String),
       end: DateTime.parse(json['end'] as String),
-      status: $enumDecode(_$EventSimpleStatusEnumMap, json['status']),
-      additionalContent: json['additionalContent'] as Object,
+      status: $enumDecode(_$EventStatusEnumMap, json['status']),
     );
 
 Map<String, dynamic> _$$EventImplToJson(_$EventImpl instance) =>
@@ -130,329 +609,62 @@ Map<String, dynamic> _$$EventImplToJson(_$EventImpl instance) =>
       'id': instance.id,
       'v': instance.v,
       'name': instance.name,
-      'content': instance.content,
+      'description': instance.description,
       'start': instance.start.toIso8601String(),
       'end': instance.end.toIso8601String(),
-      'status': _$EventSimpleStatusEnumMap[instance.status]!,
-      'additionalContent': instance.additionalContent,
+      'status': _$EventStatusEnumMap[instance.status]!,
     };
 
-const _$EventSimpleStatusEnumMap = {
-  EventSimpleStatus.preparing: 'preparing',
-  EventSimpleStatus.established: 'established',
-  EventSimpleStatus.running: 'running',
-  EventSimpleStatus.finished: 'finished',
-};
-
-_$PostImpl _$$PostImplFromJson(Map<String, dynamic> json) => _$PostImpl(
-      id: json['id'] as String,
-      v: json['v'] as String,
-      content: json['content'] as String,
-      timestamp: DateTime.parse(json['timestamp'] as String),
-      threads: (json['threads'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(
-            k,
-            (e as List<dynamic>)
-                .map((e) => Message.fromJson(e as Map<String, dynamic>))
-                .toList()),
-      ),
-      status: $enumDecode(_$PostStatusEnumMap, json['status']),
-      additionalContent: json['additionalContent'] as Object,
-    );
-
-Map<String, dynamic> _$$PostImplToJson(_$PostImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'v': instance.v,
-      'content': instance.content,
-      'timestamp': instance.timestamp.toIso8601String(),
-      'threads': instance.threads,
-      'status': _$PostStatusEnumMap[instance.status]!,
-      'additionalContent': instance.additionalContent,
-    };
-
-const _$PostStatusEnumMap = {
-  PostStatus.open: 'open',
-  PostStatus.archived: 'archived',
-  PostStatus.idle: 'idle',
-  PostStatus.popular: 'popular',
-  PostStatus.closed: 'closed',
-};
-
-_$TestTextingImpl _$$TestTextingImplFromJson(Map<String, dynamic> json) =>
-    _$TestTextingImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      questions:
-          (json['questions'] as List<dynamic>).map((e) => e as Object).toList(),
-      answers:
-          (json['answers'] as List<dynamic>).map((e) => e as Object).toList(),
-      score: Score.fromJson(json['score'] as Map<String, dynamic>),
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$TestTextingImplToJson(_$TestTextingImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'questions': instance.questions,
-      'answers': instance.answers,
-      'score': instance.score,
-      'runtimeType': instance.$type,
-    };
-
-_$TestChoosingImpl _$$TestChoosingImplFromJson(Map<String, dynamic> json) =>
-    _$TestChoosingImpl(
-      id: json['id'] as String,
-      question: json['question'] as String,
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$TestChoosingImplToJson(_$TestChoosingImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'question': instance.question,
-      'runtimeType': instance.$type,
-    };
-
-_$TestMatchingImpl _$$TestMatchingImplFromJson(Map<String, dynamic> json) =>
-    _$TestMatchingImpl(
-      scope: $enumDecode(_$AssignmentTaskScopeEnumMap, json['scope']),
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$TestMatchingImplToJson(_$TestMatchingImpl instance) =>
-    <String, dynamic>{
-      'scope': _$AssignmentTaskScopeEnumMap[instance.scope]!,
-      'runtimeType': instance.$type,
-    };
-
-const _$AssignmentTaskScopeEnumMap = {
-  AssignmentTaskScope.private: 'private',
-  AssignmentTaskScope.inSchool: 'inSchool',
-  AssignmentTaskScope.invited: 'invited',
-};
-
-_$TestVideoLiveAnswerImpl _$$TestVideoLiveAnswerImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TestVideoLiveAnswerImpl(
-      scope: $enumDecode(_$AssignmentTaskScopeEnumMap, json['scope']),
-      questions: (json['questions'] as Map<String, dynamic>).map(
-        (k, e) =>
-            MapEntry(int.parse(k), Test.fromJson(e as Map<String, dynamic>)),
-      ),
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$TestVideoLiveAnswerImplToJson(
-        _$TestVideoLiveAnswerImpl instance) =>
-    <String, dynamic>{
-      'scope': _$AssignmentTaskScopeEnumMap[instance.scope]!,
-      'questions': instance.questions.map((k, e) => MapEntry(k.toString(), e)),
-      'runtimeType': instance.$type,
-    };
-
-_$ExamImpl _$$ExamImplFromJson(Map<String, dynamic> json) => _$ExamImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      questions:
-          (json['questions'] as List<dynamic>).map((e) => e as Object).toList(),
-      answers:
-          (json['answers'] as List<dynamic>).map((e) => e as Object).toList(),
-      certificate:
-          Certificate.fromJson(json['certificate'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$ExamImplToJson(_$ExamImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'questions': instance.questions,
-      'answers': instance.answers,
-      'certificate': instance.certificate,
-    };
-
-_$AssignmentTaskDataImpl _$$AssignmentTaskDataImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AssignmentTaskDataImpl(
-      scope: $enumDecode(_$AssignmentTaskScopeEnumMap, json['scope']),
-      description: json['description'] as String,
-      data: json['data'] as Object,
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$AssignmentTaskDataImplToJson(
-        _$AssignmentTaskDataImpl instance) =>
-    <String, dynamic>{
-      'scope': _$AssignmentTaskScopeEnumMap[instance.scope]!,
-      'description': instance.description,
-      'data': instance.data,
-      'runtimeType': instance.$type,
-    };
-
-_$AssignmentTaskFormImpl _$$AssignmentTaskFormImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AssignmentTaskFormImpl(
-      scope: $enumDecode(_$AssignmentTaskScopeEnumMap, json['scope']),
-      description: json['description'] as String,
-      form: json['form'] as Object,
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$AssignmentTaskFormImplToJson(
-        _$AssignmentTaskFormImpl instance) =>
-    <String, dynamic>{
-      'scope': _$AssignmentTaskScopeEnumMap[instance.scope]!,
-      'description': instance.description,
-      'form': instance.form,
-      'runtimeType': instance.$type,
-    };
-
-_$AssignmentTaskSubAssignmentImpl _$$AssignmentTaskSubAssignmentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AssignmentTaskSubAssignmentImpl(
-      scope: $enumDecode(_$AssignmentTaskScopeEnumMap, json['scope']),
-      description: json['description'] as String,
-      submission: json['submission'] as Object,
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$AssignmentTaskSubAssignmentImplToJson(
-        _$AssignmentTaskSubAssignmentImpl instance) =>
-    <String, dynamic>{
-      'scope': _$AssignmentTaskScopeEnumMap[instance.scope]!,
-      'description': instance.description,
-      'submission': instance.submission,
-      'runtimeType': instance.$type,
-    };
-
-_$AssignmentTaskTestTextingImpl _$$AssignmentTaskTestTextingImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AssignmentTaskTestTextingImpl(
-      scope: $enumDecode(_$AssignmentTaskScopeEnumMap, json['scope']),
-      description: json['description'] as String,
-      test: Test.fromJson(json['test'] as Map<String, dynamic>),
-      $type: json['runtimeType'] as String?,
-    );
-
-Map<String, dynamic> _$$AssignmentTaskTestTextingImplToJson(
-        _$AssignmentTaskTestTextingImpl instance) =>
-    <String, dynamic>{
-      'scope': _$AssignmentTaskScopeEnumMap[instance.scope]!,
-      'description': instance.description,
-      'test': instance.test,
-      'runtimeType': instance.$type,
-    };
-
-_$AssignmentImpl _$$AssignmentImplFromJson(Map<String, dynamic> json) =>
-    _$AssignmentImpl(
-      id: json['id'] as String,
-      idTarget: json['idTarget'] as String,
-      start: DateTime.parse(json['start'] as String),
-      end: DateTime.parse(json['end'] as String),
-      isIncludeStartTime: json['isIncludeStartTime'] as bool,
-      isIncludeEndTime: json['isIncludeEndTime'] as bool,
-      title: json['title'] as String,
-      requirements: (json['requirements'] as List<dynamic>)
-          .map((e) => Task.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      shouldStepByStep: json['shouldStepByStep'] as bool,
-      status: $enumDecode(_$AssignmentStatusEnumMap, json['status']),
-      additionalContent: json['additionalContent'] as Object,
-    );
-
-Map<String, dynamic> _$$AssignmentImplToJson(_$AssignmentImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'idTarget': instance.idTarget,
-      'start': instance.start.toIso8601String(),
-      'end': instance.end.toIso8601String(),
-      'isIncludeStartTime': instance.isIncludeStartTime,
-      'isIncludeEndTime': instance.isIncludeEndTime,
-      'title': instance.title,
-      'requirements': instance.requirements,
-      'shouldStepByStep': instance.shouldStepByStep,
-      'status': _$AssignmentStatusEnumMap[instance.status]!,
-      'additionalContent': instance.additionalContent,
-    };
-
-const _$AssignmentStatusEnumMap = {
-  AssignmentStatus.preparing: 'preparing',
-  AssignmentStatus.stored: 'stored',
-  AssignmentStatus.categorized: 'categorized',
-  AssignmentStatus.published: 'published',
-  AssignmentStatus.progressing: 'progressing',
-  AssignmentStatus.finished: 'finished',
-  AssignmentStatus.validated: 'validated',
+const _$EventStatusEnumMap = {
+  EventStatus.organizing: 'organizing',
+  EventStatus.established: 'established',
+  EventStatus.ongoing: 'ongoing',
+  EventStatus.finished: 'finished',
 };
 
 _$CourseImpl _$$CourseImplFromJson(Map<String, dynamic> json) => _$CourseImpl(
       id: json['id'] as String,
+      v: json['v'] as String?,
       name: json['name'] as String,
-      content: json['content'] as String,
-      status: $enumDecode(_$EventComplexStatusEnumMap, json['status']),
-      additionalContent: json['additionalContent'] as Object,
+      description: json['description'] as String,
+      attachment: json['attachment'] as Object,
+      schedule: (json['schedule'] as List<dynamic>)
+          .map((e) => Event.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      assignments: (json['assignments'] as List<dynamic>)
+          .map((e) => Assignment.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      tests: (json['tests'] as List<dynamic>)
+          .map((e) => Test.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      status: $enumDecode(_$CourseStatusEnumMap, json['status']),
     );
 
 Map<String, dynamic> _$$CourseImplToJson(_$CourseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'v': instance.v,
       'name': instance.name,
-      'content': instance.content,
-      'status': _$EventComplexStatusEnumMap[instance.status]!,
-      'additionalContent': instance.additionalContent,
+      'description': instance.description,
+      'attachment': instance.attachment,
+      'schedule': instance.schedule,
+      'assignments': instance.assignments,
+      'tests': instance.tests,
+      'status': _$CourseStatusEnumMap[instance.status]!,
     };
 
-const _$EventComplexStatusEnumMap = {
-  EventComplexStatus.visioning: 'visioning',
-  EventComplexStatus.planning: 'planning',
-  EventComplexStatus.analyzing: 'analyzing',
-  EventComplexStatus.preparing: 'preparing',
-  EventComplexStatus.established: 'established',
-  EventComplexStatus.openRegister: 'openRegister',
-  EventComplexStatus.registrationNoticed: 'registrationNoticed',
-  EventComplexStatus.ongoing: 'ongoing',
-  EventComplexStatus.openFeedback: 'openFeedback',
-  EventComplexStatus.reviewing: 'reviewing',
-  EventComplexStatus.finished: 'finished',
+const _$CourseStatusEnumMap = {
+  CourseStatus.organizing: 'organizing',
+  CourseStatus.established: 'established',
+  CourseStatus.openRegister: 'openRegister',
+  CourseStatus.ongoing: 'ongoing',
+  CourseStatus.openFeedback: 'openFeedback',
+  CourseStatus.finished: 'finished',
 };
-
-_$NotebookImpl _$$NotebookImplFromJson(Map<String, dynamic> json) =>
-    _$NotebookImpl(
-      id: json['id'] as String,
-      notes: (json['notes'] as List<dynamic>)
-          .map((e) => Note.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      management: json['management'] as Object,
-    );
-
-Map<String, dynamic> _$$NotebookImplToJson(_$NotebookImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'notes': instance.notes,
-      'management': instance.management,
-    };
-
-_$PersonalScheduleImpl _$$PersonalScheduleImplFromJson(
-        Map<String, dynamic> json) =>
-    _$PersonalScheduleImpl(
-      id: json['id'] as String,
-      events: (json['events'] as List<dynamic>)
-          .map((e) => Event.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      management: json['management'] as Object,
-    );
-
-Map<String, dynamic> _$$PersonalScheduleImplToJson(
-        _$PersonalScheduleImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'events': instance.events,
-      'management': instance.management,
-    };
 
 _$InboxImpl _$$InboxImplFromJson(Map<String, dynamic> json) => _$InboxImpl(
       id: json['id'] as String,
+      v: json['v'] as String?,
       messages: (json['messages'] as List<dynamic>)
           .map((e) => Message.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -462,41 +674,62 @@ _$InboxImpl _$$InboxImplFromJson(Map<String, dynamic> json) => _$InboxImpl(
 Map<String, dynamic> _$$InboxImplToJson(_$InboxImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'v': instance.v,
       'messages': instance.messages,
       'management': instance.management,
     };
 
-_$BoardQuestionImpl _$$BoardQuestionImplFromJson(Map<String, dynamic> json) =>
-    _$BoardQuestionImpl(
+_$NotebookImpl _$$NotebookImplFromJson(Map<String, dynamic> json) =>
+    _$NotebookImpl(
       id: json['id'] as String,
+      v: json['v'] as String?,
+      notes: (json['notes'] as List<dynamic>)
+          .map((e) => Note.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      management: json['management'] as Object,
+    );
+
+Map<String, dynamic> _$$NotebookImplToJson(_$NotebookImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'v': instance.v,
+      'notes': instance.notes,
+      'management': instance.management,
+    };
+
+_$PostbookImpl _$$PostbookImplFromJson(Map<String, dynamic> json) =>
+    _$PostbookImpl(
+      id: json['id'] as String,
+      v: json['v'] as String?,
       questions: (json['questions'] as List<dynamic>)
           .map((e) => Post.fromJson(e as Map<String, dynamic>))
           .toList(),
       management: json['management'] as Object,
     );
 
-Map<String, dynamic> _$$BoardQuestionImplToJson(_$BoardQuestionImpl instance) =>
+Map<String, dynamic> _$$PostbookImplToJson(_$PostbookImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'v': instance.v,
       'questions': instance.questions,
       'management': instance.management,
     };
 
-_$BoardDiscussionImpl _$$BoardDiscussionImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BoardDiscussionImpl(
+_$BoardNoticeImpl _$$BoardNoticeImplFromJson(Map<String, dynamic> json) =>
+    _$BoardNoticeImpl(
       id: json['id'] as String,
-      discussions: (json['discussions'] as List<dynamic>)
-          .map((e) => Post.fromJson(e as Map<String, dynamic>))
+      v: json['v'] as String?,
+      notices: (json['notices'] as List<dynamic>)
+          .map((e) => Notice.fromJson(e as Map<String, dynamic>))
           .toList(),
       management: json['management'] as Object,
     );
 
-Map<String, dynamic> _$$BoardDiscussionImplToJson(
-        _$BoardDiscussionImpl instance) =>
+Map<String, dynamic> _$$BoardNoticeImplToJson(_$BoardNoticeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'discussions': instance.discussions,
+      'v': instance.v,
+      'notices': instance.notices,
       'management': instance.management,
     };
 
@@ -504,6 +737,7 @@ _$BoardAnnouncementImpl _$$BoardAnnouncementImplFromJson(
         Map<String, dynamic> json) =>
     _$BoardAnnouncementImpl(
       id: json['id'] as String,
+      v: json['v'] as String?,
       announcements: (json['announcements'] as List<dynamic>)
           .map((e) => Announcement.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -514,31 +748,71 @@ Map<String, dynamic> _$$BoardAnnouncementImplToJson(
         _$BoardAnnouncementImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'v': instance.v,
       'announcements': instance.announcements,
       'management': instance.management,
     };
 
-_$BoardAssignmentImpl _$$BoardAssignmentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BoardAssignmentImpl(
+_$TaskPanelImpl _$$TaskPanelImplFromJson(Map<String, dynamic> json) =>
+    _$TaskPanelImpl(
       id: json['id'] as String,
-      Assignments: (json['Assignments'] as List<dynamic>)
+      v: json['v'] as String?,
+      tasks: (json['tasks'] as List<dynamic>)
+          .map((e) => Task.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      management: json['management'] as Object,
+    );
+
+Map<String, dynamic> _$$TaskPanelImplToJson(_$TaskPanelImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'v': instance.v,
+      'tasks': instance.tasks,
+      'management': instance.management,
+    };
+
+_$AssignmentPanelImpl _$$AssignmentPanelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AssignmentPanelImpl(
+      id: json['id'] as String,
+      v: json['v'] as String?,
+      assignments: (json['assignments'] as List<dynamic>)
           .map((e) => Assignment.fromJson(e as Map<String, dynamic>))
           .toList(),
       management: json['management'] as Object,
     );
 
-Map<String, dynamic> _$$BoardAssignmentImplToJson(
-        _$BoardAssignmentImpl instance) =>
+Map<String, dynamic> _$$AssignmentPanelImplToJson(
+        _$AssignmentPanelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'Assignments': instance.Assignments,
+      'v': instance.v,
+      'assignments': instance.assignments,
+      'management': instance.management,
+    };
+
+_$BoardEventImpl _$$BoardEventImplFromJson(Map<String, dynamic> json) =>
+    _$BoardEventImpl(
+      id: json['id'] as String,
+      v: json['v'] as String?,
+      events: (json['events'] as List<dynamic>)
+          .map((e) => Event.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      management: json['management'] as Object,
+    );
+
+Map<String, dynamic> _$$BoardEventImplToJson(_$BoardEventImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'v': instance.v,
+      'events': instance.events,
       'management': instance.management,
     };
 
 _$BoardCourseImpl _$$BoardCourseImplFromJson(Map<String, dynamic> json) =>
     _$BoardCourseImpl(
       id: json['id'] as String,
+      v: json['v'] as String?,
       courses: (json['courses'] as List<dynamic>)
           .map((e) => Course.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -548,6 +822,7 @@ _$BoardCourseImpl _$$BoardCourseImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$BoardCourseImplToJson(_$BoardCourseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'v': instance.v,
       'courses': instance.courses,
       'management': instance.management,
     };
