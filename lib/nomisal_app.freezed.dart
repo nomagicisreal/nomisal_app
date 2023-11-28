@@ -171,7 +171,7 @@ mixin _$Student {
   String get id => throw _privateConstructorUsedError;
   String get idOfSchool => throw _privateConstructorUsedError;
   String get idOfClass => throw _privateConstructorUsedError;
-  School get school => throw _privateConstructorUsedError;
+  SchoolTaiwan get school => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -188,10 +188,10 @@ abstract class $StudentCopyWith<$Res> {
       {String id,
       String idOfSchool,
       String idOfClass,
-      School school,
+      SchoolTaiwan school,
       String name});
 
-  $SchoolCopyWith<$Res> get school;
+  $SchoolTaiwanCopyWith<$Res> get school;
 }
 
 /// @nodoc
@@ -229,7 +229,7 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School,
+              as SchoolTaiwan,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -239,8 +239,8 @@ class _$StudentCopyWithImpl<$Res, $Val extends Student>
 
   @override
   @pragma('vm:prefer-inline')
-  $SchoolCopyWith<$Res> get school {
-    return $SchoolCopyWith<$Res>(_value.school, (value) {
+  $SchoolTaiwanCopyWith<$Res> get school {
+    return $SchoolTaiwanCopyWith<$Res>(_value.school, (value) {
       return _then(_value.copyWith(school: value) as $Val);
     });
   }
@@ -257,11 +257,11 @@ abstract class _$$StudentImplCopyWith<$Res> implements $StudentCopyWith<$Res> {
       {String id,
       String idOfSchool,
       String idOfClass,
-      School school,
+      SchoolTaiwan school,
       String name});
 
   @override
-  $SchoolCopyWith<$Res> get school;
+  $SchoolTaiwanCopyWith<$Res> get school;
 }
 
 /// @nodoc
@@ -297,7 +297,7 @@ class __$$StudentImplCopyWithImpl<$Res>
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School,
+              as SchoolTaiwan,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -326,7 +326,7 @@ class _$StudentImpl implements _Student {
   @override
   final String idOfClass;
   @override
-  final School school;
+  final SchoolTaiwan school;
   @override
   final String name;
 
@@ -373,7 +373,7 @@ abstract class _Student implements Student, Identity {
       {required final String id,
       required final String idOfSchool,
       required final String idOfClass,
-      required final School school,
+      required final SchoolTaiwan school,
       required final String name}) = _$StudentImpl;
 
   factory _Student.fromJson(Map<String, dynamic> json) = _$StudentImpl.fromJson;
@@ -385,7 +385,7 @@ abstract class _Student implements Student, Identity {
   @override
   String get idOfClass;
   @override
-  School get school;
+  SchoolTaiwan get school;
   @override
   String get name;
   @override
@@ -612,27 +612,25 @@ abstract class _StudentCompanion implements StudentCompanion, Identity {
       throw _privateConstructorUsedError;
 }
 
-Parent<G> _$ParentFromJson<G extends SchoolQualification>(
-    Map<String, dynamic> json) {
-  return _Parent<G>.fromJson(json);
+Parent _$ParentFromJson(Map<String, dynamic> json) {
+  return _Parent.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Parent<G extends SchoolQualification> {
+mixin _$Parent {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   Student get children => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ParentCopyWith<G, Parent<G>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ParentCopyWith<Parent> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ParentCopyWith<G extends SchoolQualification, $Res> {
-  factory $ParentCopyWith(Parent<G> value, $Res Function(Parent<G>) then) =
-      _$ParentCopyWithImpl<G, $Res, Parent<G>>;
+abstract class $ParentCopyWith<$Res> {
+  factory $ParentCopyWith(Parent value, $Res Function(Parent) then) =
+      _$ParentCopyWithImpl<$Res, Parent>;
   @useResult
   $Res call({String id, String name, Student children});
 
@@ -640,8 +638,8 @@ abstract class $ParentCopyWith<G extends SchoolQualification, $Res> {
 }
 
 /// @nodoc
-class _$ParentCopyWithImpl<G extends SchoolQualification, $Res,
-    $Val extends Parent<G>> implements $ParentCopyWith<G, $Res> {
+class _$ParentCopyWithImpl<$Res, $Val extends Parent>
+    implements $ParentCopyWith<$Res> {
   _$ParentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -682,11 +680,10 @@ class _$ParentCopyWithImpl<G extends SchoolQualification, $Res,
 }
 
 /// @nodoc
-abstract class _$$ParentImplCopyWith<G extends SchoolQualification, $Res>
-    implements $ParentCopyWith<G, $Res> {
+abstract class _$$ParentImplCopyWith<$Res> implements $ParentCopyWith<$Res> {
   factory _$$ParentImplCopyWith(
-          _$ParentImpl<G> value, $Res Function(_$ParentImpl<G>) then) =
-      __$$ParentImplCopyWithImpl<G, $Res>;
+          _$ParentImpl value, $Res Function(_$ParentImpl) then) =
+      __$$ParentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String name, Student children});
@@ -696,11 +693,11 @@ abstract class _$$ParentImplCopyWith<G extends SchoolQualification, $Res>
 }
 
 /// @nodoc
-class __$$ParentImplCopyWithImpl<G extends SchoolQualification, $Res>
-    extends _$ParentCopyWithImpl<G, $Res, _$ParentImpl<G>>
-    implements _$$ParentImplCopyWith<G, $Res> {
+class __$$ParentImplCopyWithImpl<$Res>
+    extends _$ParentCopyWithImpl<$Res, _$ParentImpl>
+    implements _$$ParentImplCopyWith<$Res> {
   __$$ParentImplCopyWithImpl(
-      _$ParentImpl<G> _value, $Res Function(_$ParentImpl<G>) _then)
+      _$ParentImpl _value, $Res Function(_$ParentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -710,7 +707,7 @@ class __$$ParentImplCopyWithImpl<G extends SchoolQualification, $Res>
     Object? name = null,
     Object? children = null,
   }) {
-    return _then(_$ParentImpl<G>(
+    return _then(_$ParentImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -729,7 +726,7 @@ class __$$ParentImplCopyWithImpl<G extends SchoolQualification, $Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ParentImpl<G extends SchoolQualification> implements _Parent<G> {
+class _$ParentImpl implements _Parent {
   const _$ParentImpl(
       {required this.id, required this.name, required this.children});
 
@@ -745,14 +742,14 @@ class _$ParentImpl<G extends SchoolQualification> implements _Parent<G> {
 
   @override
   String toString() {
-    return 'Parent<$G>(id: $id, name: $name, children: $children)';
+    return 'Parent(id: $id, name: $name, children: $children)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ParentImpl<G> &&
+            other is _$ParentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.children, children) ||
@@ -766,26 +763,24 @@ class _$ParentImpl<G extends SchoolQualification> implements _Parent<G> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ParentImplCopyWith<G, _$ParentImpl<G>> get copyWith =>
-      __$$ParentImplCopyWithImpl<G, _$ParentImpl<G>>(this, _$identity);
+  _$$ParentImplCopyWith<_$ParentImpl> get copyWith =>
+      __$$ParentImplCopyWithImpl<_$ParentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ParentImplToJson<G>(
+    return _$$ParentImplToJson(
       this,
     );
   }
 }
 
-abstract class _Parent<G extends SchoolQualification>
-    implements Parent<G>, Identity {
+abstract class _Parent implements Parent, Identity {
   const factory _Parent(
       {required final String id,
       required final String name,
-      required final Student children}) = _$ParentImpl<G>;
+      required final Student children}) = _$ParentImpl;
 
-  factory _Parent.fromJson(Map<String, dynamic> json) =
-      _$ParentImpl<G>.fromJson;
+  factory _Parent.fromJson(Map<String, dynamic> json) = _$ParentImpl.fromJson;
 
   @override
   String get id;
@@ -795,47 +790,45 @@ abstract class _Parent<G extends SchoolQualification>
   Student get children;
   @override
   @JsonKey(ignore: true)
-  _$$ParentImplCopyWith<G, _$ParentImpl<G>> get copyWith =>
+  _$$ParentImplCopyWith<_$ParentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-Teacher<G> _$TeacherFromJson<G extends SchoolQualification>(
-    Map<String, dynamic> json) {
-  return _Teacher<G>.fromJson(json);
+Teacher _$TeacherFromJson(Map<String, dynamic> json) {
+  return _Teacher.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Teacher<G extends SchoolQualification> {
+mixin _$Teacher {
   String get id => throw _privateConstructorUsedError;
   String get idOfSchool => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  School get school => throw _privateConstructorUsedError;
+  SchoolTaiwan get school => throw _privateConstructorUsedError;
   List<Group> get students => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TeacherCopyWith<G, Teacher<G>> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TeacherCopyWith<Teacher> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TeacherCopyWith<G extends SchoolQualification, $Res> {
-  factory $TeacherCopyWith(Teacher<G> value, $Res Function(Teacher<G>) then) =
-      _$TeacherCopyWithImpl<G, $Res, Teacher<G>>;
+abstract class $TeacherCopyWith<$Res> {
+  factory $TeacherCopyWith(Teacher value, $Res Function(Teacher) then) =
+      _$TeacherCopyWithImpl<$Res, Teacher>;
   @useResult
   $Res call(
       {String id,
       String idOfSchool,
       String name,
-      School school,
+      SchoolTaiwan school,
       List<Group> students});
 
-  $SchoolCopyWith<$Res> get school;
+  $SchoolTaiwanCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class _$TeacherCopyWithImpl<G extends SchoolQualification, $Res,
-    $Val extends Teacher<G>> implements $TeacherCopyWith<G, $Res> {
+class _$TeacherCopyWithImpl<$Res, $Val extends Teacher>
+    implements $TeacherCopyWith<$Res> {
   _$TeacherCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -868,7 +861,7 @@ class _$TeacherCopyWithImpl<G extends SchoolQualification, $Res,
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School,
+              as SchoolTaiwan,
       students: null == students
           ? _value.students
           : students // ignore: cast_nullable_to_non_nullable
@@ -878,38 +871,37 @@ class _$TeacherCopyWithImpl<G extends SchoolQualification, $Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $SchoolCopyWith<$Res> get school {
-    return $SchoolCopyWith<$Res>(_value.school, (value) {
+  $SchoolTaiwanCopyWith<$Res> get school {
+    return $SchoolTaiwanCopyWith<$Res>(_value.school, (value) {
       return _then(_value.copyWith(school: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$TeacherImplCopyWith<G extends SchoolQualification, $Res>
-    implements $TeacherCopyWith<G, $Res> {
+abstract class _$$TeacherImplCopyWith<$Res> implements $TeacherCopyWith<$Res> {
   factory _$$TeacherImplCopyWith(
-          _$TeacherImpl<G> value, $Res Function(_$TeacherImpl<G>) then) =
-      __$$TeacherImplCopyWithImpl<G, $Res>;
+          _$TeacherImpl value, $Res Function(_$TeacherImpl) then) =
+      __$$TeacherImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
       String idOfSchool,
       String name,
-      School school,
+      SchoolTaiwan school,
       List<Group> students});
 
   @override
-  $SchoolCopyWith<$Res> get school;
+  $SchoolTaiwanCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class __$$TeacherImplCopyWithImpl<G extends SchoolQualification, $Res>
-    extends _$TeacherCopyWithImpl<G, $Res, _$TeacherImpl<G>>
-    implements _$$TeacherImplCopyWith<G, $Res> {
+class __$$TeacherImplCopyWithImpl<$Res>
+    extends _$TeacherCopyWithImpl<$Res, _$TeacherImpl>
+    implements _$$TeacherImplCopyWith<$Res> {
   __$$TeacherImplCopyWithImpl(
-      _$TeacherImpl<G> _value, $Res Function(_$TeacherImpl<G>) _then)
+      _$TeacherImpl _value, $Res Function(_$TeacherImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -921,7 +913,7 @@ class __$$TeacherImplCopyWithImpl<G extends SchoolQualification, $Res>
     Object? school = null,
     Object? students = null,
   }) {
-    return _then(_$TeacherImpl<G>(
+    return _then(_$TeacherImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -937,7 +929,7 @@ class __$$TeacherImplCopyWithImpl<G extends SchoolQualification, $Res>
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School,
+              as SchoolTaiwan,
       students: null == students
           ? _value._students
           : students // ignore: cast_nullable_to_non_nullable
@@ -948,7 +940,7 @@ class __$$TeacherImplCopyWithImpl<G extends SchoolQualification, $Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TeacherImpl<G extends SchoolQualification> implements _Teacher<G> {
+class _$TeacherImpl implements _Teacher {
   const _$TeacherImpl(
       {required this.id,
       required this.idOfSchool,
@@ -967,7 +959,7 @@ class _$TeacherImpl<G extends SchoolQualification> implements _Teacher<G> {
   @override
   final String name;
   @override
-  final School school;
+  final SchoolTaiwan school;
   final List<Group> _students;
   @override
   List<Group> get students {
@@ -978,14 +970,14 @@ class _$TeacherImpl<G extends SchoolQualification> implements _Teacher<G> {
 
   @override
   String toString() {
-    return 'Teacher<$G>(id: $id, idOfSchool: $idOfSchool, name: $name, school: $school, students: $students)';
+    return 'Teacher(id: $id, idOfSchool: $idOfSchool, name: $name, school: $school, students: $students)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TeacherImpl<G> &&
+            other is _$TeacherImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.idOfSchool, idOfSchool) ||
                 other.idOfSchool == idOfSchool) &&
@@ -1002,28 +994,26 @@ class _$TeacherImpl<G extends SchoolQualification> implements _Teacher<G> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TeacherImplCopyWith<G, _$TeacherImpl<G>> get copyWith =>
-      __$$TeacherImplCopyWithImpl<G, _$TeacherImpl<G>>(this, _$identity);
+  _$$TeacherImplCopyWith<_$TeacherImpl> get copyWith =>
+      __$$TeacherImplCopyWithImpl<_$TeacherImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TeacherImplToJson<G>(
+    return _$$TeacherImplToJson(
       this,
     );
   }
 }
 
-abstract class _Teacher<G extends SchoolQualification>
-    implements Teacher<G>, Identity {
+abstract class _Teacher implements Teacher, Identity {
   const factory _Teacher(
       {required final String id,
       required final String idOfSchool,
       required final String name,
-      required final School school,
-      required final List<Group> students}) = _$TeacherImpl<G>;
+      required final SchoolTaiwan school,
+      required final List<Group> students}) = _$TeacherImpl;
 
-  factory _Teacher.fromJson(Map<String, dynamic> json) =
-      _$TeacherImpl<G>.fromJson;
+  factory _Teacher.fromJson(Map<String, dynamic> json) = _$TeacherImpl.fromJson;
 
   @override
   String get id;
@@ -1032,53 +1022,52 @@ abstract class _Teacher<G extends SchoolQualification>
   @override
   String get name;
   @override
-  School get school;
+  SchoolTaiwan get school;
   @override
   List<Group> get students;
   @override
   @JsonKey(ignore: true)
-  _$$TeacherImplCopyWith<G, _$TeacherImpl<G>> get copyWith =>
+  _$$TeacherImplCopyWith<_$TeacherImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-SchoolManager<G> _$SchoolManagerFromJson<G extends SchoolQualification>(
-    Map<String, dynamic> json) {
-  return _SchoolManager<G>.fromJson(json);
+SchoolManager _$SchoolManagerFromJson(Map<String, dynamic> json) {
+  return _SchoolManager.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SchoolManager<G extends SchoolQualification> {
+mixin _$SchoolManager {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  School get school => throw _privateConstructorUsedError;
+  SchoolTaiwan get school => throw _privateConstructorUsedError;
   List<Group> get students => throw _privateConstructorUsedError;
   List<Group> get teachers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SchoolManagerCopyWith<G, SchoolManager<G>> get copyWith =>
+  $SchoolManagerCopyWith<SchoolManager> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SchoolManagerCopyWith<G extends SchoolQualification, $Res> {
+abstract class $SchoolManagerCopyWith<$Res> {
   factory $SchoolManagerCopyWith(
-          SchoolManager<G> value, $Res Function(SchoolManager<G>) then) =
-      _$SchoolManagerCopyWithImpl<G, $Res, SchoolManager<G>>;
+          SchoolManager value, $Res Function(SchoolManager) then) =
+      _$SchoolManagerCopyWithImpl<$Res, SchoolManager>;
   @useResult
   $Res call(
       {String id,
       String name,
-      School school,
+      SchoolTaiwan school,
       List<Group> students,
       List<Group> teachers});
 
-  $SchoolCopyWith<$Res> get school;
+  $SchoolTaiwanCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class _$SchoolManagerCopyWithImpl<G extends SchoolQualification, $Res,
-    $Val extends SchoolManager<G>> implements $SchoolManagerCopyWith<G, $Res> {
+class _$SchoolManagerCopyWithImpl<$Res, $Val extends SchoolManager>
+    implements $SchoolManagerCopyWith<$Res> {
   _$SchoolManagerCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1107,7 +1096,7 @@ class _$SchoolManagerCopyWithImpl<G extends SchoolQualification, $Res,
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School,
+              as SchoolTaiwan,
       students: null == students
           ? _value.students
           : students // ignore: cast_nullable_to_non_nullable
@@ -1121,38 +1110,38 @@ class _$SchoolManagerCopyWithImpl<G extends SchoolQualification, $Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $SchoolCopyWith<$Res> get school {
-    return $SchoolCopyWith<$Res>(_value.school, (value) {
+  $SchoolTaiwanCopyWith<$Res> get school {
+    return $SchoolTaiwanCopyWith<$Res>(_value.school, (value) {
       return _then(_value.copyWith(school: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SchoolManagerImplCopyWith<G extends SchoolQualification, $Res>
-    implements $SchoolManagerCopyWith<G, $Res> {
-  factory _$$SchoolManagerImplCopyWith(_$SchoolManagerImpl<G> value,
-          $Res Function(_$SchoolManagerImpl<G>) then) =
-      __$$SchoolManagerImplCopyWithImpl<G, $Res>;
+abstract class _$$SchoolManagerImplCopyWith<$Res>
+    implements $SchoolManagerCopyWith<$Res> {
+  factory _$$SchoolManagerImplCopyWith(
+          _$SchoolManagerImpl value, $Res Function(_$SchoolManagerImpl) then) =
+      __$$SchoolManagerImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
       String name,
-      School school,
+      SchoolTaiwan school,
       List<Group> students,
       List<Group> teachers});
 
   @override
-  $SchoolCopyWith<$Res> get school;
+  $SchoolTaiwanCopyWith<$Res> get school;
 }
 
 /// @nodoc
-class __$$SchoolManagerImplCopyWithImpl<G extends SchoolQualification, $Res>
-    extends _$SchoolManagerCopyWithImpl<G, $Res, _$SchoolManagerImpl<G>>
-    implements _$$SchoolManagerImplCopyWith<G, $Res> {
-  __$$SchoolManagerImplCopyWithImpl(_$SchoolManagerImpl<G> _value,
-      $Res Function(_$SchoolManagerImpl<G>) _then)
+class __$$SchoolManagerImplCopyWithImpl<$Res>
+    extends _$SchoolManagerCopyWithImpl<$Res, _$SchoolManagerImpl>
+    implements _$$SchoolManagerImplCopyWith<$Res> {
+  __$$SchoolManagerImplCopyWithImpl(
+      _$SchoolManagerImpl _value, $Res Function(_$SchoolManagerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1164,7 +1153,7 @@ class __$$SchoolManagerImplCopyWithImpl<G extends SchoolQualification, $Res>
     Object? students = null,
     Object? teachers = null,
   }) {
-    return _then(_$SchoolManagerImpl<G>(
+    return _then(_$SchoolManagerImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1176,7 +1165,7 @@ class __$$SchoolManagerImplCopyWithImpl<G extends SchoolQualification, $Res>
       school: null == school
           ? _value.school
           : school // ignore: cast_nullable_to_non_nullable
-              as School,
+              as SchoolTaiwan,
       students: null == students
           ? _value._students
           : students // ignore: cast_nullable_to_non_nullable
@@ -1191,8 +1180,7 @@ class __$$SchoolManagerImplCopyWithImpl<G extends SchoolQualification, $Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SchoolManagerImpl<G extends SchoolQualification>
-    implements _SchoolManager<G> {
+class _$SchoolManagerImpl implements _SchoolManager {
   const _$SchoolManagerImpl(
       {required this.id,
       required this.name,
@@ -1210,7 +1198,7 @@ class _$SchoolManagerImpl<G extends SchoolQualification>
   @override
   final String name;
   @override
-  final School school;
+  final SchoolTaiwan school;
   final List<Group> _students;
   @override
   List<Group> get students {
@@ -1229,14 +1217,14 @@ class _$SchoolManagerImpl<G extends SchoolQualification>
 
   @override
   String toString() {
-    return 'SchoolManager<$G>(id: $id, name: $name, school: $school, students: $students, teachers: $teachers)';
+    return 'SchoolManager(id: $id, name: $name, school: $school, students: $students, teachers: $teachers)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SchoolManagerImpl<G> &&
+            other is _$SchoolManagerImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.school, school) || other.school == school) &&
@@ -1257,43 +1245,41 @@ class _$SchoolManagerImpl<G extends SchoolQualification>
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SchoolManagerImplCopyWith<G, _$SchoolManagerImpl<G>> get copyWith =>
-      __$$SchoolManagerImplCopyWithImpl<G, _$SchoolManagerImpl<G>>(
-          this, _$identity);
+  _$$SchoolManagerImplCopyWith<_$SchoolManagerImpl> get copyWith =>
+      __$$SchoolManagerImplCopyWithImpl<_$SchoolManagerImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SchoolManagerImplToJson<G>(
+    return _$$SchoolManagerImplToJson(
       this,
     );
   }
 }
 
-abstract class _SchoolManager<G extends SchoolQualification>
-    implements SchoolManager<G>, Identity {
+abstract class _SchoolManager implements SchoolManager, Identity {
   const factory _SchoolManager(
       {required final String id,
       required final String name,
-      required final School school,
+      required final SchoolTaiwan school,
       required final List<Group> students,
-      required final List<Group> teachers}) = _$SchoolManagerImpl<G>;
+      required final List<Group> teachers}) = _$SchoolManagerImpl;
 
   factory _SchoolManager.fromJson(Map<String, dynamic> json) =
-      _$SchoolManagerImpl<G>.fromJson;
+      _$SchoolManagerImpl.fromJson;
 
   @override
   String get id;
   @override
   String get name;
   @override
-  School get school;
+  SchoolTaiwan get school;
   @override
   List<Group> get students;
   @override
   List<Group> get teachers;
   @override
   @JsonKey(ignore: true)
-  _$$SchoolManagerImplCopyWith<G, _$SchoolManagerImpl<G>> get copyWith =>
+  _$$SchoolManagerImplCopyWith<_$SchoolManagerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4681,122 +4667,44 @@ abstract class _Questionnaire implements Questionnaire {
       throw _privateConstructorUsedError;
 }
 
-Survey _$SurveyFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'choosing':
-      return _SurveyChoosing.fromJson(json);
-    case 'matching':
-      return _SurveyMatching.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'Survey',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
+SurveyChoosing _$SurveyChoosingFromJson(Map<String, dynamic> json) {
+  return _SurveyChoosing.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Survey {
+mixin _$SurveyChoosing {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  List<Object> get answers => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)
-        choosing,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)
-        matching,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)?
-        choosing,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)?
-        matching,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)?
-        choosing,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)?
-        matching,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SurveyChoosing value) choosing,
-    required TResult Function(_SurveyMatching value) matching,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SurveyChoosing value)? choosing,
-    TResult? Function(_SurveyMatching value)? matching,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SurveyChoosing value)? choosing,
-    TResult Function(_SurveyMatching value)? matching,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  List<Object> get questions => throw _privateConstructorUsedError;
+  List<List<Object>> get options => throw _privateConstructorUsedError;
+  List<int> get answers => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SurveyCopyWith<Survey> get copyWith => throw _privateConstructorUsedError;
+  $SurveyChoosingCopyWith<SurveyChoosing> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SurveyCopyWith<$Res> {
-  factory $SurveyCopyWith(Survey value, $Res Function(Survey) then) =
-      _$SurveyCopyWithImpl<$Res, Survey>;
+abstract class $SurveyChoosingCopyWith<$Res> {
+  factory $SurveyChoosingCopyWith(
+          SurveyChoosing value, $Res Function(SurveyChoosing) then) =
+      _$SurveyChoosingCopyWithImpl<$Res, SurveyChoosing>;
   @useResult
-  $Res call({String id, String title, String description});
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      List<Object> questions,
+      List<List<Object>> options,
+      List<int> answers});
 }
 
 /// @nodoc
-class _$SurveyCopyWithImpl<$Res, $Val extends Survey>
-    implements $SurveyCopyWith<$Res> {
-  _$SurveyCopyWithImpl(this._value, this._then);
+class _$SurveyChoosingCopyWithImpl<$Res, $Val extends SurveyChoosing>
+    implements $SurveyChoosingCopyWith<$Res> {
+  _$SurveyChoosingCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -4809,6 +4717,9 @@ class _$SurveyCopyWithImpl<$Res, $Val extends Survey>
     Object? id = null,
     Object? title = null,
     Object? description = null,
+    Object? questions = null,
+    Object? options = null,
+    Object? answers = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -4823,13 +4734,25 @@ class _$SurveyCopyWithImpl<$Res, $Val extends Survey>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      questions: null == questions
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Object>,
+      options: null == options
+          ? _value.options
+          : options // ignore: cast_nullable_to_non_nullable
+              as List<List<Object>>,
+      answers: null == answers
+          ? _value.answers
+          : answers // ignore: cast_nullable_to_non_nullable
+              as List<int>,
     ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$SurveyChoosingImplCopyWith<$Res>
-    implements $SurveyCopyWith<$Res> {
+    implements $SurveyChoosingCopyWith<$Res> {
   factory _$$SurveyChoosingImplCopyWith(_$SurveyChoosingImpl value,
           $Res Function(_$SurveyChoosingImpl) then) =
       __$$SurveyChoosingImplCopyWithImpl<$Res>;
@@ -4846,7 +4769,7 @@ abstract class _$$SurveyChoosingImplCopyWith<$Res>
 
 /// @nodoc
 class __$$SurveyChoosingImplCopyWithImpl<$Res>
-    extends _$SurveyCopyWithImpl<$Res, _$SurveyChoosingImpl>
+    extends _$SurveyChoosingCopyWithImpl<$Res, _$SurveyChoosingImpl>
     implements _$$SurveyChoosingImplCopyWith<$Res> {
   __$$SurveyChoosingImplCopyWithImpl(
       _$SurveyChoosingImpl _value, $Res Function(_$SurveyChoosingImpl) _then)
@@ -4900,12 +4823,10 @@ class _$SurveyChoosingImpl implements _SurveyChoosing {
       this.description = '',
       required final List<Object> questions,
       required final List<List<Object>> options,
-      final List<int> answers = const [],
-      final String? $type})
+      final List<int> answers = const []})
       : _questions = questions,
         _options = options,
-        _answers = answers,
-        $type = $type ?? 'choosing';
+        _answers = answers;
 
   factory _$SurveyChoosingImpl.fromJson(Map<String, dynamic> json) =>
       _$$SurveyChoosingImplFromJson(json);
@@ -4942,12 +4863,9 @@ class _$SurveyChoosingImpl implements _SurveyChoosing {
     return EqualUnmodifiableListView(_answers);
   }
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
   @override
   String toString() {
-    return 'Survey.choosing(id: $id, title: $title, description: $description, questions: $questions, options: $options, answers: $answers)';
+    return 'SurveyChoosing(id: $id, title: $title, description: $description, questions: $questions, options: $options, answers: $answers)';
   }
 
   @override
@@ -4984,110 +4902,6 @@ class _$SurveyChoosingImpl implements _SurveyChoosing {
           this, _$identity);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)
-        choosing,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)
-        matching,
-  }) {
-    return choosing(id, title, description, questions, options, answers);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)?
-        choosing,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)?
-        matching,
-  }) {
-    return choosing?.call(id, title, description, questions, options, answers);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)?
-        choosing,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)?
-        matching,
-    required TResult orElse(),
-  }) {
-    if (choosing != null) {
-      return choosing(id, title, description, questions, options, answers);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SurveyChoosing value) choosing,
-    required TResult Function(_SurveyMatching value) matching,
-  }) {
-    return choosing(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SurveyChoosing value)? choosing,
-    TResult? Function(_SurveyMatching value)? matching,
-  }) {
-    return choosing?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SurveyChoosing value)? choosing,
-    TResult Function(_SurveyMatching value)? matching,
-    required TResult orElse(),
-  }) {
-    if (choosing != null) {
-      return choosing(this);
-    }
-    return orElse();
-  }
-
-  @override
   Map<String, dynamic> toJson() {
     return _$$SurveyChoosingImplToJson(
       this,
@@ -5095,7 +4909,7 @@ class _$SurveyChoosingImpl implements _SurveyChoosing {
   }
 }
 
-abstract class _SurveyChoosing implements Survey {
+abstract class _SurveyChoosing implements SurveyChoosing {
   const factory _SurveyChoosing(
       {required final String id,
       required final String title,
@@ -5113,7 +4927,9 @@ abstract class _SurveyChoosing implements Survey {
   String get title;
   @override
   String get description;
+  @override
   List<Object> get questions;
+  @override
   List<List<Object>> get options;
   @override
   List<int> get answers;
@@ -5123,9 +4939,99 @@ abstract class _SurveyChoosing implements Survey {
       throw _privateConstructorUsedError;
 }
 
+SurveyMatching _$SurveyMatchingFromJson(Map<String, dynamic> json) {
+  return _SurveyMatching.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SurveyMatching {
+  String get id => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  List<Object> get questions => throw _privateConstructorUsedError;
+  List<List<Object>> get sideA => throw _privateConstructorUsedError;
+  List<List<Object>> get sideB => throw _privateConstructorUsedError;
+  List<Map<int, int>> get answers => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SurveyMatchingCopyWith<SurveyMatching> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SurveyMatchingCopyWith<$Res> {
+  factory $SurveyMatchingCopyWith(
+          SurveyMatching value, $Res Function(SurveyMatching) then) =
+      _$SurveyMatchingCopyWithImpl<$Res, SurveyMatching>;
+  @useResult
+  $Res call(
+      {String id,
+      String title,
+      String description,
+      List<Object> questions,
+      List<List<Object>> sideA,
+      List<List<Object>> sideB,
+      List<Map<int, int>> answers});
+}
+
+/// @nodoc
+class _$SurveyMatchingCopyWithImpl<$Res, $Val extends SurveyMatching>
+    implements $SurveyMatchingCopyWith<$Res> {
+  _$SurveyMatchingCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? title = null,
+    Object? description = null,
+    Object? questions = null,
+    Object? sideA = null,
+    Object? sideB = null,
+    Object? answers = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      questions: null == questions
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Object>,
+      sideA: null == sideA
+          ? _value.sideA
+          : sideA // ignore: cast_nullable_to_non_nullable
+              as List<List<Object>>,
+      sideB: null == sideB
+          ? _value.sideB
+          : sideB // ignore: cast_nullable_to_non_nullable
+              as List<List<Object>>,
+      answers: null == answers
+          ? _value.answers
+          : answers // ignore: cast_nullable_to_non_nullable
+              as List<Map<int, int>>,
+    ) as $Val);
+  }
+}
+
 /// @nodoc
 abstract class _$$SurveyMatchingImplCopyWith<$Res>
-    implements $SurveyCopyWith<$Res> {
+    implements $SurveyMatchingCopyWith<$Res> {
   factory _$$SurveyMatchingImplCopyWith(_$SurveyMatchingImpl value,
           $Res Function(_$SurveyMatchingImpl) then) =
       __$$SurveyMatchingImplCopyWithImpl<$Res>;
@@ -5135,6 +5041,7 @@ abstract class _$$SurveyMatchingImplCopyWith<$Res>
       {String id,
       String title,
       String description,
+      List<Object> questions,
       List<List<Object>> sideA,
       List<List<Object>> sideB,
       List<Map<int, int>> answers});
@@ -5142,7 +5049,7 @@ abstract class _$$SurveyMatchingImplCopyWith<$Res>
 
 /// @nodoc
 class __$$SurveyMatchingImplCopyWithImpl<$Res>
-    extends _$SurveyCopyWithImpl<$Res, _$SurveyMatchingImpl>
+    extends _$SurveyMatchingCopyWithImpl<$Res, _$SurveyMatchingImpl>
     implements _$$SurveyMatchingImplCopyWith<$Res> {
   __$$SurveyMatchingImplCopyWithImpl(
       _$SurveyMatchingImpl _value, $Res Function(_$SurveyMatchingImpl) _then)
@@ -5154,6 +5061,7 @@ class __$$SurveyMatchingImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? description = null,
+    Object? questions = null,
     Object? sideA = null,
     Object? sideB = null,
     Object? answers = null,
@@ -5171,6 +5079,10 @@ class __$$SurveyMatchingImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      questions: null == questions
+          ? _value._questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Object>,
       sideA: null == sideA
           ? _value._sideA
           : sideA // ignore: cast_nullable_to_non_nullable
@@ -5194,14 +5106,14 @@ class _$SurveyMatchingImpl implements _SurveyMatching {
       {required this.id,
       required this.title,
       this.description = '',
+      required final List<Object> questions,
       required final List<List<Object>> sideA,
       required final List<List<Object>> sideB,
-      final List<Map<int, int>> answers = const [],
-      final String? $type})
-      : _sideA = sideA,
+      final List<Map<int, int>> answers = const []})
+      : _questions = questions,
+        _sideA = sideA,
         _sideB = sideB,
-        _answers = answers,
-        $type = $type ?? 'matching';
+        _answers = answers;
 
   factory _$SurveyMatchingImpl.fromJson(Map<String, dynamic> json) =>
       _$$SurveyMatchingImplFromJson(json);
@@ -5213,6 +5125,14 @@ class _$SurveyMatchingImpl implements _SurveyMatching {
   @override
   @JsonKey()
   final String description;
+  final List<Object> _questions;
+  @override
+  List<Object> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
+
   final List<List<Object>> _sideA;
   @override
   List<List<Object>> get sideA {
@@ -5238,12 +5158,9 @@ class _$SurveyMatchingImpl implements _SurveyMatching {
     return EqualUnmodifiableListView(_answers);
   }
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
   @override
   String toString() {
-    return 'Survey.matching(id: $id, title: $title, description: $description, sideA: $sideA, sideB: $sideB, answers: $answers)';
+    return 'SurveyMatching(id: $id, title: $title, description: $description, questions: $questions, sideA: $sideA, sideB: $sideB, answers: $answers)';
   }
 
   @override
@@ -5255,6 +5172,8 @@ class _$SurveyMatchingImpl implements _SurveyMatching {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
             const DeepCollectionEquality().equals(other._sideA, _sideA) &&
             const DeepCollectionEquality().equals(other._sideB, _sideB) &&
             const DeepCollectionEquality().equals(other._answers, _answers));
@@ -5267,6 +5186,7 @@ class _$SurveyMatchingImpl implements _SurveyMatching {
       id,
       title,
       description,
+      const DeepCollectionEquality().hash(_questions),
       const DeepCollectionEquality().hash(_sideA),
       const DeepCollectionEquality().hash(_sideB),
       const DeepCollectionEquality().hash(_answers));
@@ -5279,110 +5199,6 @@ class _$SurveyMatchingImpl implements _SurveyMatching {
           this, _$identity);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)
-        choosing,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)
-        matching,
-  }) {
-    return matching(id, title, description, sideA, sideB, answers);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)?
-        choosing,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)?
-        matching,
-  }) {
-    return matching?.call(id, title, description, sideA, sideB, answers);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            List<Object> questions,
-            List<List<Object>> options,
-            List<int> answers)?
-        choosing,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            List<List<Object>> sideA,
-            List<List<Object>> sideB,
-            List<Map<int, int>> answers)?
-        matching,
-    required TResult orElse(),
-  }) {
-    if (matching != null) {
-      return matching(id, title, description, sideA, sideB, answers);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SurveyChoosing value) choosing,
-    required TResult Function(_SurveyMatching value) matching,
-  }) {
-    return matching(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SurveyChoosing value)? choosing,
-    TResult? Function(_SurveyMatching value)? matching,
-  }) {
-    return matching?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SurveyChoosing value)? choosing,
-    TResult Function(_SurveyMatching value)? matching,
-    required TResult orElse(),
-  }) {
-    if (matching != null) {
-      return matching(this);
-    }
-    return orElse();
-  }
-
-  @override
   Map<String, dynamic> toJson() {
     return _$$SurveyMatchingImplToJson(
       this,
@@ -5390,11 +5206,12 @@ class _$SurveyMatchingImpl implements _SurveyMatching {
   }
 }
 
-abstract class _SurveyMatching implements Survey {
+abstract class _SurveyMatching implements SurveyMatching {
   const factory _SurveyMatching(
       {required final String id,
       required final String title,
       final String description,
+      required final List<Object> questions,
       required final List<List<Object>> sideA,
       required final List<List<Object>> sideB,
       final List<Map<int, int>> answers}) = _$SurveyMatchingImpl;
@@ -5408,7 +5225,11 @@ abstract class _SurveyMatching implements Survey {
   String get title;
   @override
   String get description;
+  @override
+  List<Object> get questions;
+  @override
   List<List<Object>> get sideA;
+  @override
   List<List<Object>> get sideB;
   @override
   List<Map<int, int>> get answers;
@@ -5419,212 +5240,19 @@ abstract class _SurveyMatching implements Survey {
 }
 
 Quiz _$QuizFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'default':
-      return _Quiz.fromJson(json);
-    case 'submission':
-      return _QuizSubmission.fromJson(json);
-    case 'questionnaire':
-      return _QuizQuestionnaire.fromJson(json);
-    case 'survey':
-      return _QuizSurvey.fromJson(json);
-    case 'videoCheckpoint':
-      return _QuizVideoCheckpoint.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'Quiz',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
+  return _Quiz.fromJson(json);
 }
 
 /// @nodoc
 mixin _$Quiz {
   String get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Object get content => throw _privateConstructorUsedError;
   Ability get ability => throw _privateConstructorUsedError;
-  QuizStatus get status => throw _privateConstructorUsedError;
+  QuizStatus get statusValidation => throw _privateConstructorUsedError;
   List<DateTime> get statusChanges => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        survey,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        videoCheckpoint,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Quiz value) $default, {
-    required TResult Function(_QuizSubmission value) submission,
-    required TResult Function(_QuizQuestionnaire value) questionnaire,
-    required TResult Function(_QuizSurvey value) survey,
-    required TResult Function(_QuizVideoCheckpoint value) videoCheckpoint,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Quiz value)? $default, {
-    TResult? Function(_QuizSubmission value)? submission,
-    TResult? Function(_QuizQuestionnaire value)? questionnaire,
-    TResult? Function(_QuizSurvey value)? survey,
-    TResult? Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Quiz value)? $default, {
-    TResult Function(_QuizSubmission value)? submission,
-    TResult Function(_QuizQuestionnaire value)? questionnaire,
-    TResult Function(_QuizSurvey value)? survey,
-    TResult Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $QuizCopyWith<Quiz> get copyWith => throw _privateConstructorUsedError;
@@ -5637,10 +5265,11 @@ abstract class $QuizCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String title,
+      String name,
       String description,
+      Object content,
       Ability ability,
-      QuizStatus status,
+      QuizStatus statusValidation,
       List<DateTime> statusChanges});
 
   $AbilityCopyWith<$Res> get ability;
@@ -5660,10 +5289,11 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? name = null,
     Object? description = null,
+    Object? content = null,
     Object? ability = null,
-    Object? status = null,
+    Object? statusValidation = null,
     Object? statusChanges = null,
   }) {
     return _then(_value.copyWith(
@@ -5671,21 +5301,22 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      content: null == content ? _value.content : content,
       ability: null == ability
           ? _value.ability
           : ability // ignore: cast_nullable_to_non_nullable
               as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      statusValidation: null == statusValidation
+          ? _value.statusValidation
+          : statusValidation // ignore: cast_nullable_to_non_nullable
               as QuizStatus,
       statusChanges: null == statusChanges
           ? _value.statusChanges
@@ -5712,11 +5343,11 @@ abstract class _$$QuizImplCopyWith<$Res> implements $QuizCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String title,
+      String name,
       String description,
       Object content,
       Ability ability,
-      QuizStatus status,
+      QuizStatus statusValidation,
       List<DateTime> statusChanges});
 
   @override
@@ -5734,11 +5365,11 @@ class __$$QuizImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? name = null,
     Object? description = null,
     Object? content = null,
     Object? ability = null,
-    Object? status = null,
+    Object? statusValidation = null,
     Object? statusChanges = null,
   }) {
     return _then(_$QuizImpl(
@@ -5746,9 +5377,9 @@ class __$$QuizImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -5759,9 +5390,9 @@ class __$$QuizImplCopyWithImpl<$Res>
           ? _value.ability
           : ability // ignore: cast_nullable_to_non_nullable
               as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
+      statusValidation: null == statusValidation
+          ? _value.statusValidation
+          : statusValidation // ignore: cast_nullable_to_non_nullable
               as QuizStatus,
       statusChanges: null == statusChanges
           ? _value._statusChanges
@@ -5776,15 +5407,13 @@ class __$$QuizImplCopyWithImpl<$Res>
 class _$QuizImpl implements _Quiz {
   const _$QuizImpl(
       {required this.id,
-      required this.title,
+      required this.name,
       this.description = '',
       required this.content,
       required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'default';
+      this.statusValidation = QuizStatus.unfinished,
+      required final List<DateTime> statusChanges})
+      : _statusChanges = statusChanges;
 
   factory _$QuizImpl.fromJson(Map<String, dynamic> json) =>
       _$$QuizImplFromJson(json);
@@ -5792,7 +5421,7 @@ class _$QuizImpl implements _Quiz {
   @override
   final String id;
   @override
-  final String title;
+  final String name;
   @override
   @JsonKey()
   final String description;
@@ -5801,7 +5430,8 @@ class _$QuizImpl implements _Quiz {
   @override
   final Ability ability;
   @override
-  final QuizStatus status;
+  @JsonKey()
+  final QuizStatus statusValidation;
   final List<DateTime> _statusChanges;
   @override
   List<DateTime> get statusChanges {
@@ -5810,12 +5440,9 @@ class _$QuizImpl implements _Quiz {
     return EqualUnmodifiableListView(_statusChanges);
   }
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
   @override
   String toString() {
-    return 'Quiz(id: $id, title: $title, description: $description, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
+    return 'Quiz(id: $id, name: $name, description: $description, content: $content, ability: $ability, statusValidation: $statusValidation, statusChanges: $statusChanges)';
   }
 
   @override
@@ -5824,12 +5451,13 @@ class _$QuizImpl implements _Quiz {
         (other.runtimeType == runtimeType &&
             other is _$QuizImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             const DeepCollectionEquality().equals(other.content, content) &&
             (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
+            (identical(other.statusValidation, statusValidation) ||
+                other.statusValidation == statusValidation) &&
             const DeepCollectionEquality()
                 .equals(other._statusChanges, _statusChanges));
   }
@@ -5839,11 +5467,11 @@ class _$QuizImpl implements _Quiz {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      title,
+      name,
       description,
       const DeepCollectionEquality().hash(content),
       ability,
-      status,
+      statusValidation,
       const DeepCollectionEquality().hash(_statusChanges));
 
   @JsonKey(ignore: true)
@@ -5851,212 +5479,6 @@ class _$QuizImpl implements _Quiz {
   @pragma('vm:prefer-inline')
   _$$QuizImplCopyWith<_$QuizImpl> get copyWith =>
       __$$QuizImplCopyWithImpl<_$QuizImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        survey,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        videoCheckpoint,
-  }) {
-    return $default(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-  }) {
-    return $default?.call(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(
-          id, title, description, content, ability, status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Quiz value) $default, {
-    required TResult Function(_QuizSubmission value) submission,
-    required TResult Function(_QuizQuestionnaire value) questionnaire,
-    required TResult Function(_QuizSurvey value) survey,
-    required TResult Function(_QuizVideoCheckpoint value) videoCheckpoint,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Quiz value)? $default, {
-    TResult? Function(_QuizSubmission value)? submission,
-    TResult? Function(_QuizQuestionnaire value)? questionnaire,
-    TResult? Function(_QuizSurvey value)? survey,
-    TResult? Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Quiz value)? $default, {
-    TResult Function(_QuizSubmission value)? submission,
-    TResult Function(_QuizQuestionnaire value)? questionnaire,
-    TResult Function(_QuizSurvey value)? survey,
-    TResult Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
 
   @override
   Map<String, dynamic> toJson() {
@@ -6069,11 +5491,11 @@ class _$QuizImpl implements _Quiz {
 abstract class _Quiz implements Quiz {
   const factory _Quiz(
       {required final String id,
-      required final String title,
+      required final String name,
       final String description,
       required final Object content,
       required final Ability ability,
-      required final QuizStatus status,
+      final QuizStatus statusValidation,
       required final List<DateTime> statusChanges}) = _$QuizImpl;
 
   factory _Quiz.fromJson(Map<String, dynamic> json) = _$QuizImpl.fromJson;
@@ -6081,7 +5503,7 @@ abstract class _Quiz implements Quiz {
   @override
   String get id;
   @override
-  String get title;
+  String get name;
   @override
   String get description;
   @override
@@ -6089,7 +5511,7 @@ abstract class _Quiz implements Quiz {
   @override
   Ability get ability;
   @override
-  QuizStatus get status;
+  QuizStatus get statusValidation;
   @override
   List<DateTime> get statusChanges;
   @override
@@ -6098,1826 +5520,23 @@ abstract class _Quiz implements Quiz {
       throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-abstract class _$$QuizSubmissionImplCopyWith<$Res>
-    implements $QuizCopyWith<$Res> {
-  factory _$$QuizSubmissionImplCopyWith(_$QuizSubmissionImpl value,
-          $Res Function(_$QuizSubmissionImpl) then) =
-      __$$QuizSubmissionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      Submission content,
-      Ability ability,
-      QuizStatus status,
-      List<DateTime> statusChanges});
-
-  $SubmissionCopyWith<$Res> get content;
-  @override
-  $AbilityCopyWith<$Res> get ability;
-}
-
-/// @nodoc
-class __$$QuizSubmissionImplCopyWithImpl<$Res>
-    extends _$QuizCopyWithImpl<$Res, _$QuizSubmissionImpl>
-    implements _$$QuizSubmissionImplCopyWith<$Res> {
-  __$$QuizSubmissionImplCopyWithImpl(
-      _$QuizSubmissionImpl _value, $Res Function(_$QuizSubmissionImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? content = null,
-    Object? ability = null,
-    Object? status = null,
-    Object? statusChanges = null,
-  }) {
-    return _then(_$QuizSubmissionImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Submission,
-      ability: null == ability
-          ? _value.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as QuizStatus,
-      statusChanges: null == statusChanges
-          ? _value._statusChanges
-          : statusChanges // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SubmissionCopyWith<$Res> get content {
-    return $SubmissionCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$QuizSubmissionImpl implements _QuizSubmission {
-  const _$QuizSubmissionImpl(
-      {required this.id,
-      required this.title,
-      this.description = '',
-      required this.content,
-      required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'submission';
-
-  factory _$QuizSubmissionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuizSubmissionImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
-  @override
-  final Submission content;
-  @override
-  final Ability ability;
-  @override
-  final QuizStatus status;
-  final List<DateTime> _statusChanges;
-  @override
-  List<DateTime> get statusChanges {
-    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statusChanges);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Quiz.submission(id: $id, title: $title, description: $description, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$QuizSubmissionImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._statusChanges, _statusChanges));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, title, description, content,
-      ability, status, const DeepCollectionEquality().hash(_statusChanges));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$QuizSubmissionImplCopyWith<_$QuizSubmissionImpl> get copyWith =>
-      __$$QuizSubmissionImplCopyWithImpl<_$QuizSubmissionImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        survey,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        videoCheckpoint,
-  }) {
-    return submission(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-  }) {
-    return submission?.call(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (submission != null) {
-      return submission(
-          id, title, description, content, ability, status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Quiz value) $default, {
-    required TResult Function(_QuizSubmission value) submission,
-    required TResult Function(_QuizQuestionnaire value) questionnaire,
-    required TResult Function(_QuizSurvey value) survey,
-    required TResult Function(_QuizVideoCheckpoint value) videoCheckpoint,
-  }) {
-    return submission(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Quiz value)? $default, {
-    TResult? Function(_QuizSubmission value)? submission,
-    TResult? Function(_QuizQuestionnaire value)? questionnaire,
-    TResult? Function(_QuizSurvey value)? survey,
-    TResult? Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-  }) {
-    return submission?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Quiz value)? $default, {
-    TResult Function(_QuizSubmission value)? submission,
-    TResult Function(_QuizQuestionnaire value)? questionnaire,
-    TResult Function(_QuizSurvey value)? survey,
-    TResult Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (submission != null) {
-      return submission(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuizSubmissionImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _QuizSubmission implements Quiz {
-  const factory _QuizSubmission(
-      {required final String id,
-      required final String title,
-      final String description,
-      required final Submission content,
-      required final Ability ability,
-      required final QuizStatus status,
-      required final List<DateTime> statusChanges}) = _$QuizSubmissionImpl;
-
-  factory _QuizSubmission.fromJson(Map<String, dynamic> json) =
-      _$QuizSubmissionImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get title;
-  @override
-  String get description;
-  @override
-  Submission get content;
-  @override
-  Ability get ability;
-  @override
-  QuizStatus get status;
-  @override
-  List<DateTime> get statusChanges;
-  @override
-  @JsonKey(ignore: true)
-  _$$QuizSubmissionImplCopyWith<_$QuizSubmissionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$QuizQuestionnaireImplCopyWith<$Res>
-    implements $QuizCopyWith<$Res> {
-  factory _$$QuizQuestionnaireImplCopyWith(_$QuizQuestionnaireImpl value,
-          $Res Function(_$QuizQuestionnaireImpl) then) =
-      __$$QuizQuestionnaireImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      Questionnaire content,
-      Ability ability,
-      QuizStatus status,
-      List<DateTime> statusChanges});
-
-  $QuestionnaireCopyWith<$Res> get content;
-  @override
-  $AbilityCopyWith<$Res> get ability;
-}
-
-/// @nodoc
-class __$$QuizQuestionnaireImplCopyWithImpl<$Res>
-    extends _$QuizCopyWithImpl<$Res, _$QuizQuestionnaireImpl>
-    implements _$$QuizQuestionnaireImplCopyWith<$Res> {
-  __$$QuizQuestionnaireImplCopyWithImpl(_$QuizQuestionnaireImpl _value,
-      $Res Function(_$QuizQuestionnaireImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? content = null,
-    Object? ability = null,
-    Object? status = null,
-    Object? statusChanges = null,
-  }) {
-    return _then(_$QuizQuestionnaireImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Questionnaire,
-      ability: null == ability
-          ? _value.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as QuizStatus,
-      statusChanges: null == statusChanges
-          ? _value._statusChanges
-          : statusChanges // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $QuestionnaireCopyWith<$Res> get content {
-    return $QuestionnaireCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$QuizQuestionnaireImpl implements _QuizQuestionnaire {
-  const _$QuizQuestionnaireImpl(
-      {required this.id,
-      required this.title,
-      this.description = '',
-      required this.content,
-      required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'questionnaire';
-
-  factory _$QuizQuestionnaireImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuizQuestionnaireImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
-  @override
-  final Questionnaire content;
-  @override
-  final Ability ability;
-  @override
-  final QuizStatus status;
-  final List<DateTime> _statusChanges;
-  @override
-  List<DateTime> get statusChanges {
-    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statusChanges);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Quiz.questionnaire(id: $id, title: $title, description: $description, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$QuizQuestionnaireImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._statusChanges, _statusChanges));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, title, description, content,
-      ability, status, const DeepCollectionEquality().hash(_statusChanges));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$QuizQuestionnaireImplCopyWith<_$QuizQuestionnaireImpl> get copyWith =>
-      __$$QuizQuestionnaireImplCopyWithImpl<_$QuizQuestionnaireImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        survey,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        videoCheckpoint,
-  }) {
-    return questionnaire(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-  }) {
-    return questionnaire?.call(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (questionnaire != null) {
-      return questionnaire(
-          id, title, description, content, ability, status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Quiz value) $default, {
-    required TResult Function(_QuizSubmission value) submission,
-    required TResult Function(_QuizQuestionnaire value) questionnaire,
-    required TResult Function(_QuizSurvey value) survey,
-    required TResult Function(_QuizVideoCheckpoint value) videoCheckpoint,
-  }) {
-    return questionnaire(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Quiz value)? $default, {
-    TResult? Function(_QuizSubmission value)? submission,
-    TResult? Function(_QuizQuestionnaire value)? questionnaire,
-    TResult? Function(_QuizSurvey value)? survey,
-    TResult? Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-  }) {
-    return questionnaire?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Quiz value)? $default, {
-    TResult Function(_QuizSubmission value)? submission,
-    TResult Function(_QuizQuestionnaire value)? questionnaire,
-    TResult Function(_QuizSurvey value)? survey,
-    TResult Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (questionnaire != null) {
-      return questionnaire(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuizQuestionnaireImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _QuizQuestionnaire implements Quiz {
-  const factory _QuizQuestionnaire(
-      {required final String id,
-      required final String title,
-      final String description,
-      required final Questionnaire content,
-      required final Ability ability,
-      required final QuizStatus status,
-      required final List<DateTime> statusChanges}) = _$QuizQuestionnaireImpl;
-
-  factory _QuizQuestionnaire.fromJson(Map<String, dynamic> json) =
-      _$QuizQuestionnaireImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get title;
-  @override
-  String get description;
-  @override
-  Questionnaire get content;
-  @override
-  Ability get ability;
-  @override
-  QuizStatus get status;
-  @override
-  List<DateTime> get statusChanges;
-  @override
-  @JsonKey(ignore: true)
-  _$$QuizQuestionnaireImplCopyWith<_$QuizQuestionnaireImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$QuizSurveyImplCopyWith<$Res> implements $QuizCopyWith<$Res> {
-  factory _$$QuizSurveyImplCopyWith(
-          _$QuizSurveyImpl value, $Res Function(_$QuizSurveyImpl) then) =
-      __$$QuizSurveyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      Survey content,
-      Ability ability,
-      QuizStatus status,
-      List<DateTime> statusChanges});
-
-  $SurveyCopyWith<$Res> get content;
-  @override
-  $AbilityCopyWith<$Res> get ability;
-}
-
-/// @nodoc
-class __$$QuizSurveyImplCopyWithImpl<$Res>
-    extends _$QuizCopyWithImpl<$Res, _$QuizSurveyImpl>
-    implements _$$QuizSurveyImplCopyWith<$Res> {
-  __$$QuizSurveyImplCopyWithImpl(
-      _$QuizSurveyImpl _value, $Res Function(_$QuizSurveyImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? content = null,
-    Object? ability = null,
-    Object? status = null,
-    Object? statusChanges = null,
-  }) {
-    return _then(_$QuizSurveyImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Survey,
-      ability: null == ability
-          ? _value.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as QuizStatus,
-      statusChanges: null == statusChanges
-          ? _value._statusChanges
-          : statusChanges // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SurveyCopyWith<$Res> get content {
-    return $SurveyCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$QuizSurveyImpl implements _QuizSurvey {
-  const _$QuizSurveyImpl(
-      {required this.id,
-      required this.title,
-      this.description = '',
-      required this.content,
-      required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'survey';
-
-  factory _$QuizSurveyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuizSurveyImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
-  @override
-  final Survey content;
-  @override
-  final Ability ability;
-  @override
-  final QuizStatus status;
-  final List<DateTime> _statusChanges;
-  @override
-  List<DateTime> get statusChanges {
-    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statusChanges);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Quiz.survey(id: $id, title: $title, description: $description, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$QuizSurveyImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._statusChanges, _statusChanges));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, title, description, content,
-      ability, status, const DeepCollectionEquality().hash(_statusChanges));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$QuizSurveyImplCopyWith<_$QuizSurveyImpl> get copyWith =>
-      __$$QuizSurveyImplCopyWithImpl<_$QuizSurveyImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        survey,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        videoCheckpoint,
-  }) {
-    return survey(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-  }) {
-    return survey?.call(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (survey != null) {
-      return survey(
-          id, title, description, content, ability, status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Quiz value) $default, {
-    required TResult Function(_QuizSubmission value) submission,
-    required TResult Function(_QuizQuestionnaire value) questionnaire,
-    required TResult Function(_QuizSurvey value) survey,
-    required TResult Function(_QuizVideoCheckpoint value) videoCheckpoint,
-  }) {
-    return survey(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Quiz value)? $default, {
-    TResult? Function(_QuizSubmission value)? submission,
-    TResult? Function(_QuizQuestionnaire value)? questionnaire,
-    TResult? Function(_QuizSurvey value)? survey,
-    TResult? Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-  }) {
-    return survey?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Quiz value)? $default, {
-    TResult Function(_QuizSubmission value)? submission,
-    TResult Function(_QuizQuestionnaire value)? questionnaire,
-    TResult Function(_QuizSurvey value)? survey,
-    TResult Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (survey != null) {
-      return survey(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuizSurveyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _QuizSurvey implements Quiz {
-  const factory _QuizSurvey(
-      {required final String id,
-      required final String title,
-      final String description,
-      required final Survey content,
-      required final Ability ability,
-      required final QuizStatus status,
-      required final List<DateTime> statusChanges}) = _$QuizSurveyImpl;
-
-  factory _QuizSurvey.fromJson(Map<String, dynamic> json) =
-      _$QuizSurveyImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get title;
-  @override
-  String get description;
-  @override
-  Survey get content;
-  @override
-  Ability get ability;
-  @override
-  QuizStatus get status;
-  @override
-  List<DateTime> get statusChanges;
-  @override
-  @JsonKey(ignore: true)
-  _$$QuizSurveyImplCopyWith<_$QuizSurveyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$QuizVideoCheckpointImplCopyWith<$Res>
-    implements $QuizCopyWith<$Res> {
-  factory _$$QuizVideoCheckpointImplCopyWith(_$QuizVideoCheckpointImpl value,
-          $Res Function(_$QuizVideoCheckpointImpl) then) =
-      __$$QuizVideoCheckpointImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      Object content,
-      Map<int, Object> checkpoints,
-      Ability ability,
-      QuizStatus status,
-      List<DateTime> statusChanges});
-
-  @override
-  $AbilityCopyWith<$Res> get ability;
-}
-
-/// @nodoc
-class __$$QuizVideoCheckpointImplCopyWithImpl<$Res>
-    extends _$QuizCopyWithImpl<$Res, _$QuizVideoCheckpointImpl>
-    implements _$$QuizVideoCheckpointImplCopyWith<$Res> {
-  __$$QuizVideoCheckpointImplCopyWithImpl(_$QuizVideoCheckpointImpl _value,
-      $Res Function(_$QuizVideoCheckpointImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? content = null,
-    Object? checkpoints = null,
-    Object? ability = null,
-    Object? status = null,
-    Object? statusChanges = null,
-  }) {
-    return _then(_$QuizVideoCheckpointImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content ? _value.content : content,
-      checkpoints: null == checkpoints
-          ? _value._checkpoints
-          : checkpoints // ignore: cast_nullable_to_non_nullable
-              as Map<int, Object>,
-      ability: null == ability
-          ? _value.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as QuizStatus,
-      statusChanges: null == statusChanges
-          ? _value._statusChanges
-          : statusChanges // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$QuizVideoCheckpointImpl implements _QuizVideoCheckpoint {
-  const _$QuizVideoCheckpointImpl(
-      {required this.id,
-      required this.title,
-      this.description = '',
-      required this.content,
-      required final Map<int, Object> checkpoints,
-      required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _checkpoints = checkpoints,
-        _statusChanges = statusChanges,
-        $type = $type ?? 'videoCheckpoint';
-
-  factory _$QuizVideoCheckpointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$QuizVideoCheckpointImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
-  @override
-  final Object content;
-  final Map<int, Object> _checkpoints;
-  @override
-  Map<int, Object> get checkpoints {
-    if (_checkpoints is EqualUnmodifiableMapView) return _checkpoints;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_checkpoints);
-  }
-
-  @override
-  final Ability ability;
-  @override
-  final QuizStatus status;
-  final List<DateTime> _statusChanges;
-  @override
-  List<DateTime> get statusChanges {
-    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statusChanges);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Quiz.videoCheckpoint(id: $id, title: $title, description: $description, content: $content, checkpoints: $checkpoints, ability: $ability, status: $status, statusChanges: $statusChanges)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$QuizVideoCheckpointImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other.content, content) &&
-            const DeepCollectionEquality()
-                .equals(other._checkpoints, _checkpoints) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._statusChanges, _statusChanges));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      description,
-      const DeepCollectionEquality().hash(content),
-      const DeepCollectionEquality().hash(_checkpoints),
-      ability,
-      status,
-      const DeepCollectionEquality().hash(_statusChanges));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$QuizVideoCheckpointImplCopyWith<_$QuizVideoCheckpointImpl> get copyWith =>
-      __$$QuizVideoCheckpointImplCopyWithImpl<_$QuizVideoCheckpointImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        survey,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)
-        videoCheckpoint,
-  }) {
-    return videoCheckpoint(id, title, description, content, checkpoints,
-        ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-  }) {
-    return videoCheckpoint?.call(id, title, description, content, checkpoints,
-        ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Questionnaire content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Survey content,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Object content,
-            Map<int, Object> checkpoints,
-            Ability ability,
-            QuizStatus status,
-            List<DateTime> statusChanges)?
-        videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (videoCheckpoint != null) {
-      return videoCheckpoint(id, title, description, content, checkpoints,
-          ability, status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Quiz value) $default, {
-    required TResult Function(_QuizSubmission value) submission,
-    required TResult Function(_QuizQuestionnaire value) questionnaire,
-    required TResult Function(_QuizSurvey value) survey,
-    required TResult Function(_QuizVideoCheckpoint value) videoCheckpoint,
-  }) {
-    return videoCheckpoint(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Quiz value)? $default, {
-    TResult? Function(_QuizSubmission value)? submission,
-    TResult? Function(_QuizQuestionnaire value)? questionnaire,
-    TResult? Function(_QuizSurvey value)? survey,
-    TResult? Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-  }) {
-    return videoCheckpoint?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Quiz value)? $default, {
-    TResult Function(_QuizSubmission value)? submission,
-    TResult Function(_QuizQuestionnaire value)? questionnaire,
-    TResult Function(_QuizSurvey value)? survey,
-    TResult Function(_QuizVideoCheckpoint value)? videoCheckpoint,
-    required TResult orElse(),
-  }) {
-    if (videoCheckpoint != null) {
-      return videoCheckpoint(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$QuizVideoCheckpointImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _QuizVideoCheckpoint implements Quiz {
-  const factory _QuizVideoCheckpoint(
-      {required final String id,
-      required final String title,
-      final String description,
-      required final Object content,
-      required final Map<int, Object> checkpoints,
-      required final Ability ability,
-      required final QuizStatus status,
-      required final List<DateTime> statusChanges}) = _$QuizVideoCheckpointImpl;
-
-  factory _QuizVideoCheckpoint.fromJson(Map<String, dynamic> json) =
-      _$QuizVideoCheckpointImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get title;
-  @override
-  String get description;
-  @override
-  Object get content;
-  Map<int, Object> get checkpoints;
-  @override
-  Ability get ability;
-  @override
-  QuizStatus get status;
-  @override
-  List<DateTime> get statusChanges;
-  @override
-  @JsonKey(ignore: true)
-  _$$QuizVideoCheckpointImplCopyWith<_$QuizVideoCheckpointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 Test _$TestFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'default':
-      return _Test.fromJson(json);
-    case 'submission':
-      return _TestSubmission.fromJson(json);
-    case 'questionnaire':
-      return _TestQuestionnaire.fromJson(json);
-    case 'survey':
-      return _TestSurvey.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'Test',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
+  return _Test.fromJson(json);
 }
 
 /// @nodoc
 mixin _$Test {
   String get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get start => throw _privateConstructorUsedError;
+  DateTime get end => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   Object get content => throw _privateConstructorUsedError;
   Ability get ability => throw _privateConstructorUsedError;
   TestStatus get status => throw _privateConstructorUsedError;
+  QuizStatus get statusValidation => throw _privateConstructorUsedError;
   List<DateTime> get statusChanges => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        survey,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Test value) $default, {
-    required TResult Function(_TestSubmission value) submission,
-    required TResult Function(_TestQuestionnaire value) questionnaire,
-    required TResult Function(_TestSurvey value) survey,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Test value)? $default, {
-    TResult? Function(_TestSubmission value)? submission,
-    TResult? Function(_TestQuestionnaire value)? questionnaire,
-    TResult? Function(_TestSurvey value)? survey,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Test value)? $default, {
-    TResult Function(_TestSubmission value)? submission,
-    TResult Function(_TestQuestionnaire value)? questionnaire,
-    TResult Function(_TestSurvey value)? survey,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TestCopyWith<Test> get copyWith => throw _privateConstructorUsedError;
@@ -7930,10 +5549,14 @@ abstract class $TestCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String title,
+      String name,
+      DateTime start,
+      DateTime end,
       String description,
+      Object content,
       Ability ability,
       TestStatus status,
+      QuizStatus statusValidation,
       List<DateTime> statusChanges});
 
   $AbilityCopyWith<$Res> get ability;
@@ -7953,10 +5576,14 @@ class _$TestCopyWithImpl<$Res, $Val extends Test>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
+    Object? name = null,
+    Object? start = null,
+    Object? end = null,
     Object? description = null,
+    Object? content = null,
     Object? ability = null,
     Object? status = null,
+    Object? statusValidation = null,
     Object? statusChanges = null,
   }) {
     return _then(_value.copyWith(
@@ -7964,14 +5591,23 @@ class _$TestCopyWithImpl<$Res, $Val extends Test>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
+      start: null == start
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      end: null == end
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
+      content: null == content ? _value.content : content,
       ability: null == ability
           ? _value.ability
           : ability // ignore: cast_nullable_to_non_nullable
@@ -7980,6 +5616,10 @@ class _$TestCopyWithImpl<$Res, $Val extends Test>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TestStatus,
+      statusValidation: null == statusValidation
+          ? _value.statusValidation
+          : statusValidation // ignore: cast_nullable_to_non_nullable
+              as QuizStatus,
       statusChanges: null == statusChanges
           ? _value.statusChanges
           : statusChanges // ignore: cast_nullable_to_non_nullable
@@ -8005,13 +5645,14 @@ abstract class _$$TestImplCopyWith<$Res> implements $TestCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String title,
-      String description,
+      String name,
       DateTime start,
       DateTime end,
+      String description,
       Object content,
       Ability ability,
       TestStatus status,
+      QuizStatus statusValidation,
       List<DateTime> statusChanges});
 
   @override
@@ -8029,13 +5670,14 @@ class __$$TestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? title = null,
-    Object? description = null,
+    Object? name = null,
     Object? start = null,
     Object? end = null,
+    Object? description = null,
     Object? content = null,
     Object? ability = null,
     Object? status = null,
+    Object? statusValidation = null,
     Object? statusChanges = null,
   }) {
     return _then(_$TestImpl(
@@ -8043,13 +5685,9 @@ class __$$TestImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       start: null == start
           ? _value.start
@@ -8059,6 +5697,10 @@ class __$$TestImplCopyWithImpl<$Res>
           ? _value.end
           : end // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       content: null == content ? _value.content : content,
       ability: null == ability
           ? _value.ability
@@ -8068,6 +5710,10 @@ class __$$TestImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TestStatus,
+      statusValidation: null == statusValidation
+          ? _value.statusValidation
+          : statusValidation // ignore: cast_nullable_to_non_nullable
+              as QuizStatus,
       statusChanges: null == statusChanges
           ? _value._statusChanges
           : statusChanges // ignore: cast_nullable_to_non_nullable
@@ -8081,17 +5727,16 @@ class __$$TestImplCopyWithImpl<$Res>
 class _$TestImpl implements _Test {
   const _$TestImpl(
       {required this.id,
-      required this.title,
-      this.description = '',
+      required this.name,
       required this.start,
       required this.end,
+      this.description = '',
       required this.content,
       required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'default';
+      this.status = TestStatus.preparing,
+      this.statusValidation = QuizStatus.unfinished,
+      required final List<DateTime> statusChanges})
+      : _statusChanges = statusChanges;
 
   factory _$TestImpl.fromJson(Map<String, dynamic> json) =>
       _$$TestImplFromJson(json);
@@ -8099,20 +5744,24 @@ class _$TestImpl implements _Test {
   @override
   final String id;
   @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
+  final String name;
   @override
   final DateTime start;
   @override
   final DateTime end;
   @override
+  @JsonKey()
+  final String description;
+  @override
   final Object content;
   @override
   final Ability ability;
   @override
+  @JsonKey()
   final TestStatus status;
+  @override
+  @JsonKey()
+  final QuizStatus statusValidation;
   final List<DateTime> _statusChanges;
   @override
   List<DateTime> get statusChanges {
@@ -8121,12 +5770,9 @@ class _$TestImpl implements _Test {
     return EqualUnmodifiableListView(_statusChanges);
   }
 
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
   @override
   String toString() {
-    return 'Test(id: $id, title: $title, description: $description, start: $start, end: $end, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
+    return 'Test(id: $id, name: $name, start: $start, end: $end, description: $description, content: $content, ability: $ability, status: $status, statusValidation: $statusValidation, statusChanges: $statusChanges)';
   }
 
   @override
@@ -8135,14 +5781,16 @@ class _$TestImpl implements _Test {
         (other.runtimeType == runtimeType &&
             other is _$TestImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.start, start) || other.start == start) &&
             (identical(other.end, end) || other.end == end) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             const DeepCollectionEquality().equals(other.content, content) &&
             (identical(other.ability, ability) || other.ability == ability) &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.statusValidation, statusValidation) ||
+                other.statusValidation == statusValidation) &&
             const DeepCollectionEquality()
                 .equals(other._statusChanges, _statusChanges));
   }
@@ -8152,13 +5800,14 @@ class _$TestImpl implements _Test {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      title,
-      description,
+      name,
       start,
       end,
+      description,
       const DeepCollectionEquality().hash(content),
       ability,
       status,
+      statusValidation,
       const DeepCollectionEquality().hash(_statusChanges));
 
   @JsonKey(ignore: true)
@@ -8166,197 +5815,6 @@ class _$TestImpl implements _Test {
   @pragma('vm:prefer-inline')
   _$$TestImplCopyWith<_$TestImpl> get copyWith =>
       __$$TestImplCopyWithImpl<_$TestImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        survey,
-  }) {
-    return $default(id, title, description, start, end, content, ability,
-        status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-  }) {
-    return $default?.call(id, title, description, start, end, content, ability,
-        status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(id, title, description, start, end, content, ability,
-          status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Test value) $default, {
-    required TResult Function(_TestSubmission value) submission,
-    required TResult Function(_TestQuestionnaire value) questionnaire,
-    required TResult Function(_TestSurvey value) survey,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Test value)? $default, {
-    TResult? Function(_TestSubmission value)? submission,
-    TResult? Function(_TestQuestionnaire value)? questionnaire,
-    TResult? Function(_TestSurvey value)? survey,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Test value)? $default, {
-    TResult Function(_TestSubmission value)? submission,
-    TResult Function(_TestQuestionnaire value)? questionnaire,
-    TResult Function(_TestSurvey value)? survey,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
 
   @override
   Map<String, dynamic> toJson() {
@@ -8369,13 +5827,14 @@ class _$TestImpl implements _Test {
 abstract class _Test implements Test {
   const factory _Test(
       {required final String id,
-      required final String title,
-      final String description,
+      required final String name,
       required final DateTime start,
       required final DateTime end,
+      final String description,
       required final Object content,
       required final Ability ability,
-      required final TestStatus status,
+      final TestStatus status,
+      final QuizStatus statusValidation,
       required final List<DateTime> statusChanges}) = _$TestImpl;
 
   factory _Test.fromJson(Map<String, dynamic> json) = _$TestImpl.fromJson;
@@ -8383,17 +5842,21 @@ abstract class _Test implements Test {
   @override
   String get id;
   @override
-  String get title;
+  String get name;
+  @override
+  DateTime get start;
+  @override
+  DateTime get end;
   @override
   String get description;
-  DateTime get start;
-  DateTime get end;
   @override
   Object get content;
   @override
   Ability get ability;
   @override
   TestStatus get status;
+  @override
+  QuizStatus get statusValidation;
   @override
   List<DateTime> get statusChanges;
   @override
@@ -8402,1295 +5865,23 @@ abstract class _Test implements Test {
       throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-abstract class _$$TestSubmissionImplCopyWith<$Res>
-    implements $TestCopyWith<$Res> {
-  factory _$$TestSubmissionImplCopyWith(_$TestSubmissionImpl value,
-          $Res Function(_$TestSubmissionImpl) then) =
-      __$$TestSubmissionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      Submission content,
-      Ability ability,
-      TestStatus status,
-      List<DateTime> statusChanges});
-
-  $SubmissionCopyWith<$Res> get content;
-  @override
-  $AbilityCopyWith<$Res> get ability;
-}
-
-/// @nodoc
-class __$$TestSubmissionImplCopyWithImpl<$Res>
-    extends _$TestCopyWithImpl<$Res, _$TestSubmissionImpl>
-    implements _$$TestSubmissionImplCopyWith<$Res> {
-  __$$TestSubmissionImplCopyWithImpl(
-      _$TestSubmissionImpl _value, $Res Function(_$TestSubmissionImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? content = null,
-    Object? ability = null,
-    Object? status = null,
-    Object? statusChanges = null,
-  }) {
-    return _then(_$TestSubmissionImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Submission,
-      ability: null == ability
-          ? _value.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as TestStatus,
-      statusChanges: null == statusChanges
-          ? _value._statusChanges
-          : statusChanges // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SubmissionCopyWith<$Res> get content {
-    return $SubmissionCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TestSubmissionImpl implements _TestSubmission {
-  const _$TestSubmissionImpl(
-      {required this.id,
-      required this.title,
-      this.description = '',
-      required this.content,
-      required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'submission';
-
-  factory _$TestSubmissionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TestSubmissionImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
-  @override
-  final Submission content;
-  @override
-  final Ability ability;
-  @override
-  final TestStatus status;
-  final List<DateTime> _statusChanges;
-  @override
-  List<DateTime> get statusChanges {
-    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statusChanges);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Test.submission(id: $id, title: $title, description: $description, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TestSubmissionImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._statusChanges, _statusChanges));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, title, description, content,
-      ability, status, const DeepCollectionEquality().hash(_statusChanges));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TestSubmissionImplCopyWith<_$TestSubmissionImpl> get copyWith =>
-      __$$TestSubmissionImplCopyWithImpl<_$TestSubmissionImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        survey,
-  }) {
-    return submission(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-  }) {
-    return submission?.call(
-        id, title, description, content, ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    required TResult orElse(),
-  }) {
-    if (submission != null) {
-      return submission(
-          id, title, description, content, ability, status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Test value) $default, {
-    required TResult Function(_TestSubmission value) submission,
-    required TResult Function(_TestQuestionnaire value) questionnaire,
-    required TResult Function(_TestSurvey value) survey,
-  }) {
-    return submission(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Test value)? $default, {
-    TResult? Function(_TestSubmission value)? submission,
-    TResult? Function(_TestQuestionnaire value)? questionnaire,
-    TResult? Function(_TestSurvey value)? survey,
-  }) {
-    return submission?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Test value)? $default, {
-    TResult Function(_TestSubmission value)? submission,
-    TResult Function(_TestQuestionnaire value)? questionnaire,
-    TResult Function(_TestSurvey value)? survey,
-    required TResult orElse(),
-  }) {
-    if (submission != null) {
-      return submission(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TestSubmissionImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TestSubmission implements Test {
-  const factory _TestSubmission(
-      {required final String id,
-      required final String title,
-      final String description,
-      required final Submission content,
-      required final Ability ability,
-      required final TestStatus status,
-      required final List<DateTime> statusChanges}) = _$TestSubmissionImpl;
-
-  factory _TestSubmission.fromJson(Map<String, dynamic> json) =
-      _$TestSubmissionImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get title;
-  @override
-  String get description;
-  @override
-  Submission get content;
-  @override
-  Ability get ability;
-  @override
-  TestStatus get status;
-  @override
-  List<DateTime> get statusChanges;
-  @override
-  @JsonKey(ignore: true)
-  _$$TestSubmissionImplCopyWith<_$TestSubmissionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$TestQuestionnaireImplCopyWith<$Res>
-    implements $TestCopyWith<$Res> {
-  factory _$$TestQuestionnaireImplCopyWith(_$TestQuestionnaireImpl value,
-          $Res Function(_$TestQuestionnaireImpl) then) =
-      __$$TestQuestionnaireImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      DateTime start,
-      DateTime end,
-      Questionnaire content,
-      Ability ability,
-      TestStatus status,
-      List<DateTime> statusChanges});
-
-  $QuestionnaireCopyWith<$Res> get content;
-  @override
-  $AbilityCopyWith<$Res> get ability;
-}
-
-/// @nodoc
-class __$$TestQuestionnaireImplCopyWithImpl<$Res>
-    extends _$TestCopyWithImpl<$Res, _$TestQuestionnaireImpl>
-    implements _$$TestQuestionnaireImplCopyWith<$Res> {
-  __$$TestQuestionnaireImplCopyWithImpl(_$TestQuestionnaireImpl _value,
-      $Res Function(_$TestQuestionnaireImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? start = null,
-    Object? end = null,
-    Object? content = null,
-    Object? ability = null,
-    Object? status = null,
-    Object? statusChanges = null,
-  }) {
-    return _then(_$TestQuestionnaireImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      start: null == start
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      end: null == end
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Questionnaire,
-      ability: null == ability
-          ? _value.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as TestStatus,
-      statusChanges: null == statusChanges
-          ? _value._statusChanges
-          : statusChanges // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $QuestionnaireCopyWith<$Res> get content {
-    return $QuestionnaireCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TestQuestionnaireImpl implements _TestQuestionnaire {
-  const _$TestQuestionnaireImpl(
-      {required this.id,
-      required this.title,
-      this.description = '',
-      required this.start,
-      required this.end,
-      required this.content,
-      required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'questionnaire';
-
-  factory _$TestQuestionnaireImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TestQuestionnaireImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
-  @override
-  final DateTime start;
-  @override
-  final DateTime end;
-  @override
-  final Questionnaire content;
-  @override
-  final Ability ability;
-  @override
-  final TestStatus status;
-  final List<DateTime> _statusChanges;
-  @override
-  List<DateTime> get statusChanges {
-    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statusChanges);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Test.questionnaire(id: $id, title: $title, description: $description, start: $start, end: $end, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TestQuestionnaireImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.start, start) || other.start == start) &&
-            (identical(other.end, end) || other.end == end) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._statusChanges, _statusChanges));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      description,
-      start,
-      end,
-      content,
-      ability,
-      status,
-      const DeepCollectionEquality().hash(_statusChanges));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TestQuestionnaireImplCopyWith<_$TestQuestionnaireImpl> get copyWith =>
-      __$$TestQuestionnaireImplCopyWithImpl<_$TestQuestionnaireImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        survey,
-  }) {
-    return questionnaire(id, title, description, start, end, content, ability,
-        status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-  }) {
-    return questionnaire?.call(id, title, description, start, end, content,
-        ability, status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    required TResult orElse(),
-  }) {
-    if (questionnaire != null) {
-      return questionnaire(id, title, description, start, end, content, ability,
-          status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Test value) $default, {
-    required TResult Function(_TestSubmission value) submission,
-    required TResult Function(_TestQuestionnaire value) questionnaire,
-    required TResult Function(_TestSurvey value) survey,
-  }) {
-    return questionnaire(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Test value)? $default, {
-    TResult? Function(_TestSubmission value)? submission,
-    TResult? Function(_TestQuestionnaire value)? questionnaire,
-    TResult? Function(_TestSurvey value)? survey,
-  }) {
-    return questionnaire?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Test value)? $default, {
-    TResult Function(_TestSubmission value)? submission,
-    TResult Function(_TestQuestionnaire value)? questionnaire,
-    TResult Function(_TestSurvey value)? survey,
-    required TResult orElse(),
-  }) {
-    if (questionnaire != null) {
-      return questionnaire(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TestQuestionnaireImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TestQuestionnaire implements Test {
-  const factory _TestQuestionnaire(
-      {required final String id,
-      required final String title,
-      final String description,
-      required final DateTime start,
-      required final DateTime end,
-      required final Questionnaire content,
-      required final Ability ability,
-      required final TestStatus status,
-      required final List<DateTime> statusChanges}) = _$TestQuestionnaireImpl;
-
-  factory _TestQuestionnaire.fromJson(Map<String, dynamic> json) =
-      _$TestQuestionnaireImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get title;
-  @override
-  String get description;
-  DateTime get start;
-  DateTime get end;
-  @override
-  Questionnaire get content;
-  @override
-  Ability get ability;
-  @override
-  TestStatus get status;
-  @override
-  List<DateTime> get statusChanges;
-  @override
-  @JsonKey(ignore: true)
-  _$$TestQuestionnaireImplCopyWith<_$TestQuestionnaireImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$TestSurveyImplCopyWith<$Res> implements $TestCopyWith<$Res> {
-  factory _$$TestSurveyImplCopyWith(
-          _$TestSurveyImpl value, $Res Function(_$TestSurveyImpl) then) =
-      __$$TestSurveyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String title,
-      String description,
-      DateTime start,
-      DateTime end,
-      Survey content,
-      Ability ability,
-      TestStatus status,
-      List<DateTime> statusChanges});
-
-  $SurveyCopyWith<$Res> get content;
-  @override
-  $AbilityCopyWith<$Res> get ability;
-}
-
-/// @nodoc
-class __$$TestSurveyImplCopyWithImpl<$Res>
-    extends _$TestCopyWithImpl<$Res, _$TestSurveyImpl>
-    implements _$$TestSurveyImplCopyWith<$Res> {
-  __$$TestSurveyImplCopyWithImpl(
-      _$TestSurveyImpl _value, $Res Function(_$TestSurveyImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? description = null,
-    Object? start = null,
-    Object? end = null,
-    Object? content = null,
-    Object? ability = null,
-    Object? status = null,
-    Object? statusChanges = null,
-  }) {
-    return _then(_$TestSurveyImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      start: null == start
-          ? _value.start
-          : start // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      end: null == end
-          ? _value.end
-          : end // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Survey,
-      ability: null == ability
-          ? _value.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as TestStatus,
-      statusChanges: null == statusChanges
-          ? _value._statusChanges
-          : statusChanges // ignore: cast_nullable_to_non_nullable
-              as List<DateTime>,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SurveyCopyWith<$Res> get content {
-    return $SurveyCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TestSurveyImpl implements _TestSurvey {
-  const _$TestSurveyImpl(
-      {required this.id,
-      required this.title,
-      this.description = '',
-      required this.start,
-      required this.end,
-      required this.content,
-      required this.ability,
-      required this.status,
-      required final List<DateTime> statusChanges,
-      final String? $type})
-      : _statusChanges = statusChanges,
-        $type = $type ?? 'survey';
-
-  factory _$TestSurveyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TestSurveyImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String title;
-  @override
-  @JsonKey()
-  final String description;
-  @override
-  final DateTime start;
-  @override
-  final DateTime end;
-  @override
-  final Survey content;
-  @override
-  final Ability ability;
-  @override
-  final TestStatus status;
-  final List<DateTime> _statusChanges;
-  @override
-  List<DateTime> get statusChanges {
-    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_statusChanges);
-  }
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Test.survey(id: $id, title: $title, description: $description, start: $start, end: $end, content: $content, ability: $ability, status: $status, statusChanges: $statusChanges)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TestSurveyImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.start, start) || other.start == start) &&
-            (identical(other.end, end) || other.end == end) &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.status, status) || other.status == status) &&
-            const DeepCollectionEquality()
-                .equals(other._statusChanges, _statusChanges));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      description,
-      start,
-      end,
-      content,
-      ability,
-      status,
-      const DeepCollectionEquality().hash(_statusChanges));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TestSurveyImplCopyWith<_$TestSurveyImpl> get copyWith =>
-      __$$TestSurveyImplCopyWithImpl<_$TestSurveyImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        $default, {
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        submission,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        questionnaire,
-    required TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)
-        survey,
-  }) {
-    return survey(id, title, description, start, end, content, ability, status,
-        statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult? Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-  }) {
-    return survey?.call(id, title, description, start, end, content, ability,
-        status, statusChanges);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Object content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        $default, {
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            Submission content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        submission,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Questionnaire content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        questionnaire,
-    TResult Function(
-            String id,
-            String title,
-            String description,
-            DateTime start,
-            DateTime end,
-            Survey content,
-            Ability ability,
-            TestStatus status,
-            List<DateTime> statusChanges)?
-        survey,
-    required TResult orElse(),
-  }) {
-    if (survey != null) {
-      return survey(id, title, description, start, end, content, ability,
-          status, statusChanges);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Test value) $default, {
-    required TResult Function(_TestSubmission value) submission,
-    required TResult Function(_TestQuestionnaire value) questionnaire,
-    required TResult Function(_TestSurvey value) survey,
-  }) {
-    return survey(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_Test value)? $default, {
-    TResult? Function(_TestSubmission value)? submission,
-    TResult? Function(_TestQuestionnaire value)? questionnaire,
-    TResult? Function(_TestSurvey value)? survey,
-  }) {
-    return survey?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Test value)? $default, {
-    TResult Function(_TestSubmission value)? submission,
-    TResult Function(_TestQuestionnaire value)? questionnaire,
-    TResult Function(_TestSurvey value)? survey,
-    required TResult orElse(),
-  }) {
-    if (survey != null) {
-      return survey(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TestSurveyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TestSurvey implements Test {
-  const factory _TestSurvey(
-      {required final String id,
-      required final String title,
-      final String description,
-      required final DateTime start,
-      required final DateTime end,
-      required final Survey content,
-      required final Ability ability,
-      required final TestStatus status,
-      required final List<DateTime> statusChanges}) = _$TestSurveyImpl;
-
-  factory _TestSurvey.fromJson(Map<String, dynamic> json) =
-      _$TestSurveyImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get title;
-  @override
-  String get description;
-  DateTime get start;
-  DateTime get end;
-  @override
-  Survey get content;
-  @override
-  Ability get ability;
-  @override
-  TestStatus get status;
-  @override
-  List<DateTime> get statusChanges;
-  @override
-  @JsonKey(ignore: true)
-  _$$TestSurveyImplCopyWith<_$TestSurveyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 Exam _$ExamFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType']) {
-    case 'quiz':
-      return _ExamQuiz.fromJson(json);
-    case 'test':
-      return _ExamTest.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'Exam',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
+  return _Exam.fromJson(json);
 }
 
 /// @nodoc
 mixin _$Exam {
   String get id => throw _privateConstructorUsedError;
-  Certificate get certificate => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  DateTime get start => throw _privateConstructorUsedError;
+  DateTime get end => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   Object get content => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id, Certificate certificate, Quiz content)
-        quiz,
-    required TResult Function(String id, Certificate certificate, Test content)
-        test,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String id, Certificate certificate, Quiz content)? quiz,
-    TResult? Function(String id, Certificate certificate, Test content)? test,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id, Certificate certificate, Quiz content)? quiz,
-    TResult Function(String id, Certificate certificate, Test content)? test,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ExamQuiz value) quiz,
-    required TResult Function(_ExamTest value) test,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ExamQuiz value)? quiz,
-    TResult? Function(_ExamTest value)? test,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ExamQuiz value)? quiz,
-    TResult Function(_ExamTest value)? test,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  Certificate get certificate => throw _privateConstructorUsedError;
+  ExamStatus get status => throw _privateConstructorUsedError;
+  QuizStatus get statusValidation => throw _privateConstructorUsedError;
+  List<DateTime> get statusChanges => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ExamCopyWith<Exam> get copyWith => throw _privateConstructorUsedError;
@@ -9701,7 +5892,17 @@ abstract class $ExamCopyWith<$Res> {
   factory $ExamCopyWith(Exam value, $Res Function(Exam) then) =
       _$ExamCopyWithImpl<$Res, Exam>;
   @useResult
-  $Res call({String id, Certificate certificate});
+  $Res call(
+      {String id,
+      String name,
+      DateTime start,
+      DateTime end,
+      String description,
+      Object content,
+      Certificate certificate,
+      ExamStatus status,
+      QuizStatus statusValidation,
+      List<DateTime> statusChanges});
 
   $CertificateCopyWith<$Res> get certificate;
 }
@@ -9720,17 +5921,54 @@ class _$ExamCopyWithImpl<$Res, $Val extends Exam>
   @override
   $Res call({
     Object? id = null,
+    Object? name = null,
+    Object? start = null,
+    Object? end = null,
+    Object? description = null,
+    Object? content = null,
     Object? certificate = null,
+    Object? status = null,
+    Object? statusValidation = null,
+    Object? statusChanges = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      start: null == start
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      end: null == end
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      content: null == content ? _value.content : content,
       certificate: null == certificate
           ? _value.certificate
           : certificate // ignore: cast_nullable_to_non_nullable
               as Certificate,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ExamStatus,
+      statusValidation: null == statusValidation
+          ? _value.statusValidation
+          : statusValidation // ignore: cast_nullable_to_non_nullable
+              as QuizStatus,
+      statusChanges: null == statusChanges
+          ? _value.statusChanges
+          : statusChanges // ignore: cast_nullable_to_non_nullable
+              as List<DateTime>,
     ) as $Val);
   }
 
@@ -9744,394 +5982,232 @@ class _$ExamCopyWithImpl<$Res, $Val extends Exam>
 }
 
 /// @nodoc
-abstract class _$$ExamQuizImplCopyWith<$Res> implements $ExamCopyWith<$Res> {
-  factory _$$ExamQuizImplCopyWith(
-          _$ExamQuizImpl value, $Res Function(_$ExamQuizImpl) then) =
-      __$$ExamQuizImplCopyWithImpl<$Res>;
+abstract class _$$ExamImplCopyWith<$Res> implements $ExamCopyWith<$Res> {
+  factory _$$ExamImplCopyWith(
+          _$ExamImpl value, $Res Function(_$ExamImpl) then) =
+      __$$ExamImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, Certificate certificate, Quiz content});
+  $Res call(
+      {String id,
+      String name,
+      DateTime start,
+      DateTime end,
+      String description,
+      Object content,
+      Certificate certificate,
+      ExamStatus status,
+      QuizStatus statusValidation,
+      List<DateTime> statusChanges});
 
   @override
   $CertificateCopyWith<$Res> get certificate;
-  $QuizCopyWith<$Res> get content;
 }
 
 /// @nodoc
-class __$$ExamQuizImplCopyWithImpl<$Res>
-    extends _$ExamCopyWithImpl<$Res, _$ExamQuizImpl>
-    implements _$$ExamQuizImplCopyWith<$Res> {
-  __$$ExamQuizImplCopyWithImpl(
-      _$ExamQuizImpl _value, $Res Function(_$ExamQuizImpl) _then)
+class __$$ExamImplCopyWithImpl<$Res>
+    extends _$ExamCopyWithImpl<$Res, _$ExamImpl>
+    implements _$$ExamImplCopyWith<$Res> {
+  __$$ExamImplCopyWithImpl(_$ExamImpl _value, $Res Function(_$ExamImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
-    Object? certificate = null,
+    Object? name = null,
+    Object? start = null,
+    Object? end = null,
+    Object? description = null,
     Object? content = null,
+    Object? certificate = null,
+    Object? status = null,
+    Object? statusValidation = null,
+    Object? statusChanges = null,
   }) {
-    return _then(_$ExamQuizImpl(
+    return _then(_$ExamImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      start: null == start
+          ? _value.start
+          : start // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      end: null == end
+          ? _value.end
+          : end // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      content: null == content ? _value.content : content,
       certificate: null == certificate
           ? _value.certificate
           : certificate // ignore: cast_nullable_to_non_nullable
               as Certificate,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Quiz,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ExamStatus,
+      statusValidation: null == statusValidation
+          ? _value.statusValidation
+          : statusValidation // ignore: cast_nullable_to_non_nullable
+              as QuizStatus,
+      statusChanges: null == statusChanges
+          ? _value._statusChanges
+          : statusChanges // ignore: cast_nullable_to_non_nullable
+              as List<DateTime>,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $QuizCopyWith<$Res> get content {
-    return $QuizCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ExamQuizImpl implements _ExamQuiz {
-  const _$ExamQuizImpl(
+class _$ExamImpl implements _Exam {
+  const _$ExamImpl(
       {required this.id,
-      required this.certificate,
+      required this.name,
+      required this.start,
+      required this.end,
+      this.description = '',
       required this.content,
-      final String? $type})
-      : $type = $type ?? 'quiz';
+      required this.certificate,
+      this.status = ExamStatus.preparing,
+      this.statusValidation = QuizStatus.unfinished,
+      required final List<DateTime> statusChanges})
+      : _statusChanges = statusChanges;
 
-  factory _$ExamQuizImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ExamQuizImplFromJson(json);
+  factory _$ExamImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ExamImplFromJson(json);
 
   @override
   final String id;
   @override
+  final String name;
+  @override
+  final DateTime start;
+  @override
+  final DateTime end;
+  @override
+  @JsonKey()
+  final String description;
+  @override
+  final Object content;
+  @override
   final Certificate certificate;
   @override
-  final Quiz content;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
+  @JsonKey()
+  final ExamStatus status;
+  @override
+  @JsonKey()
+  final QuizStatus statusValidation;
+  final List<DateTime> _statusChanges;
+  @override
+  List<DateTime> get statusChanges {
+    if (_statusChanges is EqualUnmodifiableListView) return _statusChanges;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_statusChanges);
+  }
 
   @override
   String toString() {
-    return 'Exam.quiz(id: $id, certificate: $certificate, content: $content)';
+    return 'Exam(id: $id, name: $name, start: $start, end: $end, description: $description, content: $content, certificate: $certificate, status: $status, statusValidation: $statusValidation, statusChanges: $statusChanges)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ExamQuizImpl &&
+            other is _$ExamImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.start, start) || other.start == start) &&
+            (identical(other.end, end) || other.end == end) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.content, content) &&
             (identical(other.certificate, certificate) ||
                 other.certificate == certificate) &&
-            (identical(other.content, content) || other.content == content));
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.statusValidation, statusValidation) ||
+                other.statusValidation == statusValidation) &&
+            const DeepCollectionEquality()
+                .equals(other._statusChanges, _statusChanges));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, certificate, content);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      start,
+      end,
+      description,
+      const DeepCollectionEquality().hash(content),
+      certificate,
+      status,
+      statusValidation,
+      const DeepCollectionEquality().hash(_statusChanges));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ExamQuizImplCopyWith<_$ExamQuizImpl> get copyWith =>
-      __$$ExamQuizImplCopyWithImpl<_$ExamQuizImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id, Certificate certificate, Quiz content)
-        quiz,
-    required TResult Function(String id, Certificate certificate, Test content)
-        test,
-  }) {
-    return quiz(id, certificate, content);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String id, Certificate certificate, Quiz content)? quiz,
-    TResult? Function(String id, Certificate certificate, Test content)? test,
-  }) {
-    return quiz?.call(id, certificate, content);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id, Certificate certificate, Quiz content)? quiz,
-    TResult Function(String id, Certificate certificate, Test content)? test,
-    required TResult orElse(),
-  }) {
-    if (quiz != null) {
-      return quiz(id, certificate, content);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ExamQuiz value) quiz,
-    required TResult Function(_ExamTest value) test,
-  }) {
-    return quiz(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ExamQuiz value)? quiz,
-    TResult? Function(_ExamTest value)? test,
-  }) {
-    return quiz?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ExamQuiz value)? quiz,
-    TResult Function(_ExamTest value)? test,
-    required TResult orElse(),
-  }) {
-    if (quiz != null) {
-      return quiz(this);
-    }
-    return orElse();
-  }
+  _$$ExamImplCopyWith<_$ExamImpl> get copyWith =>
+      __$$ExamImplCopyWithImpl<_$ExamImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ExamQuizImplToJson(
+    return _$$ExamImplToJson(
       this,
     );
   }
 }
 
-abstract class _ExamQuiz implements Exam {
-  const factory _ExamQuiz(
+abstract class _Exam implements Exam {
+  const factory _Exam(
       {required final String id,
+      required final String name,
+      required final DateTime start,
+      required final DateTime end,
+      final String description,
+      required final Object content,
       required final Certificate certificate,
-      required final Quiz content}) = _$ExamQuizImpl;
+      final ExamStatus status,
+      final QuizStatus statusValidation,
+      required final List<DateTime> statusChanges}) = _$ExamImpl;
 
-  factory _ExamQuiz.fromJson(Map<String, dynamic> json) =
-      _$ExamQuizImpl.fromJson;
+  factory _Exam.fromJson(Map<String, dynamic> json) = _$ExamImpl.fromJson;
 
   @override
   String get id;
   @override
-  Certificate get certificate;
+  String get name;
   @override
-  Quiz get content;
+  DateTime get start;
   @override
-  @JsonKey(ignore: true)
-  _$$ExamQuizImplCopyWith<_$ExamQuizImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$ExamTestImplCopyWith<$Res> implements $ExamCopyWith<$Res> {
-  factory _$$ExamTestImplCopyWith(
-          _$ExamTestImpl value, $Res Function(_$ExamTestImpl) then) =
-      __$$ExamTestImplCopyWithImpl<$Res>;
+  DateTime get end;
   @override
-  @useResult
-  $Res call({String id, Certificate certificate, Test content});
-
+  String get description;
   @override
-  $CertificateCopyWith<$Res> get certificate;
-  $TestCopyWith<$Res> get content;
-}
-
-/// @nodoc
-class __$$ExamTestImplCopyWithImpl<$Res>
-    extends _$ExamCopyWithImpl<$Res, _$ExamTestImpl>
-    implements _$$ExamTestImplCopyWith<$Res> {
-  __$$ExamTestImplCopyWithImpl(
-      _$ExamTestImpl _value, $Res Function(_$ExamTestImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? certificate = null,
-    Object? content = null,
-  }) {
-    return _then(_$ExamTestImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      certificate: null == certificate
-          ? _value.certificate
-          : certificate // ignore: cast_nullable_to_non_nullable
-              as Certificate,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as Test,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TestCopyWith<$Res> get content {
-    return $TestCopyWith<$Res>(_value.content, (value) {
-      return _then(_value.copyWith(content: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ExamTestImpl implements _ExamTest {
-  const _$ExamTestImpl(
-      {required this.id,
-      required this.certificate,
-      required this.content,
-      final String? $type})
-      : $type = $type ?? 'test';
-
-  factory _$ExamTestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ExamTestImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final Certificate certificate;
-  @override
-  final Test content;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'Exam.test(id: $id, certificate: $certificate, content: $content)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ExamTestImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.certificate, certificate) ||
-                other.certificate == certificate) &&
-            (identical(other.content, content) || other.content == content));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, certificate, content);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ExamTestImplCopyWith<_$ExamTestImpl> get copyWith =>
-      __$$ExamTestImplCopyWithImpl<_$ExamTestImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String id, Certificate certificate, Quiz content)
-        quiz,
-    required TResult Function(String id, Certificate certificate, Test content)
-        test,
-  }) {
-    return test(id, certificate, content);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String id, Certificate certificate, Quiz content)? quiz,
-    TResult? Function(String id, Certificate certificate, Test content)? test,
-  }) {
-    return test?.call(id, certificate, content);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String id, Certificate certificate, Quiz content)? quiz,
-    TResult Function(String id, Certificate certificate, Test content)? test,
-    required TResult orElse(),
-  }) {
-    if (test != null) {
-      return test(id, certificate, content);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ExamQuiz value) quiz,
-    required TResult Function(_ExamTest value) test,
-  }) {
-    return test(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ExamQuiz value)? quiz,
-    TResult? Function(_ExamTest value)? test,
-  }) {
-    return test?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ExamQuiz value)? quiz,
-    TResult Function(_ExamTest value)? test,
-    required TResult orElse(),
-  }) {
-    if (test != null) {
-      return test(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ExamTestImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ExamTest implements Exam {
-  const factory _ExamTest(
-      {required final String id,
-      required final Certificate certificate,
-      required final Test content}) = _$ExamTestImpl;
-
-  factory _ExamTest.fromJson(Map<String, dynamic> json) =
-      _$ExamTestImpl.fromJson;
-
-  @override
-  String get id;
+  Object get content;
   @override
   Certificate get certificate;
   @override
-  Test get content;
+  ExamStatus get status;
+  @override
+  QuizStatus get statusValidation;
+  @override
+  List<DateTime> get statusChanges;
   @override
   @JsonKey(ignore: true)
-  _$$ExamTestImplCopyWith<_$ExamTestImpl> get copyWith =>
+  _$$ExamImplCopyWith<_$ExamImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -10419,12 +6495,12 @@ abstract class _Group implements Group {
       throw _privateConstructorUsedError;
 }
 
-School _$SchoolFromJson(Map<String, dynamic> json) {
+SchoolTaiwan _$SchoolTaiwanFromJson(Map<String, dynamic> json) {
   return _SchoolTaiwan.fromJson(json);
 }
 
 /// @nodoc
-mixin _$School {
+mixin _$SchoolTaiwan {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   FoundationType get foundationType => throw _privateConstructorUsedError;
@@ -10434,77 +6510,18 @@ mixin _$School {
   String get phone => throw _privateConstructorUsedError;
   String get website => throw _privateConstructorUsedError;
   Object? get management => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String id,
-            String name,
-            FoundationType foundationType,
-            String cityName,
-            String regionName,
-            String address,
-            String phone,
-            String website,
-            Object? management)
-        taiwan,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            String id,
-            String name,
-            FoundationType foundationType,
-            String cityName,
-            String regionName,
-            String address,
-            String phone,
-            String website,
-            Object? management)?
-        taiwan,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String id,
-            String name,
-            FoundationType foundationType,
-            String cityName,
-            String regionName,
-            String address,
-            String phone,
-            String website,
-            Object? management)?
-        taiwan,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SchoolTaiwan value) taiwan,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SchoolTaiwan value)? taiwan,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SchoolTaiwan value)? taiwan,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SchoolCopyWith<School> get copyWith => throw _privateConstructorUsedError;
+  $SchoolTaiwanCopyWith<SchoolTaiwan> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SchoolCopyWith<$Res> {
-  factory $SchoolCopyWith(School value, $Res Function(School) then) =
-      _$SchoolCopyWithImpl<$Res, School>;
+abstract class $SchoolTaiwanCopyWith<$Res> {
+  factory $SchoolTaiwanCopyWith(
+          SchoolTaiwan value, $Res Function(SchoolTaiwan) then) =
+      _$SchoolTaiwanCopyWithImpl<$Res, SchoolTaiwan>;
   @useResult
   $Res call(
       {String id,
@@ -10519,9 +6536,9 @@ abstract class $SchoolCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SchoolCopyWithImpl<$Res, $Val extends School>
-    implements $SchoolCopyWith<$Res> {
-  _$SchoolCopyWithImpl(this._value, this._then);
+class _$SchoolTaiwanCopyWithImpl<$Res, $Val extends SchoolTaiwan>
+    implements $SchoolTaiwanCopyWith<$Res> {
+  _$SchoolTaiwanCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -10581,7 +6598,7 @@ class _$SchoolCopyWithImpl<$Res, $Val extends School>
 
 /// @nodoc
 abstract class _$$SchoolTaiwanImplCopyWith<$Res>
-    implements $SchoolCopyWith<$Res> {
+    implements $SchoolTaiwanCopyWith<$Res> {
   factory _$$SchoolTaiwanImplCopyWith(
           _$SchoolTaiwanImpl value, $Res Function(_$SchoolTaiwanImpl) then) =
       __$$SchoolTaiwanImplCopyWithImpl<$Res>;
@@ -10601,7 +6618,7 @@ abstract class _$$SchoolTaiwanImplCopyWith<$Res>
 
 /// @nodoc
 class __$$SchoolTaiwanImplCopyWithImpl<$Res>
-    extends _$SchoolCopyWithImpl<$Res, _$SchoolTaiwanImpl>
+    extends _$SchoolTaiwanCopyWithImpl<$Res, _$SchoolTaiwanImpl>
     implements _$$SchoolTaiwanImplCopyWith<$Res> {
   __$$SchoolTaiwanImplCopyWithImpl(
       _$SchoolTaiwanImpl _value, $Res Function(_$SchoolTaiwanImpl) _then)
@@ -10697,7 +6714,7 @@ class _$SchoolTaiwanImpl implements _SchoolTaiwan {
 
   @override
   String toString() {
-    return 'School.taiwan(id: $id, name: $name, foundationType: $foundationType, cityName: $cityName, regionName: $regionName, address: $address, phone: $phone, website: $website, management: $management)';
+    return 'SchoolTaiwan(id: $id, name: $name, foundationType: $foundationType, cityName: $cityName, regionName: $regionName, address: $address, phone: $phone, website: $website, management: $management)';
   }
 
   @override
@@ -10741,95 +6758,6 @@ class _$SchoolTaiwanImpl implements _SchoolTaiwan {
       __$$SchoolTaiwanImplCopyWithImpl<_$SchoolTaiwanImpl>(this, _$identity);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            String id,
-            String name,
-            FoundationType foundationType,
-            String cityName,
-            String regionName,
-            String address,
-            String phone,
-            String website,
-            Object? management)
-        taiwan,
-  }) {
-    return taiwan(id, name, foundationType, cityName, regionName, address,
-        phone, website, management);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            String id,
-            String name,
-            FoundationType foundationType,
-            String cityName,
-            String regionName,
-            String address,
-            String phone,
-            String website,
-            Object? management)?
-        taiwan,
-  }) {
-    return taiwan?.call(id, name, foundationType, cityName, regionName, address,
-        phone, website, management);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            String id,
-            String name,
-            FoundationType foundationType,
-            String cityName,
-            String regionName,
-            String address,
-            String phone,
-            String website,
-            Object? management)?
-        taiwan,
-    required TResult orElse(),
-  }) {
-    if (taiwan != null) {
-      return taiwan(id, name, foundationType, cityName, regionName, address,
-          phone, website, management);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SchoolTaiwan value) taiwan,
-  }) {
-    return taiwan(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SchoolTaiwan value)? taiwan,
-  }) {
-    return taiwan?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SchoolTaiwan value)? taiwan,
-    required TResult orElse(),
-  }) {
-    if (taiwan != null) {
-      return taiwan(this);
-    }
-    return orElse();
-  }
-
-  @override
   Map<String, dynamic> toJson() {
     return _$$SchoolTaiwanImplToJson(
       this,
@@ -10837,7 +6765,7 @@ class _$SchoolTaiwanImpl implements _SchoolTaiwan {
   }
 }
 
-abstract class _SchoolTaiwan implements School {
+abstract class _SchoolTaiwan implements SchoolTaiwan {
   const factory _SchoolTaiwan(
       {required final String id,
       required final String name,
@@ -11035,7 +6963,7 @@ class _$MessageImpl implements _Message {
       required this.content,
       required this.sent,
       this.received = null,
-      required this.status,
+      this.status = MessageStatus.sending,
       required final List<DateTime> statusChanges,
       this.attachment = null})
       : _statusChanges = statusChanges;
@@ -11053,6 +6981,7 @@ class _$MessageImpl implements _Message {
   @JsonKey()
   final DateTime? received;
   @override
+  @JsonKey()
   final MessageStatus status;
   final List<DateTime> _statusChanges;
   @override
@@ -11120,7 +7049,7 @@ abstract class _Message implements Message {
       required final String content,
       required final DateTime sent,
       final DateTime? received,
-      required final MessageStatus status,
+      final MessageStatus status,
       required final List<DateTime> statusChanges,
       final Object? attachment}) = _$MessageImpl;
 
@@ -13705,6 +9634,636 @@ abstract class _Postbook implements Postbook {
       throw _privateConstructorUsedError;
 }
 
+VideoPanel _$VideoPanelFromJson(Map<String, dynamic> json) {
+  return _VideoPanel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$VideoPanel {
+  String get id => throw _privateConstructorUsedError;
+  String? get v => throw _privateConstructorUsedError;
+  Object get video => throw _privateConstructorUsedError;
+  Map<int, Object> get checkpoints => throw _privateConstructorUsedError;
+  Object? get management => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VideoPanelCopyWith<VideoPanel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $VideoPanelCopyWith<$Res> {
+  factory $VideoPanelCopyWith(
+          VideoPanel value, $Res Function(VideoPanel) then) =
+      _$VideoPanelCopyWithImpl<$Res, VideoPanel>;
+  @useResult
+  $Res call(
+      {String id,
+      String? v,
+      Object video,
+      Map<int, Object> checkpoints,
+      Object? management});
+}
+
+/// @nodoc
+class _$VideoPanelCopyWithImpl<$Res, $Val extends VideoPanel>
+    implements $VideoPanelCopyWith<$Res> {
+  _$VideoPanelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? v = freezed,
+    Object? video = null,
+    Object? checkpoints = null,
+    Object? management = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      v: freezed == v
+          ? _value.v
+          : v // ignore: cast_nullable_to_non_nullable
+              as String?,
+      video: null == video ? _value.video : video,
+      checkpoints: null == checkpoints
+          ? _value.checkpoints
+          : checkpoints // ignore: cast_nullable_to_non_nullable
+              as Map<int, Object>,
+      management: freezed == management ? _value.management : management,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$VideoPanelImplCopyWith<$Res>
+    implements $VideoPanelCopyWith<$Res> {
+  factory _$$VideoPanelImplCopyWith(
+          _$VideoPanelImpl value, $Res Function(_$VideoPanelImpl) then) =
+      __$$VideoPanelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String? v,
+      Object video,
+      Map<int, Object> checkpoints,
+      Object? management});
+}
+
+/// @nodoc
+class __$$VideoPanelImplCopyWithImpl<$Res>
+    extends _$VideoPanelCopyWithImpl<$Res, _$VideoPanelImpl>
+    implements _$$VideoPanelImplCopyWith<$Res> {
+  __$$VideoPanelImplCopyWithImpl(
+      _$VideoPanelImpl _value, $Res Function(_$VideoPanelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? v = freezed,
+    Object? video = null,
+    Object? checkpoints = null,
+    Object? management = freezed,
+  }) {
+    return _then(_$VideoPanelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      v: freezed == v
+          ? _value.v
+          : v // ignore: cast_nullable_to_non_nullable
+              as String?,
+      video: null == video ? _value.video : video,
+      checkpoints: null == checkpoints
+          ? _value._checkpoints
+          : checkpoints // ignore: cast_nullable_to_non_nullable
+              as Map<int, Object>,
+      management: freezed == management ? _value.management : management,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$VideoPanelImpl implements _VideoPanel {
+  const _$VideoPanelImpl(
+      {required this.id,
+      this.v = null,
+      required this.video,
+      required final Map<int, Object> checkpoints,
+      this.management = null})
+      : _checkpoints = checkpoints;
+
+  factory _$VideoPanelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VideoPanelImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  @JsonKey()
+  final String? v;
+  @override
+  final Object video;
+  final Map<int, Object> _checkpoints;
+  @override
+  Map<int, Object> get checkpoints {
+    if (_checkpoints is EqualUnmodifiableMapView) return _checkpoints;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_checkpoints);
+  }
+
+  @override
+  @JsonKey()
+  final Object? management;
+
+  @override
+  String toString() {
+    return 'VideoPanel(id: $id, v: $v, video: $video, checkpoints: $checkpoints, management: $management)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VideoPanelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.v, v) || other.v == v) &&
+            const DeepCollectionEquality().equals(other.video, video) &&
+            const DeepCollectionEquality()
+                .equals(other._checkpoints, _checkpoints) &&
+            const DeepCollectionEquality()
+                .equals(other.management, management));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      v,
+      const DeepCollectionEquality().hash(video),
+      const DeepCollectionEquality().hash(_checkpoints),
+      const DeepCollectionEquality().hash(management));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VideoPanelImplCopyWith<_$VideoPanelImpl> get copyWith =>
+      __$$VideoPanelImplCopyWithImpl<_$VideoPanelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$VideoPanelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _VideoPanel implements VideoPanel {
+  const factory _VideoPanel(
+      {required final String id,
+      final String? v,
+      required final Object video,
+      required final Map<int, Object> checkpoints,
+      final Object? management}) = _$VideoPanelImpl;
+
+  factory _VideoPanel.fromJson(Map<String, dynamic> json) =
+      _$VideoPanelImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  String? get v;
+  @override
+  Object get video;
+  @override
+  Map<int, Object> get checkpoints;
+  @override
+  Object? get management;
+  @override
+  @JsonKey(ignore: true)
+  _$$VideoPanelImplCopyWith<_$VideoPanelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TaskPanel _$TaskPanelFromJson(Map<String, dynamic> json) {
+  return _TaskPanel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TaskPanel {
+  String get id => throw _privateConstructorUsedError;
+  String? get v => throw _privateConstructorUsedError;
+  List<Task> get tasks => throw _privateConstructorUsedError;
+  Object? get management => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TaskPanelCopyWith<TaskPanel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TaskPanelCopyWith<$Res> {
+  factory $TaskPanelCopyWith(TaskPanel value, $Res Function(TaskPanel) then) =
+      _$TaskPanelCopyWithImpl<$Res, TaskPanel>;
+  @useResult
+  $Res call({String id, String? v, List<Task> tasks, Object? management});
+}
+
+/// @nodoc
+class _$TaskPanelCopyWithImpl<$Res, $Val extends TaskPanel>
+    implements $TaskPanelCopyWith<$Res> {
+  _$TaskPanelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? v = freezed,
+    Object? tasks = null,
+    Object? management = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      v: freezed == v
+          ? _value.v
+          : v // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tasks: null == tasks
+          ? _value.tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<Task>,
+      management: freezed == management ? _value.management : management,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TaskPanelImplCopyWith<$Res>
+    implements $TaskPanelCopyWith<$Res> {
+  factory _$$TaskPanelImplCopyWith(
+          _$TaskPanelImpl value, $Res Function(_$TaskPanelImpl) then) =
+      __$$TaskPanelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String? v, List<Task> tasks, Object? management});
+}
+
+/// @nodoc
+class __$$TaskPanelImplCopyWithImpl<$Res>
+    extends _$TaskPanelCopyWithImpl<$Res, _$TaskPanelImpl>
+    implements _$$TaskPanelImplCopyWith<$Res> {
+  __$$TaskPanelImplCopyWithImpl(
+      _$TaskPanelImpl _value, $Res Function(_$TaskPanelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? v = freezed,
+    Object? tasks = null,
+    Object? management = freezed,
+  }) {
+    return _then(_$TaskPanelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      v: freezed == v
+          ? _value.v
+          : v // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tasks: null == tasks
+          ? _value._tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<Task>,
+      management: freezed == management ? _value.management : management,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TaskPanelImpl implements _TaskPanel {
+  const _$TaskPanelImpl(
+      {required this.id,
+      this.v = null,
+      required final List<Task> tasks,
+      this.management = null})
+      : _tasks = tasks;
+
+  factory _$TaskPanelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TaskPanelImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  @JsonKey()
+  final String? v;
+  final List<Task> _tasks;
+  @override
+  List<Task> get tasks {
+    if (_tasks is EqualUnmodifiableListView) return _tasks;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tasks);
+  }
+
+  @override
+  @JsonKey()
+  final Object? management;
+
+  @override
+  String toString() {
+    return 'TaskPanel(id: $id, v: $v, tasks: $tasks, management: $management)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TaskPanelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.v, v) || other.v == v) &&
+            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
+            const DeepCollectionEquality()
+                .equals(other.management, management));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      v,
+      const DeepCollectionEquality().hash(_tasks),
+      const DeepCollectionEquality().hash(management));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TaskPanelImplCopyWith<_$TaskPanelImpl> get copyWith =>
+      __$$TaskPanelImplCopyWithImpl<_$TaskPanelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TaskPanelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TaskPanel implements TaskPanel {
+  const factory _TaskPanel(
+      {required final String id,
+      final String? v,
+      required final List<Task> tasks,
+      final Object? management}) = _$TaskPanelImpl;
+
+  factory _TaskPanel.fromJson(Map<String, dynamic> json) =
+      _$TaskPanelImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  String? get v;
+  @override
+  List<Task> get tasks;
+  @override
+  Object? get management;
+  @override
+  @JsonKey(ignore: true)
+  _$$TaskPanelImplCopyWith<_$TaskPanelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AssignmentPanel _$AssignmentPanelFromJson(Map<String, dynamic> json) {
+  return _AssignmentPanel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AssignmentPanel {
+  String get id => throw _privateConstructorUsedError;
+  String? get v => throw _privateConstructorUsedError;
+  List<Assignment> get assignments => throw _privateConstructorUsedError;
+  Object? get management => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AssignmentPanelCopyWith<AssignmentPanel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AssignmentPanelCopyWith<$Res> {
+  factory $AssignmentPanelCopyWith(
+          AssignmentPanel value, $Res Function(AssignmentPanel) then) =
+      _$AssignmentPanelCopyWithImpl<$Res, AssignmentPanel>;
+  @useResult
+  $Res call(
+      {String id, String? v, List<Assignment> assignments, Object? management});
+}
+
+/// @nodoc
+class _$AssignmentPanelCopyWithImpl<$Res, $Val extends AssignmentPanel>
+    implements $AssignmentPanelCopyWith<$Res> {
+  _$AssignmentPanelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? v = freezed,
+    Object? assignments = null,
+    Object? management = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      v: freezed == v
+          ? _value.v
+          : v // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assignments: null == assignments
+          ? _value.assignments
+          : assignments // ignore: cast_nullable_to_non_nullable
+              as List<Assignment>,
+      management: freezed == management ? _value.management : management,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AssignmentPanelImplCopyWith<$Res>
+    implements $AssignmentPanelCopyWith<$Res> {
+  factory _$$AssignmentPanelImplCopyWith(_$AssignmentPanelImpl value,
+          $Res Function(_$AssignmentPanelImpl) then) =
+      __$$AssignmentPanelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id, String? v, List<Assignment> assignments, Object? management});
+}
+
+/// @nodoc
+class __$$AssignmentPanelImplCopyWithImpl<$Res>
+    extends _$AssignmentPanelCopyWithImpl<$Res, _$AssignmentPanelImpl>
+    implements _$$AssignmentPanelImplCopyWith<$Res> {
+  __$$AssignmentPanelImplCopyWithImpl(
+      _$AssignmentPanelImpl _value, $Res Function(_$AssignmentPanelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? v = freezed,
+    Object? assignments = null,
+    Object? management = freezed,
+  }) {
+    return _then(_$AssignmentPanelImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      v: freezed == v
+          ? _value.v
+          : v // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assignments: null == assignments
+          ? _value._assignments
+          : assignments // ignore: cast_nullable_to_non_nullable
+              as List<Assignment>,
+      management: freezed == management ? _value.management : management,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AssignmentPanelImpl implements _AssignmentPanel {
+  const _$AssignmentPanelImpl(
+      {required this.id,
+      this.v = null,
+      required final List<Assignment> assignments,
+      this.management = null})
+      : _assignments = assignments;
+
+  factory _$AssignmentPanelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssignmentPanelImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  @JsonKey()
+  final String? v;
+  final List<Assignment> _assignments;
+  @override
+  List<Assignment> get assignments {
+    if (_assignments is EqualUnmodifiableListView) return _assignments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_assignments);
+  }
+
+  @override
+  @JsonKey()
+  final Object? management;
+
+  @override
+  String toString() {
+    return 'AssignmentPanel(id: $id, v: $v, assignments: $assignments, management: $management)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssignmentPanelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.v, v) || other.v == v) &&
+            const DeepCollectionEquality()
+                .equals(other._assignments, _assignments) &&
+            const DeepCollectionEquality()
+                .equals(other.management, management));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      v,
+      const DeepCollectionEquality().hash(_assignments),
+      const DeepCollectionEquality().hash(management));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssignmentPanelImplCopyWith<_$AssignmentPanelImpl> get copyWith =>
+      __$$AssignmentPanelImplCopyWithImpl<_$AssignmentPanelImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssignmentPanelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AssignmentPanel implements AssignmentPanel {
+  const factory _AssignmentPanel(
+      {required final String id,
+      final String? v,
+      required final List<Assignment> assignments,
+      final Object? management}) = _$AssignmentPanelImpl;
+
+  factory _AssignmentPanel.fromJson(Map<String, dynamic> json) =
+      _$AssignmentPanelImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  String? get v;
+  @override
+  List<Assignment> get assignments;
+  @override
+  Object? get management;
+  @override
+  @JsonKey(ignore: true)
+  _$$AssignmentPanelImplCopyWith<_$AssignmentPanelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 BoardNotice _$BoardNoticeFromJson(Map<String, dynamic> json) {
   return _BoardNotice.fromJson(json);
 }
@@ -14114,411 +10673,6 @@ abstract class _BoardAnnouncement implements BoardAnnouncement {
   @override
   @JsonKey(ignore: true)
   _$$BoardAnnouncementImplCopyWith<_$BoardAnnouncementImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TaskPanel _$TaskPanelFromJson(Map<String, dynamic> json) {
-  return _TaskPanel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$TaskPanel {
-  String get id => throw _privateConstructorUsedError;
-  String? get v => throw _privateConstructorUsedError;
-  List<Task> get tasks => throw _privateConstructorUsedError;
-  Object? get management => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TaskPanelCopyWith<TaskPanel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TaskPanelCopyWith<$Res> {
-  factory $TaskPanelCopyWith(TaskPanel value, $Res Function(TaskPanel) then) =
-      _$TaskPanelCopyWithImpl<$Res, TaskPanel>;
-  @useResult
-  $Res call({String id, String? v, List<Task> tasks, Object? management});
-}
-
-/// @nodoc
-class _$TaskPanelCopyWithImpl<$Res, $Val extends TaskPanel>
-    implements $TaskPanelCopyWith<$Res> {
-  _$TaskPanelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? v = freezed,
-    Object? tasks = null,
-    Object? management = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      v: freezed == v
-          ? _value.v
-          : v // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tasks: null == tasks
-          ? _value.tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<Task>,
-      management: freezed == management ? _value.management : management,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TaskPanelImplCopyWith<$Res>
-    implements $TaskPanelCopyWith<$Res> {
-  factory _$$TaskPanelImplCopyWith(
-          _$TaskPanelImpl value, $Res Function(_$TaskPanelImpl) then) =
-      __$$TaskPanelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, String? v, List<Task> tasks, Object? management});
-}
-
-/// @nodoc
-class __$$TaskPanelImplCopyWithImpl<$Res>
-    extends _$TaskPanelCopyWithImpl<$Res, _$TaskPanelImpl>
-    implements _$$TaskPanelImplCopyWith<$Res> {
-  __$$TaskPanelImplCopyWithImpl(
-      _$TaskPanelImpl _value, $Res Function(_$TaskPanelImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? v = freezed,
-    Object? tasks = null,
-    Object? management = freezed,
-  }) {
-    return _then(_$TaskPanelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      v: freezed == v
-          ? _value.v
-          : v // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tasks: null == tasks
-          ? _value._tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<Task>,
-      management: freezed == management ? _value.management : management,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TaskPanelImpl implements _TaskPanel {
-  const _$TaskPanelImpl(
-      {required this.id,
-      this.v = null,
-      required final List<Task> tasks,
-      this.management = null})
-      : _tasks = tasks;
-
-  factory _$TaskPanelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TaskPanelImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  @JsonKey()
-  final String? v;
-  final List<Task> _tasks;
-  @override
-  List<Task> get tasks {
-    if (_tasks is EqualUnmodifiableListView) return _tasks;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tasks);
-  }
-
-  @override
-  @JsonKey()
-  final Object? management;
-
-  @override
-  String toString() {
-    return 'TaskPanel(id: $id, v: $v, tasks: $tasks, management: $management)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TaskPanelImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.v, v) || other.v == v) &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
-            const DeepCollectionEquality()
-                .equals(other.management, management));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      v,
-      const DeepCollectionEquality().hash(_tasks),
-      const DeepCollectionEquality().hash(management));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TaskPanelImplCopyWith<_$TaskPanelImpl> get copyWith =>
-      __$$TaskPanelImplCopyWithImpl<_$TaskPanelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TaskPanelImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TaskPanel implements TaskPanel {
-  const factory _TaskPanel(
-      {required final String id,
-      final String? v,
-      required final List<Task> tasks,
-      final Object? management}) = _$TaskPanelImpl;
-
-  factory _TaskPanel.fromJson(Map<String, dynamic> json) =
-      _$TaskPanelImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String? get v;
-  @override
-  List<Task> get tasks;
-  @override
-  Object? get management;
-  @override
-  @JsonKey(ignore: true)
-  _$$TaskPanelImplCopyWith<_$TaskPanelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-AssignmentPanel _$AssignmentPanelFromJson(Map<String, dynamic> json) {
-  return _AssignmentPanel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$AssignmentPanel {
-  String get id => throw _privateConstructorUsedError;
-  String? get v => throw _privateConstructorUsedError;
-  List<Assignment> get assignments => throw _privateConstructorUsedError;
-  Object? get management => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AssignmentPanelCopyWith<AssignmentPanel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AssignmentPanelCopyWith<$Res> {
-  factory $AssignmentPanelCopyWith(
-          AssignmentPanel value, $Res Function(AssignmentPanel) then) =
-      _$AssignmentPanelCopyWithImpl<$Res, AssignmentPanel>;
-  @useResult
-  $Res call(
-      {String id, String? v, List<Assignment> assignments, Object? management});
-}
-
-/// @nodoc
-class _$AssignmentPanelCopyWithImpl<$Res, $Val extends AssignmentPanel>
-    implements $AssignmentPanelCopyWith<$Res> {
-  _$AssignmentPanelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? v = freezed,
-    Object? assignments = null,
-    Object? management = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      v: freezed == v
-          ? _value.v
-          : v // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assignments: null == assignments
-          ? _value.assignments
-          : assignments // ignore: cast_nullable_to_non_nullable
-              as List<Assignment>,
-      management: freezed == management ? _value.management : management,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$AssignmentPanelImplCopyWith<$Res>
-    implements $AssignmentPanelCopyWith<$Res> {
-  factory _$$AssignmentPanelImplCopyWith(_$AssignmentPanelImpl value,
-          $Res Function(_$AssignmentPanelImpl) then) =
-      __$$AssignmentPanelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id, String? v, List<Assignment> assignments, Object? management});
-}
-
-/// @nodoc
-class __$$AssignmentPanelImplCopyWithImpl<$Res>
-    extends _$AssignmentPanelCopyWithImpl<$Res, _$AssignmentPanelImpl>
-    implements _$$AssignmentPanelImplCopyWith<$Res> {
-  __$$AssignmentPanelImplCopyWithImpl(
-      _$AssignmentPanelImpl _value, $Res Function(_$AssignmentPanelImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? v = freezed,
-    Object? assignments = null,
-    Object? management = freezed,
-  }) {
-    return _then(_$AssignmentPanelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      v: freezed == v
-          ? _value.v
-          : v // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assignments: null == assignments
-          ? _value._assignments
-          : assignments // ignore: cast_nullable_to_non_nullable
-              as List<Assignment>,
-      management: freezed == management ? _value.management : management,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AssignmentPanelImpl implements _AssignmentPanel {
-  const _$AssignmentPanelImpl(
-      {required this.id,
-      this.v = null,
-      required final List<Assignment> assignments,
-      this.management = null})
-      : _assignments = assignments;
-
-  factory _$AssignmentPanelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssignmentPanelImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  @JsonKey()
-  final String? v;
-  final List<Assignment> _assignments;
-  @override
-  List<Assignment> get assignments {
-    if (_assignments is EqualUnmodifiableListView) return _assignments;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_assignments);
-  }
-
-  @override
-  @JsonKey()
-  final Object? management;
-
-  @override
-  String toString() {
-    return 'AssignmentPanel(id: $id, v: $v, assignments: $assignments, management: $management)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AssignmentPanelImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.v, v) || other.v == v) &&
-            const DeepCollectionEquality()
-                .equals(other._assignments, _assignments) &&
-            const DeepCollectionEquality()
-                .equals(other.management, management));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      v,
-      const DeepCollectionEquality().hash(_assignments),
-      const DeepCollectionEquality().hash(management));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AssignmentPanelImplCopyWith<_$AssignmentPanelImpl> get copyWith =>
-      __$$AssignmentPanelImplCopyWithImpl<_$AssignmentPanelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AssignmentPanelImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _AssignmentPanel implements AssignmentPanel {
-  const factory _AssignmentPanel(
-      {required final String id,
-      final String? v,
-      required final List<Assignment> assignments,
-      final Object? management}) = _$AssignmentPanelImpl;
-
-  factory _AssignmentPanel.fromJson(Map<String, dynamic> json) =
-      _$AssignmentPanelImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String? get v;
-  @override
-  List<Assignment> get assignments;
-  @override
-  Object? get management;
-  @override
-  @JsonKey(ignore: true)
-  _$$AssignmentPanelImplCopyWith<_$AssignmentPanelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

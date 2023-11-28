@@ -22,3 +22,7 @@
 ## 0.0.6
 - integrate all file into `lib/nomisal_app.dart`
 - partial export at `bin/nomisal_app.dart`
+
+## 0.0.7
+- remove unnecessary partial export at `bin/nomisal_app.dart`
+- retain only 1 no-name factory for all entities, to ensure that all the properties can be used

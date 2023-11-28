@@ -34,7 +34,7 @@ class Student with _$Student {
     required String id,
     required String idOfSchool,
     required String idOfClass,
-    required School school,
+    required SchoolTaiwan school,
     required String name,
   }) = _Student;
 
@@ -57,7 +57,7 @@ class StudentCompanion with _$StudentCompanion {
 }
 
 @freezed
-class Parent<G extends SchoolQualification> with _$Parent {
+class Parent with _$Parent {
   @Implements<Identity>()
   const factory Parent({
     required String id,
@@ -69,13 +69,13 @@ class Parent<G extends SchoolQualification> with _$Parent {
 }
 
 @freezed
-class Teacher<G extends SchoolQualification> with _$Teacher {
+class Teacher with _$Teacher {
   @Implements<Identity>()
   const factory Teacher({
     required String id,
     required String idOfSchool,
     required String name,
-    required School school,
+    required SchoolTaiwan school,
     required List<Group> students,
   }) = _Teacher;
 
@@ -84,12 +84,12 @@ class Teacher<G extends SchoolQualification> with _$Teacher {
 }
 
 @freezed
-class SchoolManager<G extends SchoolQualification> with _$SchoolManager {
+class SchoolManager with _$SchoolManager {
   @Implements<Identity>()
   const factory SchoolManager({
     required String id,
     required String name,
-    required School school,
+    required SchoolTaiwan school,
     required List<Group> students,
     required List<Group> teachers,
   }) = _SchoolManager;

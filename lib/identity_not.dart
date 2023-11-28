@@ -4,8 +4,8 @@ part of 'nomisal_app.dart';
 ///
 /// class
 ///   - Content       ([Note], ...;[Submission], ...)
-///   - LC            ([Message], ...;[Token], ...;[Score], ...;[LearningNode], ...)  (Linked Content)
-///   - CMS           ([Notebook], ...;[Inbox])                                       (Content Management System)
+///   - LC            ([Message], ...)                  (Linked Content)
+///   - CMS           ([Notebook], ...;[Inbox])         (Content Management System)
 ///
 /// interfaces, enums, extensions
 ///   - Status        ([WorkStatus], ...)
@@ -257,8 +257,8 @@ class Questionnaire with _$Questionnaire {
 
 // for questions list with provided options
 @freezed
-class Survey with _$Survey {
-  const factory Survey.choosing({
+class SurveyChoosing with _$SurveyChoosing {
+  const factory SurveyChoosing({
     required String id,
     required String title,
     @Default('') String description,
@@ -267,71 +267,36 @@ class Survey with _$Survey {
     @Default([]) List<int> answers,
   }) = _SurveyChoosing;
 
-  const factory Survey.matching({
+  factory SurveyChoosing.fromJson(Json json) => _$SurveyChoosingFromJson(json);
+}
+
+@freezed
+class SurveyMatching with _$SurveyMatching {
+  const factory SurveyMatching({
     required String id,
     required String title,
     @Default('') String description,
+    required List<Object> questions,
     required List<List<Object>> sideA,
     required List<List<Object>> sideB,
     @Default([]) List<Map<int, int>> answers,
   }) = _SurveyMatching;
 
-  factory Survey.fromJson(Json json) => _$SurveyFromJson(json);
+  factory SurveyMatching.fromJson(Json json) => _$SurveyMatchingFromJson(json);
 }
 
-// no time limit
+// no time limit ([content] may be submission, questionnaire, survey..., videoCheckpoint)
 @freezed
 class Quiz with _$Quiz {
   const factory Quiz({
     required String id,
-    required String title,
+    required String name,
     @Default('') String description,
     required Object content,
     required Ability ability,
-    required QuizStatus status,
+    @Default(QuizStatus.unfinished) QuizStatus statusValidation,
     required List<DateTime> statusChanges,
   }) = _Quiz;
-
-  const factory Quiz.submission({
-    required String id,
-    required String title,
-    @Default('') String description,
-    required Submission content,
-    required Ability ability,
-    required QuizStatus status,
-    required List<DateTime> statusChanges,
-  }) = _QuizSubmission;
-
-  const factory Quiz.questionnaire({
-    required String id,
-    required String title,
-    @Default('') String description,
-    required Questionnaire content,
-    required Ability ability,
-    required QuizStatus status,
-    required List<DateTime> statusChanges,
-  }) = _QuizQuestionnaire;
-
-  const factory Quiz.survey({
-    required String id,
-    required String title,
-    @Default('') String description,
-    required Survey content,
-    required Ability ability,
-    required QuizStatus status,
-    required List<DateTime> statusChanges,
-  }) = _QuizSurvey;
-
-  const factory Quiz.videoCheckpoint({
-    required String id,
-    required String title,
-    @Default('') String description,
-    required Object content,
-    required Map<int, Object> checkpoints,
-    required Ability ability,
-    required QuizStatus status,
-    required List<DateTime> statusChanges,
-  }) = _QuizVideoCheckpoint;
 
   factory Quiz.fromJson(Json json) => _$QuizFromJson(json);
 }
@@ -341,67 +306,35 @@ class Quiz with _$Quiz {
 class Test with _$Test {
   const factory Test({
     required String id,
-    required String title,
-    @Default('') String description,
+    required String name,
     required DateTime start,
     required DateTime end,
+    @Default('') String description,
     required Object content,
     required Ability ability,
-    required TestStatus status,
+    @Default(TestStatus.preparing) TestStatus status,
+    @Default(QuizStatus.unfinished) QuizStatus statusValidation,
     required List<DateTime> statusChanges,
   }) = _Test;
-
-  const factory Test.submission({
-    required String id,
-    required String title,
-    @Default('') String description,
-    required Submission content,
-    required Ability ability,
-    required TestStatus status,
-    required List<DateTime> statusChanges,
-  }) = _TestSubmission;
-
-  const factory Test.questionnaire({
-    required String id,
-    required String title,
-    @Default('') String description,
-    required DateTime start,
-    required DateTime end,
-    required Questionnaire content,
-    required Ability ability,
-    required TestStatus status,
-    required List<DateTime> statusChanges,
-  }) = _TestQuestionnaire;
-
-  const factory Test.survey({
-    required String id,
-    required String title,
-    @Default('') String description,
-    required DateTime start,
-    required DateTime end,
-    required Survey content,
-    required Ability ability,
-    required TestStatus status,
-    required List<DateTime> statusChanges,
-  }) = _TestSurvey;
 
   factory Test.fromJson(Json json) => _$TestFromJson(json);
 }
 
-// has certificate
+// has time limit, certificate
 @freezed
 class Exam with _$Exam {
-  const factory Exam.quiz({
+  const factory Exam({
     required String id,
+    required String name,
+    required DateTime start,
+    required DateTime end,
+    @Default('') String description,
+    required Object content,
     required Certificate certificate,
-    required Quiz content,
-  }) = _ExamQuiz;
-
-  const factory Exam.test({
-    required String id,
-    required Certificate certificate,
-    required Test content,
-  }) = _ExamTest;
+    @Default(ExamStatus.preparing) ExamStatus status,
+    @Default(QuizStatus.unfinished) QuizStatus statusValidation,
+    required List<DateTime> statusChanges,
+  }) = _Exam;
 
   factory Exam.fromJson(Json json) => _$ExamFromJson(json);
 }
@@ -422,8 +355,8 @@ class Group with _$Group {
 }
 
 @freezed
-class School with _$School {
-  const factory School.taiwan({
+class SchoolTaiwan with _$SchoolTaiwan {
+  const factory SchoolTaiwan({
     required String id,
     required String name,
     required FoundationType foundationType,
@@ -435,9 +368,8 @@ class School with _$School {
     @Default(null) Object? management,
   }) = _SchoolTaiwan;
 
-  factory School.fromJson(Json json) => _$SchoolFromJson(json);
+  factory SchoolTaiwan.fromJson(Json json) => _$SchoolTaiwanFromJson(json);
 }
-
 
 ///
 ///
@@ -456,7 +388,7 @@ class Message with _$Message {
     required String content,
     required DateTime sent,
     @Default(null) DateTime? received,
-    required MessageStatus status,
+    @Default(MessageStatus.sending) MessageStatus status,
     required List<DateTime> statusChanges,
     @Default(null) Object? attachment,
   }) = _Message;
@@ -471,7 +403,7 @@ class MessageThread with _$MessageThread {
     required List<Message> body,
     @Default(null) Object? management,
   }) = _MessageThread;
-  
+
   factory MessageThread.fromJson(Json json) => _$MessageThreadFromJson(json);
 }
 
@@ -606,7 +538,6 @@ class LearningPath with _$LearningPath {
   factory LearningPath.fromJson(Json json) => _$LearningPathFromJson(json);
 }
 
-
 ///
 ///
 ///
@@ -615,7 +546,7 @@ class LearningPath with _$LearningPath {
 /// CMS that may be private/protected/public
 ///
 /// [Notebook], [Postbook],
-/// [TaskPanel], [AssignmentPanel],
+/// [TaskPanel], [AssignmentPanel], [VideoPanel]
 /// [BoardNotice], [BoardAnnouncement], [BoardEvent], [BoardCourse],
 /// [Semester]
 ///
@@ -649,28 +580,16 @@ class Postbook with _$Postbook {
 }
 
 @freezed
-class BoardNotice with _$BoardNotice {
-  const factory BoardNotice({
+class VideoPanel with _$VideoPanel {
+  const factory VideoPanel({
     required String id,
     @Default(null) String? v,
-    required List<Notice> notices,
+    required Object video,
+    required Map<int, Object> checkpoints,
     @Default(null) Object? management,
-  }) = _BoardNotice;
+  }) = _VideoPanel;
 
-  factory BoardNotice.fromJson(Json json) => _$BoardNoticeFromJson(json);
-}
-
-@freezed
-class BoardAnnouncement with _$BoardAnnouncement {
-  const factory BoardAnnouncement({
-    required String id,
-    @Default(null) String? v,
-    required List<Announcement> announcements,
-    @Default(null) Object? management,
-  }) = _BoardAnnouncement;
-
-  factory BoardAnnouncement.fromJson(Json json) =>
-      _$BoardAnnouncementFromJson(json);
+  factory VideoPanel.fromJson(Json json) => _$VideoPanelFromJson(json);
 }
 
 @freezed
@@ -696,6 +615,31 @@ class AssignmentPanel with _$AssignmentPanel {
 
   factory AssignmentPanel.fromJson(Json json) =>
       _$AssignmentPanelFromJson(json);
+}
+
+@freezed
+class BoardNotice with _$BoardNotice {
+  const factory BoardNotice({
+    required String id,
+    @Default(null) String? v,
+    required List<Notice> notices,
+    @Default(null) Object? management,
+  }) = _BoardNotice;
+
+  factory BoardNotice.fromJson(Json json) => _$BoardNoticeFromJson(json);
+}
+
+@freezed
+class BoardAnnouncement with _$BoardAnnouncement {
+  const factory BoardAnnouncement({
+    required String id,
+    @Default(null) String? v,
+    required List<Announcement> announcements,
+    @Default(null) Object? management,
+  }) = _BoardAnnouncement;
+
+  factory BoardAnnouncement.fromJson(Json json) =>
+      _$BoardAnnouncementFromJson(json);
 }
 
 @freezed
@@ -785,7 +729,6 @@ class Room with _$Room {
   factory Room.fromJson(Json json) => _$RoomFromJson(json);
 }
 
-
 ///
 /// interfaces, enums for status
 /// - [NoteStatus]
@@ -808,7 +751,7 @@ class Room with _$Room {
 /// - [LearningStatus]
 /// - [LearningPathStatus]
 /// - [PublishStatus]
-///     
+///
 
 abstract interface class WorkStatus {}
 
@@ -826,7 +769,6 @@ enum PostStatus { editing, posted, archived, idle, popular, closed }
 
 /// [Message]
 enum MessageStatus { sending, received, highlighted }
-
 
 /// [Task]
 enum TaskStatus implements WorkStatus { pending, progressing, completed }
@@ -876,8 +818,17 @@ enum TestStatus implements ValidationStatus {
   preparing,
   secreted,
   testing,
-  failed,
-  pass,
+  finished,
+}
+
+/// [Exam]
+enum ExamStatus implements ValidationStatus {
+  preparing,
+  secreted,
+  sampled,
+  samplePublished,
+  examing,
+  finished,
 }
 
 /// [Event]
@@ -939,13 +890,13 @@ enum PublishStatus {
   approved,
 }
 
-/// 
-/// 
+///
+///
 /// interfaces, enums for qualification
 /// - [SchoolQualification]
 ///   - [SchoolQualificationTaiwan]
-/// 
-/// 
+///
+///
 abstract interface class SchoolQualification {}
 
 enum SchoolQualificationTaiwan implements SchoolQualification {
@@ -958,18 +909,18 @@ enum SchoolQualificationTaiwan implements SchoolQualification {
       SchoolQualificationTaiwan.values.asNameMap()[string]!;
 
   int get grades => switch (this) {
-    SchoolQualificationTaiwan.elementary => 6,
-    SchoolQualificationTaiwan.junior => 3,
-    SchoolQualificationTaiwan.senior => 3,
-    SchoolQualificationTaiwan.college => 4,
-  };
+        SchoolQualificationTaiwan.elementary => 6,
+        SchoolQualificationTaiwan.junior => 3,
+        SchoolQualificationTaiwan.senior => 3,
+        SchoolQualificationTaiwan.college => 4,
+      };
 
   String get nameInMandarin => switch (this) {
-    SchoolQualificationTaiwan.elementary => '國小',
-    SchoolQualificationTaiwan.junior => '國中',
-    SchoolQualificationTaiwan.senior => '高中',
-    SchoolQualificationTaiwan.college => '大學',
-  };
+        SchoolQualificationTaiwan.elementary => '國小',
+        SchoolQualificationTaiwan.junior => '國中',
+        SchoolQualificationTaiwan.senior => '高中',
+        SchoolQualificationTaiwan.college => '大學',
+      };
 }
 
 ///
@@ -999,11 +950,10 @@ enum GroupScope {
 ///
 /// interfaces, enums for type
 /// [FoundationType]
-/// 
-/// 
+///
+///
 
 enum FoundationType { public, private }
-
 
 ///
 /// extensions
@@ -1027,7 +977,7 @@ extension AbilityExtension on Ability {
       score.values.fold(0.0, (p, score) => p + score.percentage) / score.length;
 }
 
-extension SchoolExtension on School {
+extension SchoolExtension on SchoolTaiwan {
   SchoolQualification get qualification =>
       SchoolQualificationTaiwan.parse(id.split(' ').first);
 }
