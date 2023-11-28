@@ -1,10 +1,14 @@
 library app;
 
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'data/data.dart';
-
 part 'model/model.dart';
-
 part 'entity/entity.dart';
+part 'identity.dart';
+part 'identity_not.dart';
+part 'nomisal_app.freezed.dart';
+part 'nomisal_app.g.dart';
 
 ///
 /// freezed command:

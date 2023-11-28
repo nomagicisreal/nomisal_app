@@ -1,9 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'identity_not.dart';
-
-part 'identity.freezed.dart';
-
-part 'identity.g.dart';
+part of 'nomisal_app.dart';
 
 ///
 /// this file contains:

@@ -1,16 +1,4 @@
-///
-/// [Assignment], [ScheduleEvent]
-/// [Place], [School]
-/// [Grade], [Semester], [Class]
-///
-library;
-
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:nomisal_app/nomisal_app.dart';
-
-part 'identity_not.freezed.dart';
-
-part 'identity_not.g.dart';
+part of 'nomisal_app.dart';
 
 /// this file contains:
 ///

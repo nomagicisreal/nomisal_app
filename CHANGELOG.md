@@ -19,3 +19,6 @@
     - read data in flutter assets.
     - read/write data in cloud store
 
+## 0.0.6
+- integrate all file into `lib/nomisal_app.dart`
+- partial export at `bin/nomisal_app.dart`
