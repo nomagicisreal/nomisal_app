@@ -14,7 +14,8 @@
   - Prepare for the project on the end of 2023/2024 semester, building a learning platform.
   - Instead of 'EDM concept', Use `identity`, `identity-not` as basic classification for entities.
 - goals
-  - Create basic properties of some entities, which be expected to use in ui of my 'learning platform' project. 
+  - Create basic properties of some entities, which be expected to use in ui of my 'learning platform' project.
   - Implement `toJson` and `fromJson` in 'freezed' for entities, which be expected to use in my 'learning platform' project
     - read data in flutter assets.
     - read/write data in cloud store
+
