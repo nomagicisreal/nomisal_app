@@ -104,16 +104,16 @@ class SchoolManager<G extends SchoolQualification> with _$SchoolManager {
 }
 
 @freezed
-class PublicationProvider with _$PublicationProvider {
+class EditionProvider with _$EditionProvider {
   @Implements<Identity>()
-  const factory PublicationProvider({
+  const factory EditionProvider({
     required String id,
     required String name,
-    required List<Publication> publications,
-  }) = _PublicationProvider;
+    required List<Edition> publications,
+  }) = _EditionProvider;
 
-  factory PublicationProvider.fromJson(Map<String, dynamic> json) =>
-      _$PublicationProviderFromJson(json);
+  factory EditionProvider.fromJson(Map<String, dynamic> json) =>
+      _$EditionProviderFromJson(json);
 }
 
 enum StudentCompanionType { partner, senior, mentor }

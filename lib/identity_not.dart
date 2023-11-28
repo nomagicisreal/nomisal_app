@@ -12,6 +12,24 @@ part 'identity_not.freezed.dart';
 
 part 'identity_not.g.dart';
 
+/// this file contains:
+///
+/// class
+///   - Content       ([Note], ...; [Message], ...; [Token])
+///   - LC     ([Token], ...; [Score], ...) (Linked Content)
+///   - CMS           ([Notebook], ...; [Inbox]) (Content Management System)
+///   - Scope
+///     - Group         ([Group], ...)
+///     - LC complex    ([LearningPath], ...)
+///   - Value System
+///     - ([Token], ...)
+///
+/// abstracts, enums, extensions
+///   - Status        ([WorkStatus], ...)
+///   - Scope         ([AssignmentTaskScope], ...)
+///   - Others        ([SchoolFoundationType], ...)
+///
+/// --------
 ///
 /// 1.  there is lots of arguments typed as [Object], because they are potential to develop in the future.
 ///     In consideration of MVP (minimum valuable product), those [Object] should be treated as [String].
@@ -42,31 +60,177 @@ part 'identity_not.g.dart';
 ///     I want to pack the ui-relative properties into a class in the future.
 ///     In consideration of MVP, they should not be included in this package.
 ///
-/// this file contains:
+
 ///
-/// class
-///   - Content       ([Message], ...; [Note], ...)
-///   - CMS           ([Notebook], ...)
-///   - Scope
-///     - Group         ([Group], ...)
-///     - Subject       ([Subject], ...)
-///     - Learning Path ([LearningPath], ...)
-///   - Value System
-///     - ([AssignmentToken], ...)
 ///
-/// abstracts, enums, extensions
-///   - Status        ([WorkStatus], ...)
-///   - Scope         ([AssignmentTaskScope], ...)
-///   - Others        ([SchoolFoundationType], ...)
+/// content that may be private/protected/public
+/// [Note], [Post],
+/// [Task], [Assignment]
+/// [Notice], [Announcement], [Certificate]
+/// [Event], [Course]
 ///
 ///
 
+@freezed
+class Note with _$Note {
+  const factory Note({
+    required String id,
+    @Default(null) String? v,
+    required String title,
+    required String content,
+    required NoteStatus status,
+    @Default('') Object attachment,
+  }) = _Note;
+
+  factory Note.fromJson(Json json) => _$NoteFromJson(json);
+}
+
+@freezed
+class Post with _$Post {
+  const factory Post({
+    required String id,
+    @Default(null) String? v,
+    required String title,
+    required String content,
+    required DateTime timestamp,
+    required Map<String, List<Message>> threads,
+    required PostStatus status,
+    @Default('') Object attachment,
+  }) = _Post;
+
+  factory Post.fromJson(Json json) => _$PostFromJson(json);
+}
+
+// simple task
+@freezed
+class Task with _$Task {
+  const factory Task({
+    required String id,
+    @Default(null) String? v,
+    required String title,
+    required String content,
+    required TaskStatus status,
+    @Default('') Object attachment,
+  }) = _Task;
+
+  factory Task.fromJson(Json json) => _$TaskFromJson(json);
+}
+
+// complex task
+@freezed
+class Assignment with _$Assignment {
+  const factory Assignment({
+    required String id,
+    @Default(null) String? v,
+    required String title,
+    @Default('') String description,
+    required DateTime start,
+    required DateTime end,
+    required bool isIncludeStartTime,
+    required bool isIncludeEndTime,
+    required List<Object> requirements,
+    required bool requireStepByStep,
+    required AssignmentStatus statusManager,
+    required TaskStatus statusAudience,
+    required List<DateTime> statusChanges,
+    @Default('') Object attachment,
+  }) = _Assignment;
+
+  factory Assignment.fromJson(Json json) => _$AssignmentFromJson(json);
+}
+
+// no time limit
+@freezed
+class Notice with _$Notice {
+  const factory Notice({
+    required String id,
+    @Default(null) String? v,
+    required String title,
+    required String content,
+    required NoticeStatus status,
+    @Default('') Object attachment,
+  }) = _Notice;
+
+  factory Notice.fromJson(Json json) => _$NoticeFromJson(json);
+}
+
+// has time limit
+@freezed
+class Announcement with _$Announcement {
+  const factory Announcement({
+    required String id,
+    @Default(null) String? v,
+    required String title,
+    required String content,
+    required DateTime start,
+    required DateTime end,
+    required AnnouncementStatus status,
+    @Default('') Object attachment,
+  }) = _Announcement;
+
+  factory Announcement.fromJson(Json json) => _$AnnouncementFromJson(json);
+}
+
+@freezed
+class Certificate with _$Certificate {
+  const factory Certificate({
+    required String id,
+    @Default(null) String? v,
+    required String title,
+    @Default('') String description,
+    required CertificateStatus status,
+    @Default('') Object attachment,
+  }) = _Certificate;
+
+  factory Certificate.fromJson(Json json) => _$CertificateFromJson(json);
+}
+
+@freezed
+class Event with _$Event {
+  const factory Event({
+    required String id,
+    @Default(null) String? v,
+    required String name,
+    @Default('') String description,
+    required DateTime start,
+    required DateTime end,
+    required EventStatus status,
+    @Default('') Object attachment,
+  }) = _Event;
+
+  factory Event.fromJson(Json json) => _$EventFromJson(json);
+}
+
+@freezed
+class Course with _$Course {
+  const factory Course({
+    required String id,
+    @Default(null) String? v,
+    required String name,
+    @Default('') String description,
+    required List<Event> schedule,
+    required List<Assignment> assignments,
+    required List<Test> tests,
+    required CourseStatus status,
+    @Default('') Object attachment,
+  }) = _Course;
+
+  factory Course.fromJson(Json json) => _$CourseFromJson(json);
+}
+
+///
+///
 ///
 ///
 /// content that are not private
 /// [Message]
 /// [Submission], [Questionnaire], [Survey]
 /// [Quiz], [Test], [Exam]
+///
+/// [Token] -> [TokenDistribution] -> [TokenAccounting] -> [Rank]
+/// [Score] -> [Ability] -> [Chapter] -> [Subject] -> [Edition]
+///
+///
 ///
 ///
 
@@ -90,7 +254,7 @@ class Submission with _$Submission {
   const factory Submission({
     required String id,
     required String title,
-    required String description,
+    @Default('') String description,
     required Object answer,
   }) = _Submission;
 
@@ -103,7 +267,7 @@ class Questionnaire with _$Questionnaire {
   const factory Questionnaire({
     required String id,
     required String title,
-    required String description,
+    @Default('') String description,
     required List<Object> questions,
     required List<Object> answers,
   }) = _Questionnaire;
@@ -117,7 +281,7 @@ class Survey with _$Survey {
   const factory Survey.choosing({
     required String id,
     required String title,
-    required String description,
+    @Default('') String description,
     required List<Object> questions,
     required List<List<Object>> options,
     required List<int> answers,
@@ -126,7 +290,7 @@ class Survey with _$Survey {
   const factory Survey.matching({
     required String id,
     required String title,
-    required String description,
+    @Default('') String description,
     required List<List<Object>> sideA,
     required List<List<Object>> sideB,
     required List<Map<int, int>> answers,
@@ -143,7 +307,7 @@ class Quiz with _$Quiz {
     required Ability ability,
     required QuizStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required Object content,
   }) = _Quiz;
 
@@ -152,7 +316,7 @@ class Quiz with _$Quiz {
     required Ability ability,
     required QuizStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required Submission content,
   }) = _QuizSubmission;
 
@@ -161,7 +325,7 @@ class Quiz with _$Quiz {
     required Ability ability,
     required QuizStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required Questionnaire content,
   }) = _QuizQuestionnaire;
 
@@ -170,7 +334,7 @@ class Quiz with _$Quiz {
     required Ability ability,
     required QuizStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required Survey content,
   }) = _QuizSurvey;
 
@@ -179,7 +343,7 @@ class Quiz with _$Quiz {
     required Ability ability,
     required QuizStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required Object content,
     required Map<int, Object> checkpoints,
   }) = _QuizVideoCheckpoint;
@@ -195,7 +359,7 @@ class Test with _$Test {
     required Ability ability,
     required TestStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required DateTime start,
     required DateTime end,
     required Object content,
@@ -206,7 +370,7 @@ class Test with _$Test {
     required Ability ability,
     required TestStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required Submission content,
   }) = _TestSubmission;
 
@@ -215,7 +379,7 @@ class Test with _$Test {
     required Ability ability,
     required TestStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required DateTime start,
     required DateTime end,
     required Questionnaire content,
@@ -226,7 +390,7 @@ class Test with _$Test {
     required Ability ability,
     required TestStatus status,
     required String title,
-    required String description,
+    @Default('') String description,
     required DateTime start,
     required DateTime end,
     required Survey content,
@@ -254,176 +418,130 @@ class Exam with _$Exam {
 }
 
 ///
-/// 
-/// content that may be private/protected/public
-/// [Note], [Post],
-/// [Task], [Assignment] 
-/// [Notice], [Announcement],
-/// [Event], [Course],
-///  
-/// 
+/// [Token] -> [TokenDistribution] -> [TokenAccounting] -> [Rank]
+///
 
 @freezed
-class Note with _$Note {
-  const factory Note({
+class Token with _$Token {
+  const factory Token({
     required String id,
-    required String? v,
-    required String title,
-    required String content,
-    required Object attachment,
-    required NoteStatus status,
-  }) = _Note;
+    required String idAssignment,
+    required int value,
+  }) = _Token;
 
-  factory Note.fromJson(Json json) => _$NoteFromJson(json);
+  factory Token.fromJson(Json json) => _$TokenFromJson(json);
 }
 
 @freezed
-class Post with _$Post {
-  const factory Post({
+class TokenDistribution with _$TokenDistribution {
+  const factory TokenDistribution({
     required String id,
-    required String? v,
-    required String title,
-    required String content,
-    required Object attachment,
-    required DateTime timestamp,
-    required Map<String, List<Message>> threads,
-    required PostStatus status,
-  }) = _Post;
+    required Token token,
+    required DateTime distribute,
+    required DateTime expired,
+  }) = _TokenDistribution;
 
-  factory Post.fromJson(Json json) => _$PostFromJson(json);
-}
-
-// simple task
-@freezed
-class Task with _$Task {
-  const factory Task({
-    required String id,
-    required String? v,
-    required String title,
-    required String content,
-    required TaskStatus status,
-    required Object attachment,
-  }) = _Task;
-
-  factory Task.fromJson(Json json) => _$TaskFromJson(json);
-}
-
-// complex task
-@freezed
-class Assignment with _$Assignment {
-  const factory Assignment({
-    required String id,
-    required String? v,
-    required String title,
-    required String description,
-    required DateTime start,
-    required DateTime end,
-    required bool isIncludeStartTime,
-    required bool isIncludeEndTime,
-    required List<Object> requirements,
-    required bool requireStepByStep,
-    required AssignmentStatus statusManager,
-    required TaskStatus statusAudience,
-    required List<DateTime> statusChanges,
-  }) = _Assignment;
-
-  factory Assignment.fromJson(Json json) => _$AssignmentFromJson(json);
-}
-
-// no time limit
-@freezed
-class Notice with _$Notice {
-  const factory Notice({
-    required String id,
-    required String? v,
-    required String title,
-    required String content,
-    required NoticeStatus status,
-  }) = _Notice;
-
-  factory Notice.fromJson(Json json) => _$NoticeFromJson(json);
-}
-
-// has time limit
-@freezed
-class Announcement with _$Announcement {
-  const factory Announcement({
-    required String id,
-    required String? v,
-    required String title,
-    required String content,
-    required DateTime start,
-    required DateTime end,
-    required AnnouncementStatus status,
-  }) = _Announcement;
-
-  factory Announcement.fromJson(Json json) => _$AnnouncementFromJson(json);
+  factory TokenDistribution.fromJson(Json json) =>
+      _$TokenDistributionFromJson(json);
 }
 
 @freezed
-class Event with _$Event {
-  const factory Event({
+class TokenAccounting with _$TokenAccounting {
+  const factory TokenAccounting({
     required String id,
-    required String? v,
+    required int value,
+    required List<TokenDistribution> distributions,
+    @Default('') Object management,
+  }) = _TokenAccounting;
+
+  factory TokenAccounting.fromJson(Json json) =>
+      _$TokenAccountingFromJson(json);
+}
+
+///
+/// [Score] -> [Ability] -> [Chapter] -> [Subject] -> [Edition]
+///
+
+@freezed
+class Score with _$Score {
+  const factory Score({
+    required double total,
+    @Default(0.0) double value,
+  }) = _Score;
+
+  factory Score.fromJson(Json json) => _$ScoreFromJson(json);
+}
+
+@freezed
+class Ability with _$Ability {
+  const factory Ability({
+    required String id,
+    required String title,
+    @Default('') String description,
+    required Map<String, Score> score,
+  }) = _Ability;
+
+  factory Ability.fromJson(Json json) => _$AbilityFromJson(json);
+}
+
+@freezed
+class Chapter with _$Chapter {
+  const factory Chapter({
+    required String id,
+    required String title,
+    @Default('') String description,
+    required List<Ability> abilities,
+  }) = _Chapter;
+
+  factory Chapter.fromJson(Json json) => _$ChapterFromJson(json);
+}
+
+@freezed
+class Subject with _$Subject {
+  const factory Subject({
+    required String id,
     required String name,
-    required String description,
-    required DateTime start,
-    required DateTime end,
-    required EventStatus status,
-  }) = _Event;
+    @Default('') String description,
+    required List<Chapter> chapters,
+  }) = _Subject;
 
-  factory Event.fromJson(Json json) => _$EventFromJson(json);
+  factory Subject.fromJson(Json json) => _$SubjectFromJson(json);
 }
 
 @freezed
-class Course with _$Course {
-  const factory Course({
+class Edition with _$Edition {
+  const factory Edition({
     required String id,
-    required String? v,
-    required String name,
-    required String description,
-    required Object attachment,
-    required List<Event> schedule,
-    required List<Assignment> assignments,
-    required List<Test> tests,
-    required CourseStatus status,
-  }) = _Course;
+    required String title,
+    @Default('') String description,
+    required List<Subject> subjects,
+  }) = _Edition;
 
-  factory Course.fromJson(Json json) => _$CourseFromJson(json);
+  factory Edition.fromJson(Json json) => _$EditionFromJson(json);
 }
 
 ///
 ///
 ///
-/// CMS / Content Management System
 ///
-/// [Inbox]
+///
+/// CMS that may be private/protected/public
+///
 /// [Notebook], [Postbook],
-/// [PanelTask], [PanelAssignment],
+/// [TaskPanel], [AssignmentPanel],
 /// [BoardNotice], [BoardAnnouncement], [BoardEvent], [BoardCourse],
+/// [Semester]
 ///
 ///
 ///
 ///
 ///
-
-@freezed
-class Inbox with _$Inbox {
-  const factory Inbox({
-    required String id,
-    required String? v,
-    required List<Message> messages,
-    required Object management,
-  }) = _Inbox;
-
-  factory Inbox.fromJson(Json json) => _$InboxFromJson(json);
-}
 
 @freezed
 class Notebook with _$Notebook {
   const factory Notebook({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Note> notes,
     required Object management,
   }) = _Notebook;
@@ -435,7 +553,7 @@ class Notebook with _$Notebook {
 class Postbook with _$Postbook {
   const factory Postbook({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Post> questions,
     required Object management,
   }) = _Postbook;
@@ -447,20 +565,19 @@ class Postbook with _$Postbook {
 class BoardNotice with _$BoardNotice {
   const factory BoardNotice({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Notice> notices,
     required Object management,
   }) = _BoardNotice;
 
-  factory BoardNotice.fromJson(Json json) =>
-      _$BoardNoticeFromJson(json);
+  factory BoardNotice.fromJson(Json json) => _$BoardNoticeFromJson(json);
 }
 
 @freezed
 class BoardAnnouncement with _$BoardAnnouncement {
   const factory BoardAnnouncement({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Announcement> announcements,
     required Object management,
   }) = _BoardAnnouncement;
@@ -473,20 +590,19 @@ class BoardAnnouncement with _$BoardAnnouncement {
 class TaskPanel with _$TaskPanel {
   const factory TaskPanel({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Task> tasks,
     required Object management,
   }) = _TaskPanel;
 
-  factory TaskPanel.fromJson(Json json) =>
-      _$TaskPanelFromJson(json);
+  factory TaskPanel.fromJson(Json json) => _$TaskPanelFromJson(json);
 }
 
 @freezed
 class AssignmentPanel with _$AssignmentPanel {
   const factory AssignmentPanel({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Assignment> assignments,
     required Object management,
   }) = _AssignmentPanel;
@@ -499,7 +615,7 @@ class AssignmentPanel with _$AssignmentPanel {
 class BoardEvent with _$BoardEvent {
   const factory BoardEvent({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Event> events,
     required Object management,
   }) = _BoardEvent;
@@ -511,12 +627,59 @@ class BoardEvent with _$BoardEvent {
 class BoardCourse with _$BoardCourse {
   const factory BoardCourse({
     required String id,
-    required String? v,
+    @Default(null) String? v,
     required List<Course> courses,
     required Object management,
   }) = _BoardCourse;
 
   factory BoardCourse.fromJson(Json json) => _$BoardCourseFromJson(json);
+}
+
+@freezed
+class Semester with _$Semester {
+  const factory Semester({
+    required String id,
+    @Default(null) String? v,
+    required DateTime start,
+    required DateTime end,
+    required String name,
+    required List<Course> courses,
+    required Object management,
+  }) = _Semester;
+
+  factory Semester.fromJson(Json json) => _$SemesterFromJson(json);
+}
+
+///
+///
+/// CMS that are not private
+/// [Inbox], [Rank]
+///
+
+@freezed
+class Inbox with _$Inbox {
+  const factory Inbox({
+    required String id,
+    @Default(null) String? v,
+    required List<Message> messages,
+    required Object management,
+  }) = _Inbox;
+
+  factory Inbox.fromJson(Json json) => _$InboxFromJson(json);
+}
+
+@freezed
+class Rank with _$Rank {
+  const factory Rank({
+    required String id,
+    @Default(null) String? v,
+    required String name,
+    @Default('') String description,
+    required List<TokenAccounting> accountings,
+    @Default('') Object management,
+  }) = _Rank;
+
+  factory Rank.fromJson(Json json) => _$RankFromJson(json);
 }
 
 ///
@@ -536,7 +699,7 @@ class Group with _$Group {
     required List<String> idMembers,
     required GroupScope scope,
     required String name,
-    required Object additionalSettings,
+    @Default('') Object additions,
   }) = _Group;
 
   factory Group.fromJson(Json json) => _$GroupFromJson(json);
@@ -553,218 +716,42 @@ class School with _$School {
     required String address,
     required String phone,
     required String website,
-    required Object additions,
+    @Default('') Object additions,
   }) = _SchoolTaiwan;
 
   factory School.fromJson(Json json) => _$SchoolFromJson(json);
 }
 
 ///
-/// subject
-/// [Subject], [Chapter], [Ability]
-/// [EditionSubject], [EditionChapter], [EditionAbility], [Publication]
+///
+///
+/// Nods for Graph
+/// [LearningNode] -> [LearningPath]
+///
+///
 ///
 
 @freezed
-class Subject with _$Subject {
-  const factory Subject({
+class LearningNode with _$LearningNode {
+  const factory LearningNode({
     required String id,
-    required String name,
-    required Object description,
-  }) = _Subject;
+    required Edition edition,
+    required DateTime timestamp,
+    required LearningStatus status,
+  }) = _LearningNode;
 
-  factory Subject.fromJson(Json json) => _$SubjectFromJson(json);
+  factory LearningNode.fromJson(Json json) => _$LearningNodeFromJson(json);
 }
-
-@freezed
-class Chapter with _$Chapter {
-  const factory Chapter({
-    required String id,
-    required String name,
-    required Subject subject,
-    required Map<String, Object> resource,
-  }) = _Chapter;
-
-  factory Chapter.fromJson(Json json) => _$ChapterFromJson(json);
-}
-
-@freezed
-class Ability with _$Ability {
-  const factory Ability({
-    required String id,
-    required List<Score> graph,
-    required Object description,
-  }) = _Ability;
-
-  factory Ability.fromJson(Json json) => _$AbilityFromJson(json);
-}
-
-@freezed
-class EditionSubject with _$EditionSubject {
-  const factory EditionSubject({
-    required String id,
-    required List<Subject> subjects,
-    required Object additions,
-  }) = _EditionSubject;
-
-  factory EditionSubject.fromJson(Json json) => _$EditionSubjectFromJson(json);
-}
-
-@freezed
-class EditionChapter with _$EditionChapter {
-  const factory EditionChapter({
-    required String id,
-    required List<Chapter> chapters,
-    required Object additions,
-  }) = _EditionChapter;
-
-  factory EditionChapter.fromJson(Json json) => _$EditionChapterFromJson(json);
-}
-
-@freezed
-class EditionAbility with _$EditionAbility {
-  const factory EditionAbility({
-    required String id,
-    required List<Ability> abilities,
-    required Object additions,
-  }) = _EditionAbility;
-
-  factory EditionAbility.fromJson(Json json) => _$EditionAbilityFromJson(json);
-}
-
-@freezed
-class Publication with _$Publication {
-  const factory Publication({
-    required String id,
-    required String idProvider,
-    required List<Chapter> chapters,
-    required Object additions,
-  }) = _Publication;
-
-  factory Publication.fromJson(Json json) => _$PublicationFromJson(json);
-}
-
-///
-/// learning path
-/// [LearningPath], [LearningHistory], [Certificate], [Semester]
-/// [Test], [Exam]
-///
-///
 
 @freezed
 class LearningPath with _$LearningPath {
   const factory LearningPath({
     required String id,
-    required String idOwner,
-    required Subject subject,
-    required List<Ability> abilities,
-    required Object additions,
+    required List<LearningNode> nodes,
+    required LearningPathStatus status,
   }) = _LearningPath;
 
   factory LearningPath.fromJson(Json json) => _$LearningPathFromJson(json);
-}
-
-@freezed
-class LearningHistory with _$LearningHistory {
-  const factory LearningHistory({
-    required String id,
-    required String idOwner,
-    required Subject subject,
-    required Map<DateTime, Ability> abilities,
-    required Object additions,
-  }) = _LearningHistory;
-
-  factory LearningHistory.fromJson(Json json) =>
-      _$LearningHistoryFromJson(json);
-}
-
-@freezed
-class Certificate with _$Certificate {
-  const factory Certificate({
-    required String id,
-    required Subject subject,
-    required String announcement,
-    required Object additions,
-  }) = _Certificate;
-
-  factory Certificate.fromJson(Json json) => _$CertificateFromJson(json);
-}
-
-@freezed
-class Semester with _$Semester {
-  const factory Semester({
-    required String name,
-    required DateTime start,
-    required DateTime end,
-    required List<Course> courses,
-  }) = _Semester;
-
-  factory Semester.fromJson(Json json) => _$SemesterFromJson(json);
-}
-
-///
-/// score
-/// [Score]
-/// [AssignmentToken], [AssignmentTokenDistribution], [AssignmentTokenAccounting]
-/// [Rank]
-///
-
-@freezed
-class Score with _$Score {
-  const factory Score({
-    required double total,
-    @Default(0.0) double value,
-  }) = _Score;
-
-  factory Score.fromJson(Json json) => _$ScoreFromJson(json);
-}
-
-@freezed
-class AssignmentToken with _$AssignmentToken {
-  const factory AssignmentToken({
-    required String id,
-    required String idAssignment,
-    required int value,
-  }) = _AssignmentToken;
-
-  factory AssignmentToken.fromJson(Json json) =>
-      _$AssignmentTokenFromJson(json);
-}
-
-@freezed
-class AssignmentTokenDistribution with _$AssignmentTokenDistribution {
-  const factory AssignmentTokenDistribution({
-    required String id,
-    required AssignmentToken token,
-    required DateTime distribute,
-    required DateTime expired,
-  }) = _AssignmentTokenDistribution;
-
-  factory AssignmentTokenDistribution.fromJson(Json json) =>
-      _$AssignmentTokenDistributionFromJson(json);
-}
-
-@freezed
-class AssignmentTokenAccounting with _$AssignmentTokenAccounting {
-  const factory AssignmentTokenAccounting({
-    required String id,
-    required String idOwner,
-    required List<AssignmentTokenDistribution> distributions,
-  }) = _AssignmentTokenAccounting;
-
-  factory AssignmentTokenAccounting.fromJson(Json json) =>
-      _$AssignmentTokenAccountingFromJson(json);
-}
-
-@freezed
-class Rank with _$Rank {
-  const factory Rank({
-    required String id,
-    required List<int> tokens,
-    required List<String> idUsers,
-  }) = _Rank;
-
-  factory Rank.fromJson(Json json) => _$RankFromJson(json);
 }
 
 ///
@@ -841,6 +828,16 @@ enum AnnouncementStatus implements NotificationStatus {
   announced,
   known,
   discarded,
+}
+
+/// [Certificate]
+enum CertificateStatus implements NotificationStatus {
+  analyzed,
+  designed,
+  published,
+  certificated,
+  attached,
+  expired,
 }
 
 /// [Quiz]
@@ -931,7 +928,22 @@ enum SchoolQualificationTaiwan implements SchoolQualification {
       };
 }
 
-enum LearningPathStatus { unknown, known, proficient }
+/// [LearningPath]
+enum LearningStatus {
+  unknown,
+  naive,
+  able,
+  understand,
+  proficient,
+}
+
+/// [LearningPath]
+enum LearningPathStatus {
+  browsed,
+  inHistory,
+  inDraft,
+  inFuture,
+}
 
 /// [PublicationContent]
 enum PublishStatus {
@@ -959,7 +971,7 @@ extension SchoolExtension on School {
 
 extension AbilityExtension on Ability {
   double get progress =>
-      graph.fold(0.0, (p, score) => p + score.percentage) / graph.length;
+      score.values.fold(0.0, (p, score) => p + score.percentage) / score.length;
 }
 
 extension ScoreExtension on Score {

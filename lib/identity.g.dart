@@ -123,18 +123,18 @@ Map<String, dynamic> _$$SchoolManagerImplToJson<G extends SchoolQualification>(
       'teachers': instance.teachers,
     };
 
-_$PublicationProviderImpl _$$PublicationProviderImplFromJson(
+_$EditionProviderImpl _$$EditionProviderImplFromJson(
         Map<String, dynamic> json) =>
-    _$PublicationProviderImpl(
+    _$EditionProviderImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       publications: (json['publications'] as List<dynamic>)
-          .map((e) => Publication.fromJson(e as Map<String, dynamic>))
+          .map((e) => Edition.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$PublicationProviderImplToJson(
-        _$PublicationProviderImpl instance) =>
+Map<String, dynamic> _$$EditionProviderImplToJson(
+        _$EditionProviderImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

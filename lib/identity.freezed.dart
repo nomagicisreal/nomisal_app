@@ -1297,35 +1297,35 @@ abstract class _SchoolManager<G extends SchoolQualification>
       throw _privateConstructorUsedError;
 }
 
-PublicationProvider _$PublicationProviderFromJson(Map<String, dynamic> json) {
-  return _PublicationProvider.fromJson(json);
+EditionProvider _$EditionProviderFromJson(Map<String, dynamic> json) {
+  return _EditionProvider.fromJson(json);
 }
 
 /// @nodoc
-mixin _$PublicationProvider {
+mixin _$EditionProvider {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  List<Publication> get publications => throw _privateConstructorUsedError;
+  List<Edition> get publications => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PublicationProviderCopyWith<PublicationProvider> get copyWith =>
+  $EditionProviderCopyWith<EditionProvider> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PublicationProviderCopyWith<$Res> {
-  factory $PublicationProviderCopyWith(
-          PublicationProvider value, $Res Function(PublicationProvider) then) =
-      _$PublicationProviderCopyWithImpl<$Res, PublicationProvider>;
+abstract class $EditionProviderCopyWith<$Res> {
+  factory $EditionProviderCopyWith(
+          EditionProvider value, $Res Function(EditionProvider) then) =
+      _$EditionProviderCopyWithImpl<$Res, EditionProvider>;
   @useResult
-  $Res call({String id, String name, List<Publication> publications});
+  $Res call({String id, String name, List<Edition> publications});
 }
 
 /// @nodoc
-class _$PublicationProviderCopyWithImpl<$Res, $Val extends PublicationProvider>
-    implements $PublicationProviderCopyWith<$Res> {
-  _$PublicationProviderCopyWithImpl(this._value, this._then);
+class _$EditionProviderCopyWithImpl<$Res, $Val extends EditionProvider>
+    implements $EditionProviderCopyWith<$Res> {
+  _$EditionProviderCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -1351,28 +1351,28 @@ class _$PublicationProviderCopyWithImpl<$Res, $Val extends PublicationProvider>
       publications: null == publications
           ? _value.publications
           : publications // ignore: cast_nullable_to_non_nullable
-              as List<Publication>,
+              as List<Edition>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$PublicationProviderImplCopyWith<$Res>
-    implements $PublicationProviderCopyWith<$Res> {
-  factory _$$PublicationProviderImplCopyWith(_$PublicationProviderImpl value,
-          $Res Function(_$PublicationProviderImpl) then) =
-      __$$PublicationProviderImplCopyWithImpl<$Res>;
+abstract class _$$EditionProviderImplCopyWith<$Res>
+    implements $EditionProviderCopyWith<$Res> {
+  factory _$$EditionProviderImplCopyWith(_$EditionProviderImpl value,
+          $Res Function(_$EditionProviderImpl) then) =
+      __$$EditionProviderImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, List<Publication> publications});
+  $Res call({String id, String name, List<Edition> publications});
 }
 
 /// @nodoc
-class __$$PublicationProviderImplCopyWithImpl<$Res>
-    extends _$PublicationProviderCopyWithImpl<$Res, _$PublicationProviderImpl>
-    implements _$$PublicationProviderImplCopyWith<$Res> {
-  __$$PublicationProviderImplCopyWithImpl(_$PublicationProviderImpl _value,
-      $Res Function(_$PublicationProviderImpl) _then)
+class __$$EditionProviderImplCopyWithImpl<$Res>
+    extends _$EditionProviderCopyWithImpl<$Res, _$EditionProviderImpl>
+    implements _$$EditionProviderImplCopyWith<$Res> {
+  __$$EditionProviderImplCopyWithImpl(
+      _$EditionProviderImpl _value, $Res Function(_$EditionProviderImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1382,7 +1382,7 @@ class __$$PublicationProviderImplCopyWithImpl<$Res>
     Object? name = null,
     Object? publications = null,
   }) {
-    return _then(_$PublicationProviderImpl(
+    return _then(_$EditionProviderImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -1394,30 +1394,30 @@ class __$$PublicationProviderImplCopyWithImpl<$Res>
       publications: null == publications
           ? _value._publications
           : publications // ignore: cast_nullable_to_non_nullable
-              as List<Publication>,
+              as List<Edition>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$PublicationProviderImpl implements _PublicationProvider {
-  const _$PublicationProviderImpl(
+class _$EditionProviderImpl implements _EditionProvider {
+  const _$EditionProviderImpl(
       {required this.id,
       required this.name,
-      required final List<Publication> publications})
+      required final List<Edition> publications})
       : _publications = publications;
 
-  factory _$PublicationProviderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PublicationProviderImplFromJson(json);
+  factory _$EditionProviderImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EditionProviderImplFromJson(json);
 
   @override
   final String id;
   @override
   final String name;
-  final List<Publication> _publications;
+  final List<Edition> _publications;
   @override
-  List<Publication> get publications {
+  List<Edition> get publications {
     if (_publications is EqualUnmodifiableListView) return _publications;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_publications);
@@ -1425,14 +1425,14 @@ class _$PublicationProviderImpl implements _PublicationProvider {
 
   @override
   String toString() {
-    return 'PublicationProvider(id: $id, name: $name, publications: $publications)';
+    return 'EditionProvider(id: $id, name: $name, publications: $publications)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PublicationProviderImpl &&
+            other is _$EditionProviderImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
@@ -1447,36 +1447,35 @@ class _$PublicationProviderImpl implements _PublicationProvider {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PublicationProviderImplCopyWith<_$PublicationProviderImpl> get copyWith =>
-      __$$PublicationProviderImplCopyWithImpl<_$PublicationProviderImpl>(
+  _$$EditionProviderImplCopyWith<_$EditionProviderImpl> get copyWith =>
+      __$$EditionProviderImplCopyWithImpl<_$EditionProviderImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PublicationProviderImplToJson(
+    return _$$EditionProviderImplToJson(
       this,
     );
   }
 }
 
-abstract class _PublicationProvider implements PublicationProvider, Identity {
-  const factory _PublicationProvider(
-          {required final String id,
-          required final String name,
-          required final List<Publication> publications}) =
-      _$PublicationProviderImpl;
+abstract class _EditionProvider implements EditionProvider, Identity {
+  const factory _EditionProvider(
+      {required final String id,
+      required final String name,
+      required final List<Edition> publications}) = _$EditionProviderImpl;
 
-  factory _PublicationProvider.fromJson(Map<String, dynamic> json) =
-      _$PublicationProviderImpl.fromJson;
+  factory _EditionProvider.fromJson(Map<String, dynamic> json) =
+      _$EditionProviderImpl.fromJson;
 
   @override
   String get id;
   @override
   String get name;
   @override
-  List<Publication> get publications;
+  List<Edition> get publications;
   @override
   @JsonKey(ignore: true)
-  _$$PublicationProviderImplCopyWith<_$PublicationProviderImpl> get copyWith =>
+  _$$EditionProviderImplCopyWith<_$EditionProviderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
