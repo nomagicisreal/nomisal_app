@@ -28,3 +28,9 @@ part 'nomisal_app.g.dart';
 ///
 
 typedef Json = Map<String, dynamic>;
+
+// void main(List<String> arguments) {
+//   SchoolQualificationTaiwan.data.forEach((key, value) {
+//     print('$key\t\t${value.last}');
+//   });
+// }

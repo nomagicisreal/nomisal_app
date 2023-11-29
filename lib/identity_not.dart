@@ -922,14 +922,26 @@ enum SchoolQualificationTaiwan implements SchoolQualification {
         university => spreadsheetTable.rows,
       };
 
-  static Iterable<List<List<dynamic>>> get iterableRows =>
+  static Iterable<List<List<dynamic>>> get _iterableRows =>
       values.map((e) => e.rows);
 
-  static Iterable<List<dynamic>> get iterableTitles =>
+  static Iterable<List<dynamic>> get _iterableTitles =>
       values.map((e) => switch (e) {
             elementary || junior => junior.spreadsheetTable.rows[2],
             university || senior => senior.spreadsheetTable.rows.first,
           });
+
+  static Map<SchoolQualificationTaiwan, List<List<dynamic>>> get data {
+    final map = <SchoolQualificationTaiwan, List<List<dynamic>>>{};
+    final qualifications = SchoolQualificationTaiwan.values;
+    final iTitles = _iterableTitles.toList();
+    final listRows = _iterableRows.toList();
+    final length = qualifications.length;
+    for (var i = 0 ; i < length ; i++) {
+      map.putIfAbsent(qualifications[i], () => [iTitles[i], ...listRows[i]]);
+    }
+    return map;
+  }
 
   static SchoolQualificationTaiwan parse(String string) =>
       values.asNameMap()[string]!;

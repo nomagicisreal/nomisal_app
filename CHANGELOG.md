@@ -18,6 +18,6 @@
 - Retain only 1 no-name factory for all entities, to ensure that all the properties can be used
 - Remove `LearningNode.timestamp`
 
-## 0.0.9
+## 0.0.9 ~ 0.0.10
 - Create `lib/assets/school/` folder and add some real data
 - Update `SchoolQualificationTaiwan` with some static real-data properties
