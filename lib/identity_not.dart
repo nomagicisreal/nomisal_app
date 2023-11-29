@@ -980,3 +980,4 @@ extension SchoolExtension on SchoolTaiwan {
   SchoolQualification get qualification =>
       SchoolQualificationTaiwan.parse(id.split(' ').first);
 }
+
