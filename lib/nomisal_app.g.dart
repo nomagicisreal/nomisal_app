@@ -939,7 +939,6 @@ _$LearningNodeImpl _$$LearningNodeImplFromJson(Map<String, dynamic> json) =>
     _$LearningNodeImpl(
       id: json['id'] as String,
       edition: Edition.fromJson(json['edition'] as Map<String, dynamic>),
-      timestamp: DateTime.parse(json['timestamp'] as String),
       status: $enumDecode(_$LearningStatusEnumMap, json['status']),
       statusChanges: (json['statusChanges'] as List<dynamic>)
           .map((e) => DateTime.parse(e as String))
@@ -950,7 +949,6 @@ Map<String, dynamic> _$$LearningNodeImplToJson(_$LearningNodeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'edition': instance.edition,
-      'timestamp': instance.timestamp.toIso8601String(),
       'status': _$LearningStatusEnumMap[instance.status]!,
       'statusChanges':
           instance.statusChanges.map((e) => e.toIso8601String()).toList(),

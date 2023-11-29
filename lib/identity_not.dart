@@ -518,7 +518,6 @@ class LearningNode with _$LearningNode {
   const factory LearningNode({
     required String id,
     required Edition edition,
-    required DateTime timestamp,
     required LearningStatus status,
     required List<DateTime> statusChanges,
   }) = _LearningNode;

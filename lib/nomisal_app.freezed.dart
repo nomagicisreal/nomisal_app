@@ -8780,7 +8780,6 @@ LearningNode _$LearningNodeFromJson(Map<String, dynamic> json) {
 mixin _$LearningNode {
   String get id => throw _privateConstructorUsedError;
   Edition get edition => throw _privateConstructorUsedError;
-  DateTime get timestamp => throw _privateConstructorUsedError;
   LearningStatus get status => throw _privateConstructorUsedError;
   List<DateTime> get statusChanges => throw _privateConstructorUsedError;
 
@@ -8799,7 +8798,6 @@ abstract class $LearningNodeCopyWith<$Res> {
   $Res call(
       {String id,
       Edition edition,
-      DateTime timestamp,
       LearningStatus status,
       List<DateTime> statusChanges});
 
@@ -8821,7 +8819,6 @@ class _$LearningNodeCopyWithImpl<$Res, $Val extends LearningNode>
   $Res call({
     Object? id = null,
     Object? edition = null,
-    Object? timestamp = null,
     Object? status = null,
     Object? statusChanges = null,
   }) {
@@ -8834,10 +8831,6 @@ class _$LearningNodeCopyWithImpl<$Res, $Val extends LearningNode>
           ? _value.edition
           : edition // ignore: cast_nullable_to_non_nullable
               as Edition,
-      timestamp: null == timestamp
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -8869,7 +8862,6 @@ abstract class _$$LearningNodeImplCopyWith<$Res>
   $Res call(
       {String id,
       Edition edition,
-      DateTime timestamp,
       LearningStatus status,
       List<DateTime> statusChanges});
 
@@ -8890,7 +8882,6 @@ class __$$LearningNodeImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? edition = null,
-    Object? timestamp = null,
     Object? status = null,
     Object? statusChanges = null,
   }) {
@@ -8903,10 +8894,6 @@ class __$$LearningNodeImplCopyWithImpl<$Res>
           ? _value.edition
           : edition // ignore: cast_nullable_to_non_nullable
               as Edition,
-      timestamp: null == timestamp
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as DateTime,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -8925,7 +8912,6 @@ class _$LearningNodeImpl implements _LearningNode {
   const _$LearningNodeImpl(
       {required this.id,
       required this.edition,
-      required this.timestamp,
       required this.status,
       required final List<DateTime> statusChanges})
       : _statusChanges = statusChanges;
@@ -8938,8 +8924,6 @@ class _$LearningNodeImpl implements _LearningNode {
   @override
   final Edition edition;
   @override
-  final DateTime timestamp;
-  @override
   final LearningStatus status;
   final List<DateTime> _statusChanges;
   @override
@@ -8951,7 +8935,7 @@ class _$LearningNodeImpl implements _LearningNode {
 
   @override
   String toString() {
-    return 'LearningNode(id: $id, edition: $edition, timestamp: $timestamp, status: $status, statusChanges: $statusChanges)';
+    return 'LearningNode(id: $id, edition: $edition, status: $status, statusChanges: $statusChanges)';
   }
 
   @override
@@ -8961,8 +8945,6 @@ class _$LearningNodeImpl implements _LearningNode {
             other is _$LearningNodeImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.edition, edition) || other.edition == edition) &&
-            (identical(other.timestamp, timestamp) ||
-                other.timestamp == timestamp) &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality()
                 .equals(other._statusChanges, _statusChanges));
@@ -8970,7 +8952,7 @@ class _$LearningNodeImpl implements _LearningNode {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, edition, timestamp, status,
+  int get hashCode => Object.hash(runtimeType, id, edition, status,
       const DeepCollectionEquality().hash(_statusChanges));
 
   @JsonKey(ignore: true)
@@ -8991,7 +8973,6 @@ abstract class _LearningNode implements LearningNode {
   const factory _LearningNode(
       {required final String id,
       required final Edition edition,
-      required final DateTime timestamp,
       required final LearningStatus status,
       required final List<DateTime> statusChanges}) = _$LearningNodeImpl;
 
@@ -9002,8 +8983,6 @@ abstract class _LearningNode implements LearningNode {
   String get id;
   @override
   Edition get edition;
-  @override
-  DateTime get timestamp;
   @override
   LearningStatus get status;
   @override

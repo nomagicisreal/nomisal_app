@@ -26,3 +26,7 @@
 ## 0.0.7
 - remove unnecessary partial export at `bin/nomisal_app.dart`
 - retain only 1 no-name factory for all entities, to ensure that all the properties can be used
+
+## 0.0.8
+- remove `LearningNode.timestamp`
+
