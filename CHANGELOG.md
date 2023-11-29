@@ -1,10 +1,5 @@
-## 0.0.1
+## 0.0.1 ~ 0.0.4
 - Initial version.
-
-## 0.0.2 ~ 0.0.3
-- Update README.md.
-
-## 0.0.4
 - Provide an entity expected to use normally after `pub add` and `pub get`.
 - Try To automate publishing with Github Actions.
 
@@ -19,14 +14,10 @@
     - read data in flutter assets.
     - read/write data in cloud store
 
-## 0.0.6
-- integrate all file into `lib/nomisal_app.dart`
-- partial export at `bin/nomisal_app.dart`
+## 0.0.6 ~ 0.0.8
+- Retain only 1 no-name factory for all entities, to ensure that all the properties can be used
+- Remove `LearningNode.timestamp`
 
-## 0.0.7
-- remove unnecessary partial export at `bin/nomisal_app.dart`
-- retain only 1 no-name factory for all entities, to ensure that all the properties can be used
-
-## 0.0.8
-- remove `LearningNode.timestamp`
-
+## 0.0.9
+- Create `lib/assets/school/` folder and add some real data
+- Update `SchoolQualificationTaiwan` with some static real-data properties

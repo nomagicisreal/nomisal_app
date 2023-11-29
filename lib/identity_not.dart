@@ -902,23 +902,50 @@ enum SchoolQualificationTaiwan implements SchoolQualification {
   elementary,
   junior,
   senior,
-  college;
+  university;
+
+  String get _pathSpreadsheet2023 => 'lib/assets/school/${switch (this) {
+        elementary => 'elementary',
+        junior => 'junior',
+        senior => 'senior',
+        university => 'university',
+      }}.ods';
+
+  SpreadsheetTable get spreadsheetTable => SpreadsheetDecoder.decodeBytes(
+        File(_pathSpreadsheet2023).readAsBytesSync(),
+      ).tables.values.first;
+
+  List<List<dynamic>> get rows => switch (this) {
+        elementary => spreadsheetTable.rows,
+        junior => spreadsheetTable.rows.sublist(3),
+        senior => spreadsheetTable.rows.sublist(2),
+        university => spreadsheetTable.rows,
+      };
+
+  static Iterable<List<List<dynamic>>> get iterableRows =>
+      values.map((e) => e.rows);
+
+  static Iterable<List<dynamic>> get iterableTitles =>
+      values.map((e) => switch (e) {
+            elementary || junior => junior.spreadsheetTable.rows[2],
+            university || senior => senior.spreadsheetTable.rows.first,
+          });
 
   static SchoolQualificationTaiwan parse(String string) =>
-      SchoolQualificationTaiwan.values.asNameMap()[string]!;
+      values.asNameMap()[string]!;
 
   int get grades => switch (this) {
-        SchoolQualificationTaiwan.elementary => 6,
-        SchoolQualificationTaiwan.junior => 3,
-        SchoolQualificationTaiwan.senior => 3,
-        SchoolQualificationTaiwan.college => 4,
+        elementary => 6,
+        junior => 3,
+        senior => 3,
+        university => 4,
       };
 
   String get nameInMandarin => switch (this) {
-        SchoolQualificationTaiwan.elementary => '國小',
-        SchoolQualificationTaiwan.junior => '國中',
-        SchoolQualificationTaiwan.senior => '高中',
-        SchoolQualificationTaiwan.college => '大學',
+        elementary => '國小',
+        junior => '國中',
+        senior => '高中',
+        university => '大學',
       };
 }
 
@@ -980,4 +1007,3 @@ extension SchoolExtension on SchoolTaiwan {
   SchoolQualification get qualification =>
       SchoolQualificationTaiwan.parse(id.split(' ').first);
 }
-

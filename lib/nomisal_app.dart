@@ -1,10 +1,13 @@
 library app;
 
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'dart:io';
 
-part 'data/data.dart';
-part 'model/model.dart';
-part 'entity/entity.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:spreadsheet_decoder/spreadsheet_decoder.dart';
+
+part 'src/data/data.dart';
+part 'src/model/model.dart';
+part 'src/entity/entity.dart';
 part 'identity.dart';
 part 'identity_not.dart';
 part 'nomisal_app.freezed.dart';
@@ -25,6 +28,3 @@ part 'nomisal_app.g.dart';
 ///
 
 typedef Json = Map<String, dynamic>;
-
-// void main(List<String> arguments) {
-// }
