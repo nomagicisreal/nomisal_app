@@ -6,8 +6,8 @@ it's certain for now that I will try to condense the world into `entity`, `data`
 which provides me a way to view from `user-side`, `social-side`, `otherUser-side`,
 those meaning are different things according to user-self.
 
-Before run into the discussion of how the difference are,
-at first, maybe I should try composing the world in my native language, Chinese ?
+Before run into the discussion of how the difference they are,
+At first, maybe I should try composing the world in my native language, Chinese ?
 Before then, I will consider all the data in a convenient way: `identity`, `identity-not`
 
 ## EDM ([Entity](#Entity), [Data](#Data), [Model](#Model))
@@ -55,6 +55,3 @@ Before then, I will consider all the data in a convenient way: `identity`, `iden
 #### Conditioning
 
 #### Graph
-
-
----
