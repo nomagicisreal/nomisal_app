@@ -1,57 +1,27 @@
-An application for nomisal to analyze all the entities/data/models in the world.
+# nomisal_app
+nomisal_app is a library on [Pub.dev](https://pub.dev/packages/nomisal_app) It’s an application for me, nomisal, to analyze the whole world, to build a social media application in the future. I know publishing such a personal use case as a library seems inappropriate; but by doing this, I don’t think I can build the social media in a clean way.
 
-I'm try to decompose the world into three kinds of data type: entity, data, model.
-Although the actual difference between 'entity', 'data', 'model' are not clear enough for now,
-it's certain for now that I will try to condense the world into `entity`, `data`, `model`,
-which provides me a way to view from `user-side`, `social-side`, `otherUser-side`,
-those meaning are different things according to user-self.
+## Why nomisal_app? What am I trying to build?
+Basically, If you are interested in building a social media application, 
+and you also favor my views and definitions helping myself to build my application, maybe this library can help you, too? 
+In the future, someday, maybe you can see `/lib/introduction.md` written in Chinese to know more details about nomisal_app.
 
-Before run into the discussion of how the difference they are,
-At first, maybe I should try composing the world in my native language, Chinese ?
-Before then, I will consider all the data in a convenient way: `identity`, `identity-not`
+I’m a Taiwanese, English is not my native language, 
+so I have trouble diving deep into every discussion on relative topics; though, 
+it is certain that I want to have some design thinking. 
+I hope that I will be able to write and talk about my design thinking in English someday, but not now.
 
-## EDM ([Entity](#Entity), [Data](#Data), [Model](#Model))
-### Entity
-#### Hierarchy
-- #### Soul
-    - person
-    - people
-    - org
-- #### Script
-    - ability
-    - conscious
-    - feel
-- #### Event
-    - ability
-    - conscious
-    - feel
+## What nomisal_app for?
+Ideally, I’m trying to find a balance between 1 and 2.
+- Let nomisal_app be a project that really helps me explore the possibility of application.
+- Let nomisal_app be a project that really prevents me from overengineering.
 
-#### Conditioning
+Practically, it is a project trying to decompose the world, containing 3 sub-projects, 
+Dreami, Lovi, Govi; Each of them has a unique way to inspect the user's data — {Dreami:entity, Lovi:model, Govi:data}.
+Take a noun, book, for example, in Dreami, we can call it as “entity”; in Lovi, we can call it as “model”; in Govi, we can call it as “data”. Not only books, every noun can be interpreted as ’entity, model, data’, reflecting ‘subjective, objective, social perspective’ to have deep discussion within each of sub-projects. 
+This three classification helps me think about how an object interacts with the user.\
 
-#### Graph
-
----
-### Data
-#### Hierarchy
-- text
-    - Note (title, content)
-- image
-- audio
-    - music (name, time, Author/Publisher/Keeper)
-    - sound effect
-- video
-    - ... (name, time, hasMusic)
-
-#### Conditioning
-- Playlist, PlaySet (shuffle-able repeatable)
-
-#### Graph
-
-
----
-### Model
-#### Hierarchy
-
-#### Conditioning
-
-#### Graph
+Again, it’s hard for me to have a deeper discussion in English for now. 
+If you want to learn more about this library, plz see ‘/lib/introduction.md’. 
+Overall, with nomisal_app, it’s practical for me to visualize ideas, prototype ui, consider user behavior, 
+and more. Notice that the visualization definition is in [nomisal_ui](https://pub.dev/packages/nomisal_ui) and the public relationship or consideration about project structure is in [nomisal_res](https://pub.dev/packages/nomisal_res).
